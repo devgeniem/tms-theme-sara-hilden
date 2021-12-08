@@ -1,6 +1,8 @@
 /**
  * Typography
  */
+
+// stylelint-disable declaration-no-important
 @import "functions";
 
 $base-sizes: (
@@ -43,10 +45,6 @@ html {
     @include from($tablet) {
         font-size: 17px;
     }
-}
-
-.is-family-tovescript {
-    font-family: $family-tove-sans;
 }
 
 @mixin breakpoint_typography($base, $calculated_sizes) {
@@ -126,6 +124,28 @@ html {
         font-weight: $weight-semibold;
         line-height: 1.22;
         hyphens: auto;
+    }
+}
+
+$link-outline-color: #78726d;
+
+a {
+    text-underline-offset: .125rem;
+
+    &:hover {
+        color: bulmaLighten($black, 20%) !important;
+    }
+
+    &:focus {
+        outline: .125rem dotted $link-outline-color !important;
+        outline-offset: .125rem;
+        text-decoration: none !important;
+    }
+
+    &:active {
+        outline: none !important;
+        color: bulmaLighten($black, 5%) !important;
+        text-decoration: none;
     }
 }
 
