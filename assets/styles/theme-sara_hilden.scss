@@ -1,0 +1,73 @@
+/*!*
+ * Copyright (c) 2021. Geniem Oy
+ */
+
+@import "themes/includes";
+
+$primary: #358049;
+$primary-invert: $color-white;
+$primary-light: bulmaLighten($primary, 15);
+$primary-light-invert: $color-white;
+$primary-dark: bulmaDarken($primary, 15);
+$primary-dark-invert: $color-white;
+
+$secondary: #aad77a;
+$secondary-invert: $color-tumma-harmaa;
+$secondary-light: bulmaLighten($secondary, 10);
+$secondary-light-invert: $color-black;
+$secondary-dark: bulmaDarken($secondary, 10);
+$secondary-dark-invert: $color-black;
+
+$light: $primary-light;
+$light-invert: $primary-light-invert;
+$dark: $primary-dark;
+$dark-invert: $primary-dark-invert;
+
+$accent: $color-muumi-oranssi;
+$accent-invert: $color-white;
+$accent-light: bulmaLighten($accent, 10);
+$accent-light-invert: $color-white;
+$accent-dark: bulmaDarken($accent, 10);
+$accent-dark-invert: $color-white;
+
+$accent-secondary: $color-muumi-turkoosi;
+$accent-secondary-invert: $black;
+
+$accent-tertiary: $color-muumi-keltainen;
+$accent-tertiary-invert: $color-black;
+
+$divider: $color-vaalean-harmaa;
+$divider-invert: $color-tumma-harmaa;
+
+$text: $color-muumipeikon-valkoinen;
+$text-strong: $color-muumipeikon-valkoinen;
+$link: $primary;
+
+$colors-palette-primary: ($primary, $primary-invert, $primary-dark, $primary-light);
+$colors-palette-secondary: ($secondary, $secondary-invert, $secondary-dark, $secondary-light);
+$colors-palette-accent: ($accent, $accent-invert, $accent-dark, $accent-light);
+$colors-palette-accent-secondary: ($accent-secondary, $accent-secondary-invert);
+$colors-palette-accent-tertiary: ($accent-tertiary, $accent-tertiary-invert);
+$colors-palette-transparent: (transparent, $color-white);
+
+$colors: (
+    "primary": $colors-palette-primary,
+    "secondary": $colors-palette-secondary,
+    "white": ($color-white, $color-black),
+    "black": ($color-black, $color-white),
+    "accent": $colors-palette-accent,
+    "accent-secondary": $colors-palette-accent-secondary,
+    "accent-tertiary": $colors-palette-accent-tertiary,
+    "transparent": $colors-palette-transparent,
+    "light": ($color-muumipeikon-valkoinen, $color-black),
+);
+
+$button-colors: (
+    "primary": ($primary, $color-white, $primary, $color-white),
+    "secondary": ($primary, $color-white, $primary, $color-white),
+);
+
+$color-background-primary-light--opaque-light: $secondary;
+
+@import "../../../tms-theme-base/assets/styles/main";
+@import "main";
