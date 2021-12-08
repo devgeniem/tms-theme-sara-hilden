@@ -1,0 +1,24 @@
+/*!
+ *  Copyright (c) 2021. Geniem Oy
+ */
+
+// stylelint-disable declaration-no-important
+
+$footer-copy-link-border-color: $black;
+
+.site-footer {
+    background-color: $light !important;
+    color: $black !important;
+
+    &__copy-links {
+        li:not(:last-child)::after {
+            background-color: $black;
+        }
+    }
+
+    > .container {
+        > .button {
+            background-color: transparent !important;
+        }
+    }
+}

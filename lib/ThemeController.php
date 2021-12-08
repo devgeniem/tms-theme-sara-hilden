@@ -6,6 +6,7 @@
 namespace TMS\Theme\Sara_Hilden;
 
 use TMS\Theme\Base\Interfaces;
+use TMS\Theme\Sara_Hilden\ThemeCustomizationController;
 
 /**
  * ThemeController
@@ -22,6 +23,7 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
             PostTypeController::class,
             TaxonomyController::class,
             Localization::class,
+            ThemeCustomizationController::class,
         ];
 
         array_walk( $classes, function ( $class ) {
