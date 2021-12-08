@@ -28,6 +28,13 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         add_filter( 'tms/theme/footer/colors', [ $this, 'footer' ] );
     }
 
+    /**
+     * Footer
+     *
+     * @param array $classes Footer classes.
+     *
+     * @return array
+     */
     public function footer( array $classes ) : array {
         $classes['container']   = 'has-colors-light';
         $classes['back_to_top'] = 'is-primary';
@@ -36,5 +43,4 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
 
         return $classes;
     }
-
 }
