@@ -1,7 +1,7 @@
 // stylelint-disable declaration-no-important
 
-$button-primary-border-color: #767676;
-$button-secondary-border-color: #f1eeeb;
+$button-primary-border-color: $border-light;
+$button-secondary-border-color: $light;
 
 .button {
     border-radius: 0 !important;
