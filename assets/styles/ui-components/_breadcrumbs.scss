@@ -1,0 +1,17 @@
+/*!
+ *  Copyright (c) 2021. Geniem Oy
+ */
+
+// stylelint-disable declaration-no-important
+
+.breadcrumb {
+    li + li {
+        &::before {
+            content: "" !important;
+            width: .25rem;
+            height: .25rem;
+            border-radius: 50%;
+            background-color: $black;
+        }
+    }
+}

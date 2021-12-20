@@ -7,4 +7,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-- TMS-491: Add theme base
+- TMS-494: Add breadcrumb styles #4
+- TMS-495: Add footer styles #3
+- TMS-491: Add theme base #1
