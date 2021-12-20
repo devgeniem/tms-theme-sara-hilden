@@ -1,0 +1,9 @@
+/*!
+ *  Copyright (c) 2021. Geniem Oy
+ */
+
+.notice-banner {
+    &.has-colors-secondary {
+        border: .0625rem solid $divider;
+    }
+}
