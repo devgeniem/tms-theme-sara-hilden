@@ -166,6 +166,7 @@ a {
     &__content {
         > p {
             > a {
+                color: inherit;
                 text-decoration: underline;
             }
         }
