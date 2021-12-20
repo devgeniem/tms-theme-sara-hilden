@@ -18,8 +18,8 @@ $secondary-light-invert: $primary-light-invert;
 $secondary-dark: $primary-dark;
 $secondary-dark-invert: $primary-dark-invert;
 
-$light: $primary-light;
-$light-invert: $primary-light-invert;
+$light: #f1eeeb;
+$light-invert: $black;
 $dark: $primary-dark;
 $dark-invert: $primary-dark-invert;
 
@@ -36,11 +36,12 @@ $colors: (
     "secondary": $colors-palette-primary,
     "white": ($color-white, $color-black),
     "black": ($color-black, $color-white),
+    "light": ($light, $light-invert),
 );
 
 $button-colors: (
     "primary": ($white, $black, $white, $black),
-    "secondary": ($primary, $color-white, $primary, $secondary-invert),
+    "secondary": ($black, $color-white, $black, $color-white),
 );
 
 $color-background-primary-light--opaque-light: $secondary;

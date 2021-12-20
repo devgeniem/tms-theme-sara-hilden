@@ -1,7 +1,7 @@
 // stylelint-disable declaration-no-important
 
 $button-primary-border-color: #767676;
-$button-secondary-border-color: #F1EEEB;
+$button-secondary-border-color: #f1eeeb;
 
 .button {
     border-radius: 0 !important;
@@ -29,6 +29,7 @@ $button-secondary-border-color: #F1EEEB;
             border-color: $button-primary-border-color !important;
             outline: .125rem dotted $black !important;
             outline-offset: .25rem !important;
+            background-color: $black !important;
         }
 
         &:active,
