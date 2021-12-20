@@ -137,7 +137,7 @@ a {
     text-underline-offset: .125rem;
 
     &:hover {
-        color: bulmaLighten($black, 20%) !important;
+        color: $link-hover !important;
     }
 
     &:focus {

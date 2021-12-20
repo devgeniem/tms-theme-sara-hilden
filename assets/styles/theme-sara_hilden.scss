@@ -28,6 +28,7 @@ $divider-invert: $color-tumma-harmaa;
 
 $text: $black;
 $link: $primary;
+$link-hover: bulmaLighten($black, 20%);
 
 $colors-palette-primary: ($primary, $primary-invert, $primary-dark, $primary-light);
 
@@ -46,6 +47,18 @@ $button-colors: (
 
 $color-background-primary-light--opaque-light: $secondary;
 $button-border-radius: 0;
+
+$secondary-navbar-item-font-weight: 400;
+$navbar-item-navbar-link-color: $black;
+$navbar-item-has-dropdown-active: $navbar-item-navbar-link-color;
+
+$fly-out-nav-trigger-icon-hover: $primary;
+$fly-out-nav-primary-link: $link;
+$fly-out-nav-primary-link-hover: $link-hover;
+$fly-out-nav-primary-dropdown-active-background: $light;
+$fly-out-nav-secondary-border-color: $light;
+$fly-out-nav-secondary-link: $link;
+$fly-out-nav-secondary-link-hover: $link-hover;
 
 @import "../../../tms-theme-base/assets/styles/main";
 @import "main";
