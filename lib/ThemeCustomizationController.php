@@ -25,10 +25,32 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             '__return_false',
         );
 
+        add_filter( 'tms/theme/header/colors', [ $this, 'header' ] );
         add_filter( 'tms/theme/footer/colors', [ $this, 'footer' ] );
 
         add_filter( 'tms/theme/error404/search_link', [ $this, 'error404_search_link' ] );
         add_filter( 'tms/theme/error404/home_link', [ $this, 'error404_home_link' ] );
+    }
+
+    /**
+     * Header
+     *
+     * @param array $colors Color classes.
+     *
+     * @return array Array of customized colors.
+     */
+    public function header( $colors ) : array {
+        $colors['nav']['container']            = 'has-background-primary-invert has-border-primary has-border-top-1 has-border-bottom-1';
+        $colors['search_popup_container']      = 'has-background-primary-invert has-text-primary';
+        $colors['lang_nav']['link__default']   = 'has-text-primary';
+        $colors['lang_nav']['link__active']    = 'has-background-primary has-text-primary-invert';
+        $colors['lang_nav']['dropdown_toggle'] = 'is-primary';
+
+        $colors['fly_out_nav'] = [
+            'inner' => 'has-background-light has-text-primary',
+        ];
+
+        return $colors;
     }
 
     /**
