@@ -11,12 +11,12 @@ $primary-light-invert: $color-white;
 $primary-dark: $color-black;
 $primary-dark-invert: $color-white;
 
-$secondary: $primary;
-$secondary-invert: $primary-invert;
-$secondary-light: $primary-light;
-$secondary-light-invert: $primary-light-invert;
-$secondary-dark: $primary-dark;
-$secondary-dark-invert: $primary-dark-invert;
+$secondary: $white;
+$secondary-invert: $black;
+$secondary-light: $white;
+$secondary-light-invert: $black;
+$secondary-dark: $light;
+$secondary-dark-invert: $white;
 
 $light: #f1eeeb;
 $light-invert: $black;
@@ -31,10 +31,11 @@ $text: #4d4c49;
 $link: $primary;
 
 $colors-palette-primary: ($primary, $primary-invert, $primary-dark, $primary-light);
+$colors-palette-secondary: ($white, $black);
 
 $colors: (
     "primary": $colors-palette-primary,
-    "secondary": $colors-palette-primary,
+    "secondary": $colors-palette-secondary,
     "white": ($color-white, $color-black),
     "black": ($color-black, $color-white),
     "light": ($light, $light-invert),
