@@ -42,10 +42,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $colors['lang_nav']['link__default']   = 'has-text-primary';
         $colors['lang_nav']['link__active']    = 'has-background-primary has-text-primary-invert';
         $colors['lang_nav']['dropdown_toggle'] = 'is-primary';
-
-        $colors['fly_out_nav'] = [
-            'inner' => 'has-background-light has-text-primary',
-        ];
+        $colors['fly_out_nav']['inner']        = 'has-background-light has-text-primary';
 
         return $colors;
     }
