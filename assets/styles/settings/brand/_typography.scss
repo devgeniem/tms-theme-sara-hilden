@@ -75,7 +75,6 @@ html {
 
     h1,
     .h1 {
-        color: $color-headings;
         font-family: $font-family-header;
         font-size: map-get($calculated_sizes, "h1") !important;
         font-weight: 800;
@@ -86,7 +85,6 @@ html {
 
     h2,
     .h2 {
-        color: $color-headings;
         font-family: $font-family-header;
         font-size: map-get($calculated_sizes, "h2") !important;
         font-weight: 800;
@@ -97,7 +95,6 @@ html {
 
     h3,
     .h3 {
-        color: $color-headings;
         font-family: $font-family-header;
         font-size: map-get($calculated_sizes, "h3") !important;
         font-weight: 800;
@@ -108,7 +105,6 @@ html {
 
     h4,
     .h4 {
-        color: $color-headings;
         font-family: $font-family-header;
         font-size: map-get($calculated_sizes, "h4") !important;
         font-weight: 800;
@@ -119,7 +115,6 @@ html {
 
     h5,
     .h5 {
-        color: $color-headings;
         font-family: $font-family-header;
         font-size: map-get($calculated_sizes, "h5") !important;
         font-weight: $weight-semibold;
@@ -130,7 +125,6 @@ html {
 
     h6,
     .h6 {
-        color: $color-headings;
         font-family: $font-family-header;
         font-size: map-get($calculated_sizes, "h6") !important;
         font-weight: $weight-semibold;
@@ -138,6 +132,25 @@ html {
         text-transform: uppercase;
         hyphens: auto;
     }
+}
+
+.has-text-lead {
+    color: $black;
+}
+
+.h1,
+h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    color: $color-headings;
 }
 
 $link-outline-color: #78726d;

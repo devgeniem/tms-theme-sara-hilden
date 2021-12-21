@@ -5,3 +5,13 @@
         border: 1px solid $light;
     }
 }
+
+.lang-nav {
+    &--horizontal {
+        a.has-text-primary-invert {
+            &:hover {
+                color: $primary-invert !important;
+            }
+        }
+    }
+}
