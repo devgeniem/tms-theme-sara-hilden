@@ -23,13 +23,13 @@
     }
 
     .icon {
-        fill: #767676 !important;
+        fill: $color-sarahilden-gray !important;
     }
 
     .navbar-dropdown-items {
         .navbar-item {
-            font-weight: 400;
             background-color: transparent !important;
+            font-weight: $weight-normal;
 
             .icon {
                 width: $theme-spacing-half !important;
