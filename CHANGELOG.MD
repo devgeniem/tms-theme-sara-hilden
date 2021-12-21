@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-512: Front page logo wall colors
 - TMS-537: 
     - Link style in text block layout
     - textblock layout maxwidth and centered
