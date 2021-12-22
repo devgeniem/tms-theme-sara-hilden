@@ -1,0 +1,33 @@
+.sibling-navigation {
+    &__item {
+        border: .0625 solid $border-light;
+        border-radius: 0 !important;
+        background-color: $white;
+        color: $black;
+        text-transform: unset !important;
+
+        &:focus {
+            outline-offset: .25rem !important;
+        }
+
+        @include from($widescreen) {
+            padding-right: $theme-spacing-oneandhalf !important;
+            padding-left: $theme-spacing-oneandhalf !important;
+        }
+
+        &.h6 {
+            font-size: .9rem !important;
+        }
+
+        &.is-current {
+            border-color: $border-light;
+            background-color: $black;
+            color: $white;
+
+            &:hover,
+            &:focus {
+                color: $white !important;
+            }
+        }
+    }
+}
