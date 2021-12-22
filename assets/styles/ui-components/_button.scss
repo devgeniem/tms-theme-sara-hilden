@@ -83,4 +83,8 @@ $button-secondary-border-color: $light;
     &.is-small {
         border-radius: 0 !important;
     }
+
+    &.is-rounded {
+        border-radius: 50% !important;
+    }
 }
