@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - TMS-542: Add 404 styles
+- TMS-510: Content page hero
 - TMS-493: Sibling navigation #12
 - TMS-512: Front page logo wall colors
 - TMS-537:
