@@ -1,0 +1,11 @@
+<section class="page__hero section is-relative pt-0 pb-0 has-background-cover" {@inlinebg id=Page.hero_image size="fullhd" /}>
+    <div class="is-absolute has-bottom-0 has-left-0">
+        <div class="container">
+            <div class="columns has-background-white">
+                <div class="column is-8 is-offset-2">
+                    {>"ui/entry-title" /}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
