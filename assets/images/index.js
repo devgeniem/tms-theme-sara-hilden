@@ -1,1 +1,0 @@
-import './favicon.png';
