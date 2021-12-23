@@ -4,11 +4,6 @@
   "version": "0.1.0",
   "description": "Tampere Multisite Sara Hilden Theme",
   "private": true,
-  "stylelint": {
-    "extends": [
-      "@geniem/geniem-rules-stylelint"
-    ]
-  },
   "dependencies": {
     "@accessible360/accessible-slick": "^1.0.1",
     "@babel/polyfill": "^7.12.1",
@@ -26,7 +21,6 @@
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-env": "^7.16.4",
     "@babel/register": "^7.16.0",
-    "@geniem/geniem-rules-stylelint": "^1.0.3",
     "@wordpress/eslint-plugin": "^9.3.0",
     "ajv": "^6.12.6",
     "autoprefixer": "^9.8.8",
