@@ -6,4 +6,20 @@
             fill: $white;
         }
     }
-} 
+}
+
+.modal-content {
+    a {
+        color: $white;
+        text-decoration: underline;
+
+        &:hover {
+            color: $white !important;
+        }
+
+        &:focus {
+            outline-color: $white !important;
+        }
+    }
+}
+
