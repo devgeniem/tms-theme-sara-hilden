@@ -5,5 +5,4 @@
 
 import '../../../tms-theme-base/assets/scripts/main.js';
 import '../fonts';
-import '../images';
 import '../styles/theme-sara_hilden.scss';
