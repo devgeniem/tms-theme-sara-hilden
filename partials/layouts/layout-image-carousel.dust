@@ -6,7 +6,7 @@
             {?title}
                 <h3 id="{carousel_id}-title"
                     class="image-carousel__title column is-block is-half is-offset-one-quarter has-text-centered mt-0 mb-0 {carousel_title_class|s}">
-                    {title|s}xxx
+                    {title|s}
                 </h3>
             {/title}
 
