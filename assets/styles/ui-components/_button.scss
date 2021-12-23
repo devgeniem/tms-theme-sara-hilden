@@ -5,6 +5,7 @@ $button-secondary-border-color: #f1eeeb;
 
 .button {
     border-radius: 0 !important;
+    letter-spacing: .04rem;
 
     &:hover,
     &:focus {
@@ -15,7 +16,7 @@ $button-secondary-border-color: #f1eeeb;
         border-color: $button-primary-border-color !important;
 
         .icon {
-            fill: $button-primary-border-color !important;
+            fill: currentColor !important;
         }
 
         &:hover,
@@ -52,7 +53,7 @@ $button-secondary-border-color: #f1eeeb;
         color: $white !important;
 
         .icon {
-            fill: $button-secondary-border-color !important;
+            fill: currentColor !important;
         }
 
         &:hover,
