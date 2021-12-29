@@ -1,0 +1,19 @@
+.share-links {
+    a {
+        // background-color: blue !important;
+        border: 1px solid $link;
+
+        &:hover,
+        &.is-hovered,
+        &:focus,
+        &.is-focused {
+            background-color: $link !important;
+            .icon {
+                fill: $white !important; 
+            }
+        }
+    }
+    .icon {
+        fill: $link !important; 
+    }
+}
