@@ -1,0 +1,50 @@
+.gallery-controls {
+    .gallery-button {
+background-color: transparent !important;
+        border:none;
+
+        .icon {
+            fill: $white !important;
+        }
+
+        &:focus {
+            outline-color: $white !important;
+        }
+    }
+}
+
+.modal-content {
+    strong {
+        color: $white;
+    }
+    a {
+        color: $white;
+        text-decoration: underline;
+
+        &:hover {
+            color: $white !important;
+        }
+
+        &:focus {
+            outline-color: $white !important;
+        }
+    }
+
+    .slide-deck, 
+    .slide-deck .slide{
+
+        figure {
+            width: fit-content;
+            margin-left: auto !important;
+            margin-right: auto !important;
+
+            figcaption p{
+                max-width: fit-content;
+            }
+        }
+        
+    }
+
+}
+
+
