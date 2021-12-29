@@ -1,6 +1,11 @@
-.share-links {
+.share-links,
+.entry__share-links {
+    h2 {
+        text-transform: none;
+        text-align: center;
+        font-weight: 400;
+    }
     a {
-        // background-color: blue !important;
         border: 1px solid $link;
 
         &:hover,
