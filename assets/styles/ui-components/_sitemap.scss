@@ -1,0 +1,20 @@
+.sitemap--toggle {
+    &.button.is-primary.is-active {
+        background-color: transparent !important;
+
+        &:active,
+        &:focus,
+        &.is-focused {
+            background-color: $black !important;
+
+            .icon {
+                fill: $white !important;
+            }
+
+        }
+
+        .icon {
+            fill: $button-primary-border-color !important;
+        }
+    }
+}
