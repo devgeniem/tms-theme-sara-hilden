@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-510: Content page hero
 - TMS-515: Image carousel layout styles
 - TMS-530: Image Gallery styles
+- TMS-532: Share links' styles
 - TMS-493: Sibling navigation #12
 - TMS-512: Front page logo wall colors
 - TMS-537:
