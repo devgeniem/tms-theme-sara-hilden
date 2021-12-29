@@ -38,8 +38,12 @@ background-color: transparent !important;
             margin-left: auto !important;
             margin-right: auto !important;
 
-            figcaption p{
-                max-width: fit-content;
+            figcaption {
+                margin-top: 0;
+                
+                p{
+                    max-width: fit-content;
+                }
             }
         }
         
