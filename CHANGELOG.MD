@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-530: Image Gallery styles
 - TMS-532: Share links' styles
 - TMS-535: Image Banner styles
+- TMS:538: Sitemap styling
 - TMS-493: Sibling navigation #12
 - TMS-512: Front page logo wall colors
 - TMS-537:
