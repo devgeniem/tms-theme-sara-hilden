@@ -1,0 +1,14 @@
+.container .gform_wrapper {
+    background-color: $light;
+    color: $black;
+
+    select, 
+    input, 
+    textarea {
+        border-radius: 0;
+    }
+    
+    input[type="submit"] {
+        font-weight: 700;
+    } 
+}
