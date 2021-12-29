@@ -78,6 +78,13 @@ $button-secondary-border-color: $light;
                 fill: currentColor !important;
             }
         }
+
+        &.is-inverted {
+            &:focus,
+            &.is-focused { 
+                outline: .125rem dotted $white !important;
+            }
+        }
     }
 
     &.is-small {
