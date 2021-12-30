@@ -30,7 +30,6 @@ class AlterImageGalleryFields {
      * @return array
      */
     public function alter_fields( array $fields ) : array {
-        // error_log( print_r( $fields, true ) );
         try {
             unset( $fields['rows']->sub_fields['is_clickable'] );
         }
