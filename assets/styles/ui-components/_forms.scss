@@ -13,4 +13,41 @@
         font-weight: 700;
         padding: 0.8rem 2rem !important;
     }
+    .gform_drop_area{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .gform_button_select_files,
+    .gform_delete_file{
+        border-color: $black;
+        background-color: transparent;
+        color:$black;
+        &:hover{
+            border-color: $white;
+            background-color: $black;
+            color:$white;
+        }
+    }
+
+    .gform_button_select_files:after{
+        content: "\002B";
+        font-size: 1.5rem;
+        padding-left: 1rem;
+        padding-bottom: 0.2rem;
+        font-family: inherit;
+    }
+
+    .gform_delete_file {
+        padding:0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    .ginput_preview {
+        display:flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
 }
