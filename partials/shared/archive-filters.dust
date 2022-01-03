@@ -3,7 +3,7 @@
         <div class="pb-4 mb-4">
             <div class="columns filters">
                 {?filters}
-                    <div class="column is-6-tablet is-flex is-align-items-center">
+                    <div class="column is-6-tablet is-flex">
                         <div class="mb-4">
                             <span class="is-block h6 mb-1">
                                 {strings.filter|s}
