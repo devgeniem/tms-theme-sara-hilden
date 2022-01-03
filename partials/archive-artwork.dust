@@ -42,7 +42,7 @@
 
                             {?types}
                                 {#types}
-                                    <span class="pill mt-4 mr-2">
+                                    <span class="pill is-primary mt-4 mr-2">
                                         {.|s}
                                     </span>
                                 {/types}
