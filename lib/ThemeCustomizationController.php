@@ -67,6 +67,13 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         return $classes;
     }
 
+    /**
+     * 404 home link
+     *
+     * @param array $link Home link.
+     *
+     * @return array
+     */
     public function error404_home_link( array $link ) : array {
         $link['classes'] = 'is-primary';
         $link['icon']    = 'arrow-right';
@@ -75,6 +82,13 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         return $link;
     }
 
+    /**
+     * 404 search link
+     *
+     * @param array $link Search link.
+     *
+     * @return array
+     */
     public function error404_search_link( array $link ) : array {
         $link['classes'] = 'is-primary';
         $link['class']   = 'icon--medium';

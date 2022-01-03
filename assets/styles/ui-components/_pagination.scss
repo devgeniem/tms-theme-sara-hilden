@@ -1,0 +1,15 @@
+.pagination {
+    &-item__link {
+        border: .125rem solid $primary;
+    }
+
+    .is-current {
+        .pagination-item__link {
+            &:hover,
+            &:focus {
+                color: $white !important;
+                text-decoration: underline;
+            }
+        }
+    }
+}

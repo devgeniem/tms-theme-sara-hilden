@@ -13,8 +13,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-523: Table styles
 - TMS-524: Link list styles
 - TMS-525: Subpages block & laout styles
+- TMS-542: Add 404 styles #17
 - TMS-511: Image block meta styles
-- TMS-542: Add 404 styles
 - TMS-510: Content page hero
 - TMS-515: Image carousel layout styles
 - TMS-530: Image Gallery styles

@@ -1,0 +1,347 @@
+<?php
+/**
+ *  Copyright (c) 2021. Geniem Oy
+ *
+ */
+
+use TMS\Theme\Base\Traits\Pagination;
+use TMS\Theme\Sara_Hilden\PostType\Artist;
+use TMS\Theme\Sara_Hilden\Taxonomy\ArtistCategory;
+
+/**
+ * Archive for Artist CPT
+ */
+class ArchiveArtist extends BaseModel {
+
+    use Pagination;
+
+    /**
+     * Search input name.
+     */
+    const SEARCH_QUERY_VAR = 'artist-search';
+
+    /**
+     * Artist category filter name.
+     */
+    const FILTER_QUERY_VAR = 'artist-filter';
+
+    /**
+     * Artist orderby var name.
+     */
+    const ORDERBY_QUERY_VAR = 'artist-sort';
+
+    /**
+     * Pagination data.
+     *
+     * @var object
+     */
+    protected object $pagination;
+
+    /**
+     * Hooks
+     */
+    public static function hooks() : void {
+        add_action(
+            'pre_get_posts',
+            [ __CLASS__, 'modify_query' ]
+        );
+    }
+
+    /**
+     * Get search query var value
+     *
+     * @return mixed
+     */
+    protected static function get_search_query_var() {
+        return get_query_var( self::SEARCH_QUERY_VAR, false );
+    }
+
+    /**
+     * Get filter query var value
+     *
+     * @return int|null
+     */
+    protected static function get_filter_query_var() {
+        $value = get_query_var( self::FILTER_QUERY_VAR, false );
+
+        return ! $value
+            ? null
+            : intval( $value );
+    }
+
+    /**
+     * Get filter query var value
+     *
+     * @return string
+     */
+    protected static function get_orderby_query_var() {
+        $value = get_query_var( self::ORDERBY_QUERY_VAR );
+
+        return sanitize_text_field( $value );
+    }
+
+    /**
+     * Modify query order.
+     *
+     * @param WP_Query $wp_query WP Query.
+     */
+    private static function modify_wp_query_order( WP_Query &$wp_query ) : void {
+        $orderby_query_var = self::get_orderby_query_var();
+
+        // Default order: last name, ascending.
+        if ( empty( $orderby_query_var ) ) {
+            $wp_query->set( 'orderby', [ 'last_name' => 'ASC' ] );
+            $wp_query->set( 'meta_key', 'last_name' );
+
+            return;
+        }
+
+        // Last name, descending.
+        if ( $orderby_query_var === 'desc' ) {
+            $wp_query->set( 'orderby', [ 'last_name' => 'DESC' ] );
+            $wp_query->set( 'meta_key', 'last_name' );
+
+            return;
+        }
+
+        // Handle ordering by birth date.
+        $order      = $orderby_query_var === 'birth_date_asc' ? 'ASC' : 'DESC';
+        $meta_query = [
+            'relation'          => 'AND',
+            'birth_date_clause' => [
+                'key'     => 'birth_year',
+                'compare' => 'EXISTS',
+            ],
+            'last_name_clause'  => [
+                'key'     => 'last_name',
+                'compare' => 'EXISTS',
+            ],
+        ];
+
+        $orderby = [ 'birth_date_clause' => $order, 'last_name_clause' => 'ASC' ];
+
+        $wp_query->set( 'meta_query', $meta_query );
+        $wp_query->set( 'orderby', $orderby );
+    }
+
+    /**
+     * Page title
+     *
+     * @return string
+     */
+    public function page_title() : string {
+        return post_type_archive_title( '', false );
+    }
+
+    /**
+     * Return translated strings.
+     *
+     * @return array[]
+     */
+    public function strings() : array {
+        return [
+            'search'         => [
+                'label'             => __( 'Search for artist', ),
+                'submit_value'      => __( 'Search', 'tms-theme-sara_hilden' ),
+                'input_placeholder' => __( 'Search query', 'tms-theme-sara_hilden' ),
+            ],
+            'terms'          => [
+                'show_all' => __( 'Show All', 'tms-theme-sara_hilden' ),
+            ],
+            'no_results'     => __( 'No results', 'tms-theme-sara_hilden' ),
+            'filter'         => __( 'Filter', 'tms-theme-sara_hilden' ),
+            'sort'           => __( 'Sort', 'tms-theme-sara_hilden' ),
+            'art_categories' => __( 'Categories', 'tms-theme-sara_hilden' ),
+
+        ];
+    }
+
+    /**
+     * Modify query
+     *
+     * @param WP_Query $wp_query Instance of WP_Query.
+     *
+     * @return void
+     */
+    public static function modify_query( WP_Query $wp_query ) : void {
+        if ( is_admin() || ( ! $wp_query->is_main_query() || ! $wp_query->is_post_type_archive( Artist::SLUG ) ) ) {
+            return;
+        }
+
+        self::modify_wp_query_order( $wp_query );
+
+        $artist_category = self::get_filter_query_var();
+
+        if ( ! empty( $artist_category ) ) {
+            $wp_query->set(
+                'tax_query',
+                [
+                    [
+                        'taxonomy' => ArtistCategory::SLUG,
+                        'terms'    => $artist_category,
+                    ],
+                ]
+            );
+        }
+
+        $s = self::get_search_query_var();
+
+        if ( ! empty( $s ) ) {
+            $wp_query->set( 's', $s );
+        }
+    }
+
+    /**
+     * Return current search data.
+     *
+     * @return string[]
+     */
+    public function search() : array {
+        $this->search_data        = new stdClass();
+        $this->search_data->query = get_query_var( self::SEARCH_QUERY_VAR );
+
+        return [
+            'input_search_name' => self::SEARCH_QUERY_VAR,
+            'current_search'    => $this->search_data->query,
+            'action'            => get_post_type_archive_link( Artist::SLUG ),
+        ];
+    }
+
+    /**
+     * Filters
+     *
+     * @return array
+     */
+    public function filters() {
+        $categories = get_terms( [
+            'taxonomy'   => ArtistCategory::SLUG,
+            'hide_empty' => true,
+        ] );
+
+        if ( empty( $categories ) || is_wp_error( $categories ) ) {
+            return [];
+        }
+
+        $base_url   = get_post_type_archive_link( Artist::SLUG );
+        $categories = array_map( function ( $item ) use ( $base_url ) {
+            return [
+                'name'      => $item->name,
+                'url'       => add_query_arg(
+                    [
+                        self::FILTER_QUERY_VAR => $item->term_id,
+                    ],
+                    $base_url
+                ),
+                'is_active' => $item->term_id === self::get_filter_query_var(),
+            ];
+        }, $categories );
+
+        array_unshift(
+            $categories,
+            [
+                'name'      => __( 'All', 'tms-theme-sara_hilden' ),
+                'url'       => $base_url,
+                'is_active' => null === self::get_filter_query_var(),
+            ]
+        );
+
+        return $categories;
+    }
+
+    /**
+     * Sort options
+     *
+     * @return array
+     */
+    public function sort_options() {
+        $current = self::get_orderby_query_var();
+
+        $options = [
+            [
+                'label' => __( 'A-Ö', 'tms-theme-sara_hilden' ),
+                'value' => '',
+            ],
+            [
+                'label' => __( 'Ö-A', 'tms-theme-sara_hilden' ),
+                'value' => 'desc',
+            ],
+            [
+                'label' => __( 'Oldest first', 'tms-theme-sara_hilden' ),
+                'value' => 'birth_date_asc',
+            ],
+            [
+                'label' => __( 'Youngest first', 'tms-theme-sara_hilden' ),
+                'value' => 'birth_date_desc',
+            ],
+        ];
+
+        return array_map( function ( $item ) use ( $current ) {
+            $item['is_selected'] = $item['value'] === $current ? 'selected' : '';
+
+            return $item;
+        }, $options );
+    }
+
+    /**
+     * View results
+     *
+     * @return array
+     */
+    public function results() {
+        global $wp_query;
+
+        $this->set_pagination_data( $wp_query );
+
+        return $this->format_posts( $wp_query->posts );
+    }
+
+    /**
+     * Format posts for view
+     *
+     * @param array $posts Array of WP_Post instances.
+     *
+     * @return array
+     */
+    protected function format_posts( array $posts ) : array {
+        return array_map( function ( $item ) {
+            $item->permalink   = get_the_permalink( $item->ID );
+            $additional_fields = get_fields( $item->ID );
+
+            if ( ! empty( $additional_fields['birth_year'] ) && ! empty( $additional_fields['death_year'] ) ) {
+                $item->years = $additional_fields['birth_year'] . ' - ' . $additional_fields['death_year'];
+            }
+            elseif ( ! empty( $additional_fields['birth_year'] ) ) {
+                $item->years = $additional_fields['birth_year'];
+            }
+
+            $item->fields = $additional_fields;
+
+            $item->link = [
+                'url'          => $item->permalink,
+                'title'        => __( 'View artist', 'tms-theme-sara_hilden' ),
+                'icon'         => 'chevron-right',
+                'icon_classes' => 'icon--medium',
+            ];
+
+            return $item;
+        }, $posts );
+    }
+
+    /**
+     * Set pagination data
+     *
+     * @param WP_Query $wp_query Instance of WP_Query.
+     *
+     * @return void
+     */
+    protected function set_pagination_data( $wp_query ) : void {
+        $per_page = get_option( 'posts_per_page' );
+        $paged    = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
+        $this->pagination           = new stdClass();
+        $this->pagination->page     = $paged;
+        $this->pagination->per_page = $per_page;
+        $this->pagination->items    = $wp_query->found_posts;
+        $this->pagination->max_page = (int) ceil( $wp_query->found_posts / $per_page );
+    }
+}
