@@ -1,5 +1,5 @@
 <div class="has-border-bottom-1 has-border-gray--dark">
-    <div class="columns is-multiline is-gapless mb-3">
+    <div class="columns is-multiline is-gapless mb-3 mb-4-desktop">
         <div class="column is-12 is-4-desktop">
             <p class="info-row--title m-0 is-uppercase has-text-small hyphenate has-text-primary">
                 {title|s}
