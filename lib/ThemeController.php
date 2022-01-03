@@ -34,5 +34,10 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
                 $instance->hooks();
             }
         } );
+
+        add_action( 'init', function () {
+            \ArchiveArtist::hooks();
+            \ArchiveArtwork::hooks();
+        } );
     }
 }
