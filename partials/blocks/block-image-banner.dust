@@ -16,7 +16,7 @@
                 </h2>
             {/title}
 
-            {>"ui/button-link" classes="is-secondary is-inverted" icon="chevron-right" icon_classes="icon--medium"  /}
+            {>"ui/button-link" classes="is-secondary is-inverted" icon="arrow-right" icon_classes="icon--medium"  /}
         </div>
 
         {>"shared/layout-after-main-content" /}
