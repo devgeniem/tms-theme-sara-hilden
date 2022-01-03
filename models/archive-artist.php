@@ -210,17 +210,17 @@ class ArchiveArtist extends BaseModel {
      */
     protected function format_posts( array $posts ) : array {
         return array_map( function ( $item ) {
-            if ( has_post_thumbnail( $item->ID ) ) {
-                $item->image = get_post_thumbnail_id( $item->ID );
+            $item->permalink   = get_the_permalink( $item->ID );
+            $additional_fields = get_fields( $item->ID );
+
+            if ( ! empty( $additional_fields['birth_year'] ) && ! empty( $additional_fields['death_year'] ) ) {
+                $item->years = $additional_fields['birth_year'] . ' - ' . $additional_fields['death_year'];
+            }
+            elseif ( ! empty( $additional_fields['birth_year'] ) ) {
+                $item->years = $additional_fields['birth_year'];
             }
 
-            $item->permalink = get_the_permalink( $item->ID );
-            $item->fields    = get_fields( $item->ID );
-
-            $categories       = wp_get_post_terms( $item->ID, ArtistCategory::SLUG, [ 'fields' => 'names' ] );
-            $item->categories = ! empty( $categories ) && ! is_wp_error( $categories )
-                ? implode( ', ', $categories )
-                : false;
+            $item->fields = $additional_fields;
 
             $item->link = [
                 'url'          => $item->permalink,

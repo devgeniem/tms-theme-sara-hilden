@@ -25,9 +25,11 @@
                                             {/link}
                                         </h2>
 
-                                        <div class="mt-3 has-text-small">
-                                            TODO: Selvitä mitä tässä kuuluisi olla
-                                        </div>
+                                        {?years}
+                                            <div class="mt-3 has-text-small has-text-primary">
+                                                {years|s}
+                                            </div>
+                                        {/years}
                                     </div>
                                 </div>
                             </div>

@@ -93,6 +93,14 @@ class ArtistGroup {
                 'title'        => 'Sukunimi',
                 'instructions' => '',
             ],
+            'birth_year'             => [
+                'title'        => 'Syntymävuosi',
+                'instructions' => '',
+            ],
+            'death_year'             => [
+                'title'        => 'Kuolinvuosi',
+                'instructions' => '',
+            ],
             'short_description'      => [
                 'title'        => 'Lyhyt kuvaus',
                 'instructions' => '',
@@ -135,6 +143,20 @@ class ArtistGroup {
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['last_name']['instructions'] );
 
+        $birth_year_field = ( new Field\Number( $strings['birth_year']['title'] ) )
+            ->set_key( "${key}_birth_year" )
+            ->set_name( 'birth_year' )
+            ->redipress_include_search()
+            ->set_wrapper_width( 50 )
+            ->set_instructions( $strings['birth_year']['instructions'] );
+
+        $death_year_field = ( new Field\Number( $strings['death_year']['title'] ) )
+            ->set_key( "${key}_death_year" )
+            ->set_name( 'death_year' )
+            ->redipress_include_search()
+            ->set_wrapper_width( 50 )
+            ->set_instructions( $strings['death_year']['instructions'] );
+
         $short_description_field = ( new Field\Textarea( $strings['short_description']['title'] ) )
             ->set_key( "${key}_short_description" )
             ->set_name( 'short_description' )
@@ -142,9 +164,7 @@ class ArtistGroup {
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['short_description']['instructions'] );
 
-        $additional_info_repeater = ( new Field\Repeater(
-            $strings['additional_information']['title']
-        ) )
+        $additional_info_repeater = ( new Field\Repeater( $strings['additional_information']['title'] ) )
             ->set_key( "${key}_additional_information" )
             ->set_name( 'additional_information' )
             ->set_layout( 'block' )
@@ -167,6 +187,8 @@ class ArtistGroup {
         $tab->add_fields( [
             $first_name_field,
             $last_name_field,
+            $birth_year_field,
+            $death_year_field,
             $short_description_field,
             $additional_info_repeater,
         ] );
