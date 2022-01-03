@@ -1,3 +1,14 @@
 .pill {
     padding-bottom: $theme-spacing-quarter;
+
+    &.is-outlined {
+        border: 1px solid $primary;
+
+        &:hover,
+        &:focus {
+            background-color: $primary !important;
+            color: $primary-invert !important;
+            border-color: $primary !important;
+        }
+    }
 }
