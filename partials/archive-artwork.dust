@@ -34,11 +34,11 @@
                                 </div>
                             {/artist}
 
-                            {?locations}
+                            {?location}
                                 <div class="has-text-small">
-                                    {locations|s}
+                                    {location|s}
                                 </div>
-                            {/locations}
+                            {/location}
 
                             {?types}
                                 {#types}

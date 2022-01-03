@@ -49,20 +49,22 @@
                                     </button>
                                 </div>
 
-                                <div class="filters--sort-by-container mt-5">
-                                    <label for="artist-sort" class="is-block h6 mb-1">
-                                        {strings.sort|s}
-                                    </label>
+                                {?sort_options}
+                                    <div class="filters--sort-by-container mt-5">
+                                        <label for="artist-sort" class="is-block h6 mb-1">
+                                            {strings.sort|s}
+                                        </label>
 
-                                    <select name="artist-sort" id="artist-sort"
-                                            class="js-trigger-form-submit has-width-100 p-2 pt-3-desktop pb-3-desktop has-text-small has-border-secondary has-border-1">
-                                        {#sort_options}
-                                            <option value="{value}" {is_selected|s}>
-                                                {label|s}
-                                            </option>
-                                        {/sort_options}
-                                    </select>
-                                </div>
+                                        <select name="artist-sort" id="artist-sort"
+                                                class="js-trigger-form-submit has-width-100 p-2 pt-3-desktop pb-3-desktop has-text-small has-border-secondary has-border-1">
+                                            {#sort_options}
+                                                <option value="{value}" {is_selected|s}>
+                                                    {label|s}
+                                                </option>
+                                            {/sort_options}
+                                        </select>
+                                    </div>
+                                {/sort_options}
                             </div>
                         </div>
                     </form>
