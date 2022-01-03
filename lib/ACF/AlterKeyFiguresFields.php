@@ -33,9 +33,9 @@ class AlterKeyFiguresFields {
         try {
             $fields['rows']->sub_fields['numbers']->sub_fields['background_color']
             ->set_choices( [
-                'black'   => 'Musta',
-                'white'   => 'Valkoinen',
-                'light'   => 'Vaalea',
+                'black' => 'Musta',
+                'white' => 'Valkoinen',
+                'light' => 'Vaalea',
             ] );
         }
         catch ( Exception $e ) {
