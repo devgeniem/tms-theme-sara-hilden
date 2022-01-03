@@ -7,44 +7,47 @@
                 <div class="container">
                     <div class="columns">
                         <div class="column is-10 is-offset-1">
-                            <header class="entry__header">
-                                <h1 class="entry__title mt-0 mb-6 has-line-height-tight">
-                                    {@title /}
-                                </h1>
-                            </header>
+                            <div class="pr-6-desktop pl-6-desktop">
+                                <header class="entry__header">
+                                    <h1 class="entry__title mt-0 mb-6 has-line-height-tight">
+                                        {@title /}
+                                    </h1>
+                                </header>
 
-                            <article class="entry columns is-desktop is-flex-wrap-wrap">
-                                
-                                 <div class="column is-6-desktop entry__content keep-vertical-spacing ">
-                                    {?content.fields.short_description}
-                                        <p class="is-family-sans-serif">
-                                            {content.fields.short_description|s}
-                                        </p>
-                                     {/content.fields.short_description}
-                                    {?content.fields.additional_information}
-                                        {>"shared/additional-info-list" list_class="mt-6" data=content.fields.additional_information /}
-                                    {/content.fields.additional_information}
-                                 </div>
+                                <article class="entry columns is-desktop is-flex-wrap-wrap">
 
-                                <div class="column is-4-desktop is-offset-2-desktop">
-                                    {?content.image}
-                                        <div class="entry__figure image is-4by3 is-3by4-desktop">
-                                            {@image id=content.image.id size="large" class="objectfit-image" /}
-                                        </div>
-                                    {/content.image}
+                                    <div class="column is-6-desktop entry__content keep-vertical-spacing">
+                                        {?content.fields.short_description}
+                                            <p class="is-family-sans-serif">
+                                                {content.fields.short_description|s}
+                                            </p>
+                                        {/content.fields.short_description}
 
-                                    {?share_links}
-                                        <div class="entry__share-links has-text-right">
-                                            <h2 class="h6 mt-6 mb-6">
-                                                {Strings.s.share.share_to_social_media|s}
-                                            </h2>
+                                        {?content.fields.additional_information}
+                                            {>"shared/additional-info-list" list_class="mt-6" data=content.fields.additional_information /}
+                                        {/content.fields.additional_information}
+                                    </div>
 
-                                            {>"ui/share-links" ul_class="is-justify-content-flex-end" li_class="ml-4" /}
-                                        </div>
-                                    {/share_links}
-                                </div>
+                                    <div class="column is-5-desktop is-offset-1-desktop">
+                                        {?content.image}
+                                            <div class="entry__figure image">
+                                                {@image id=content.image.id size="large" class="objectfit-image" /}
+                                            </div>
+                                        {/content.image}
 
-                                 <div class="column is-10-desktop entry__content keep-vertical-spacing is-family-sans-serif">
+                                        {?share_links}
+                                            <div class="entry__share-links has-text-right">
+                                                <h2 class="h6 mt-6 mb-6 mt-8-desktop mt-10-desktop">
+                                                    {Strings.s.share.share_to_social_media|s}
+                                                </h2>
+
+                                                {>"ui/share-links" ul_class="is-justify-content-flex-end" li_class="ml-4" /}
+                                            </div>
+                                        {/share_links}
+                                    </div>
+
+                                    <div
+                                        class="column is-10-desktop entry__content keep-vertical-spacing is-family-sans-serif">
                                         {?content.post_excerpt}
                                             <p>
                                                 {content.post_excerpt|s}
@@ -54,7 +57,8 @@
                                         {@content /}
                                     </div>
 
-                            </article>
+                                </article>
+                            </div>
                         </div>
                     </div>
                 </div>
