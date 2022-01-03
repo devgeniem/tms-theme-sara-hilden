@@ -37,7 +37,6 @@ class AlterSubpagesFields {
      * @return array
      */
     public function alter_fields( array $fields ) : array {
-        error_log( print_r( $fields['background_color'], true ) );
         try {
             $fields['background_color']
             ->set_choices( [
