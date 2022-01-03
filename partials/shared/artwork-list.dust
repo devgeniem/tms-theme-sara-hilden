@@ -30,7 +30,7 @@
 
                                 {?artwork_type}
                                     <div>
-                                        <span class="pill is-family-primary has-text-weight-normal">
+                                        <span class="pill is-primary is-family-primary has-text-weight-normal">
                                             {artwork_type|s}
                                         </span>
                                     </div>
