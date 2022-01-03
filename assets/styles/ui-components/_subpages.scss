@@ -2,7 +2,7 @@
 
     a {
         &:hover {
-            color:$white !important;
+            color:$black !important;
         }
     }
     .h6 {
@@ -10,7 +10,7 @@
     }
 
     .icon {
-        fill: $white !important;
+        fill: $black !important;
     }
     .has-background-cover {
         .icon {
@@ -18,13 +18,17 @@
         }
     }
     
-        a.has-background-white  {
+        .has-background-black  {
             &:hover {
-                color:$black !important;
+                color:$white !important;
             }
             .icon {
-                fill: $black !important;
+                fill: $white !important;
             }
+            
+        }
+        
+        .has-background-white {
             border: 2px solid $black;
         }
 }
