@@ -401,16 +401,16 @@
         },
         {
             "name": "devgeniem/geniem-rules-codesniffer",
-            "version": "1.2.0",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/geniem-rules-codesniffer.git",
-                "reference": "d238c8e8e600ceb0808ac25a64811044987ed773"
+                "reference": "765e4d548d059489bc9fc7e8a74686ac35a1e87b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/geniem-rules-codesniffer/zipball/d238c8e8e600ceb0808ac25a64811044987ed773",
-                "reference": "d238c8e8e600ceb0808ac25a64811044987ed773",
+                "url": "https://api.github.com/repos/devgeniem/geniem-rules-codesniffer/zipball/765e4d548d059489bc9fc7e8a74686ac35a1e87b",
+                "reference": "765e4d548d059489bc9fc7e8a74686ac35a1e87b",
                 "shasum": ""
             },
             "require": {
@@ -451,9 +451,9 @@
             ],
             "support": {
                 "issues": "https://github.com/devgeniem/geniem-rules-codesniffer/issues",
-                "source": "https://github.com/devgeniem/geniem-rules-codesniffer/tree/1.2.0"
+                "source": "https://github.com/devgeniem/geniem-rules-codesniffer/tree/1.2.2"
             },
-            "time": "2021-11-26T08:58:49+00:00"
+            "time": "2021-12-31T14:31:50+00:00"
         },
         {
             "name": "phpcompatibility/php-compatibility",
@@ -1000,16 +1000,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.6.1",
+            "version": "3.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "f268ca40d54617c6e06757f83f699775c9b3ff2e"
+                "reference": "5e4e71592f69da17871dba6e80dd51bce74a351a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/f268ca40d54617c6e06757f83f699775c9b3ff2e",
-                "reference": "f268ca40d54617c6e06757f83f699775c9b3ff2e",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/5e4e71592f69da17871dba6e80dd51bce74a351a",
+                "reference": "5e4e71592f69da17871dba6e80dd51bce74a351a",
                 "shasum": ""
             },
             "require": {
@@ -1052,7 +1052,7 @@
                 "source": "https://github.com/squizlabs/PHP_CodeSniffer",
                 "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
             },
-            "time": "2021-10-11T04:00:11+00:00"
+            "time": "2021-12-12T21:44:58+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -1117,5 +1117,5 @@
         "php": ">=7.4|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
