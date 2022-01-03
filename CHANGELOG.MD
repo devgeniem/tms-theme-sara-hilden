@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-524: Link list styles
 - TMS-511: Image block meta styles
 - TMS-542: Add 404 styles
 - TMS-510: Content page hero
