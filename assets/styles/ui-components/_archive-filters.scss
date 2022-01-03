@@ -16,7 +16,20 @@
                 @include from($widescreen) {
                     min-width: 17.5rem;
                 }
+
+                &::placeholder {
+                    color: #767676;
+                }
             }
+
+            .button {
+                border-color: $primary !important;
+            }
+        }
+
+        select {
+            border-radius: 0 !important;
+            color: #767676;
         }
 
         &--search-container {

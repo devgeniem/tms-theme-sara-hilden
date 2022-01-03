@@ -26,6 +26,11 @@ class ArchiveArtist extends BaseModel {
     const FILTER_QUERY_VAR = 'artist-filter';
 
     /**
+     * Artist orderby var name.
+     */
+    const ORDERBY_QUERY_VAR = 'artist-sort';
+
+    /**
      * Pagination data.
      *
      * @var object
@@ -65,6 +70,61 @@ class ArchiveArtist extends BaseModel {
     }
 
     /**
+     * Get filter query var value
+     *
+     * @return string
+     */
+    protected static function get_orderby_query_var() {
+        $value = get_query_var( self::ORDERBY_QUERY_VAR );
+
+        return sanitize_text_field( $value );
+    }
+
+    /**
+     * Modify query order.
+     *
+     * @param WP_Query $wp_query WP Query.
+     */
+    private static function modify_wp_query_order( WP_Query &$wp_query ) : void {
+        $orderby_query_var = self::get_orderby_query_var();
+
+        // Default order: last name, ascending.
+        if ( empty( $orderby_query_var ) ) {
+            $wp_query->set( 'orderby', [ 'last_name' => 'ASC' ] );
+            $wp_query->set( 'meta_key', 'last_name' );
+
+            return;
+        }
+
+        // Last name, descending.
+        if ( $orderby_query_var === 'desc' ) {
+            $wp_query->set( 'orderby', [ 'last_name' => 'DESC' ] );
+            $wp_query->set( 'meta_key', 'last_name' );
+
+            return;
+        }
+
+        // Handle ordering by birth date.
+        $order      = $orderby_query_var === 'birth_date_asc' ? 'ASC' : 'DESC';
+        $meta_query = [
+            'relation'          => 'AND',
+            'birth_date_clause' => [
+                'key'     => 'birth_year',
+                'compare' => 'EXISTS',
+            ],
+            'last_name_clause'  => [
+                'key'     => 'last_name',
+                'compare' => 'EXISTS',
+            ],
+        ];
+
+        $orderby = [ 'birth_date_clause' => $order, 'last_name_clause' => 'ASC' ];
+
+        $wp_query->set( 'meta_query', $meta_query );
+        $wp_query->set( 'orderby', $orderby );
+    }
+
+    /**
      * Page title
      *
      * @return string
@@ -90,6 +150,7 @@ class ArchiveArtist extends BaseModel {
             ],
             'no_results'     => __( 'No results', 'tms-theme-sara_hilden' ),
             'filter'         => __( 'Filter', 'tms-theme-sara_hilden' ),
+            'sort'           => __( 'Sort', 'tms-theme-sara_hilden' ),
             'art_categories' => __( 'Categories', 'tms-theme-sara_hilden' ),
 
         ];
@@ -107,8 +168,7 @@ class ArchiveArtist extends BaseModel {
             return;
         }
 
-        $wp_query->set( 'orderby', [ 'last_name' => 'ASC' ] );
-        $wp_query->set( 'meta_key', 'last_name' );
+        self::modify_wp_query_order( $wp_query );
 
         $artist_category = self::get_filter_query_var();
 
@@ -186,6 +246,40 @@ class ArchiveArtist extends BaseModel {
         );
 
         return $categories;
+    }
+
+    /**
+     * Sort options
+     *
+     * @return array
+     */
+    public function sort_options() {
+        $current = self::get_orderby_query_var();
+
+        $options = [
+            [
+                'label' => __( 'A-Ö', 'tms-theme-sara_hilden' ),
+                'value' => '',
+            ],
+            [
+                'label' => __( 'Ö-A', 'tms-theme-sara_hilden' ),
+                'value' => 'desc',
+            ],
+            [
+                'label' => __( 'Oldest first', 'tms-theme-sara_hilden' ),
+                'value' => 'birth_date_asc',
+            ],
+            [
+                'label' => __( 'Youngest first', 'tms-theme-sara_hilden' ),
+                'value' => 'birth_date_desc',
+            ],
+        ];
+
+        return array_map( function ( $item ) use ( $current ) {
+            $item['is_selected'] = $item['value'] === $current ? 'selected' : '';
+
+            return $item;
+        }, $options );
     }
 
     /**

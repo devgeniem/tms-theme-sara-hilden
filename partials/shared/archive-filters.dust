@@ -5,7 +5,7 @@
                 {?filters}
                     <div class="column is-6-tablet is-flex is-align-items-center">
                         <div class="mb-4">
-                            <span class="is-block h6 mb-3">
+                            <span class="is-block h6 mb-1">
                                 {strings.filter|s}
                             </span>
 
@@ -30,7 +30,7 @@
                           role="search">
                         <div class="is-flex-tablet is-justify-content-flex-end">
                             <div>
-                                <label for="filters-search" class="h6 is-block mb-3">
+                                <label for="filters-search" class="h6 is-block mb-1">
                                     {strings.search.label|s}
                                 </label>
 
@@ -47,6 +47,21 @@
 
                                         {>"ui/icon" icon="search" class="icon--medium" /}
                                     </button>
+                                </div>
+
+                                <div class="filters--sort-by-container mt-5">
+                                    <label for="artist-sort" class="is-block h6 mb-1">
+                                        {strings.sort|s}
+                                    </label>
+
+                                    <select name="artist-sort" id="artist-sort"
+                                            class="js-trigger-form-submit has-width-100 p-2 pt-3-desktop pb-3-desktop has-text-small has-border-secondary has-border-1">
+                                        {#sort_options}
+                                            <option value="{value}" {is_selected|s}>
+                                                {label|s}
+                                            </option>
+                                        {/sort_options}
+                                    </select>
                                 </div>
                             </div>
                         </div>

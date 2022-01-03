@@ -12,7 +12,8 @@
                         <div class="column is-12 is-6-desktop">
                             <div class="columns is-mobile is-variable is-4-desktop">
                                 <div class="column">
-                                    <div class="inner p-4 p-6-desktop keep-vertical-spacing has-border-1">
+                                    <div
+                                        class="inner p-4 p-6-desktop keep-vertical-spacing has-border-1 has-border-secondary">
                                         <h2 class="h4 mt-4 mb-3 has-line-height-tight">
                                             {?link}
                                                 <a href="{link.url|s}" class="has-text-black">
