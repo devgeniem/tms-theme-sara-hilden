@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-535: Image Banner styles
 - TMS:538: Sitemap styling
 - TMS-533: Contacts block styles
+- TMS-534: Gravity Form styles
 - TMS-493: Sibling navigation #12
 - TMS-512: Front page logo wall colors
 - TMS-537:
