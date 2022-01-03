@@ -176,7 +176,7 @@ class ArtistGroup {
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['additional_information']['item']['label']['instructions'] );
 
-        $additional_info_text = ( new Field\Text( $strings['additional_information']['item']['value']['title'] ) )
+        $additional_info_text = ( new Field\Textarea( $strings['additional_information']['item']['value']['title'] ) )
             ->set_key( "${key}_additional_information_text" )
             ->set_name( 'additional_information_text' )
             ->set_wrapper_width( 50 )
