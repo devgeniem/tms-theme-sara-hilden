@@ -1,0 +1,30 @@
+.subpages__items {
+
+    a {
+        &:hover {
+            color:$white !important;
+        }
+    }
+    .h6 {
+        color: inherit;
+    }
+
+    .icon {
+        fill: $white !important;
+    }
+    .has-background-cover {
+        .icon {
+            fill: $white !important;
+        }
+    }
+    
+        a.has-background-white  {
+            &:hover {
+                color:$black !important;
+            }
+            .icon {
+                fill: $black !important;
+            }
+            border: 2px solid $black;
+        }
+}
