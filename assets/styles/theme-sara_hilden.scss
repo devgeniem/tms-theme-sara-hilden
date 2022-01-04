@@ -1,4 +1,4 @@
-/*!*
+/* !*
  * Copyright (c) 2021. Geniem Oy
  */
 
@@ -22,12 +22,14 @@ $light: #f1eeeb;
 $light-invert: $black;
 $dark: $primary-dark;
 $dark-invert: $primary-dark-invert;
+$border-light: #767676;
 
 $divider: $color-vaalean-harmaa;
 $divider-invert: $color-tumma-harmaa;
 
-$text: $black;
+$text: #4d4c49;
 $link: $primary;
+$link-hover: bulmaLighten($black, 20%);
 
 $colors-palette-primary: ($primary, $primary-invert, $primary-dark, $primary-light);
 $colors-palette-secondary: ($white, $black);
@@ -47,6 +49,23 @@ $button-colors: (
 
 $color-background-primary-light--opaque-light: $secondary;
 $button-border-radius: 0;
+$sibling-navigation-item-border-color: $border-light;
+$sibling-navigation-item-active-border-color: $border-light;
+$sibling-navigation-item-color: $black;
+$sibling-navigation-item-active-color: $white;
+
+$secondary-navbar-item-font-weight: 400;
+$navbar-item-navbar-link-color: $black;
+$navbar-item-has-dropdown-active: $navbar-item-navbar-link-color;
+
+$fly-out-nav-trigger-icon-hover: $primary;
+$fly-out-nav-primary-link: $link;
+$fly-out-nav-primary-link-hover: $link-hover;
+$fly-out-nav-primary-dropdown-active-background: $light;
+$fly-out-nav-secondary-border-color: $light;
+$fly-out-nav-secondary-link: $link;
+$fly-out-nav-secondary-link-hover: $link-hover;
+$fly-out-nav-search-button-icon: currentColor;
 
 @import "../../../tms-theme-base/assets/styles/main";
 @import "main";
