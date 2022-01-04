@@ -2,9 +2,10 @@
 
     a {
         &:hover {
-            color:$black !important;
+            color: $black !important;
         }
     }
+    
     .h6 {
         color: inherit;
     }
@@ -12,16 +13,24 @@
     .icon {
         fill: $black !important;
     }
-    .has-background-cover {
+
+    .has-background-image {
+
         .icon {
             fill: $white !important;
+        }
+
+        &:hover {
+            color: $white !important;
         }
     }
     
         .has-background-black  {
+
             &:hover {
-                color:$white !important;
+                color: $white !important;
             }
+
             .icon {
                 fill: $white !important;
             }
