@@ -134,7 +134,7 @@ class Exhibition implements PostType {
             'label'               => $labels['name'],
             'description'         => '',
             'labels'              => $labels,
-            'supports'            => [ 'title', 'editor', 'thumbnail', 'revisions' ],
+            'supports'            => [ 'title', 'excerpt', 'editor', 'thumbnail', 'revisions' ],
             'hierarchical'        => true,
             'public'              => true,
             'show_ui'             => true,
