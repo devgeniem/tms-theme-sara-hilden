@@ -17,6 +17,10 @@
     }
 
     &.has-colors-primary {
+        h2 {
+            color: $white;
+        }
+
         a {
             &:hover,
             &:focus {
