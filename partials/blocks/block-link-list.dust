@@ -1,4 +1,4 @@
-<div class="link-list is-relative mt-8 mb-8 p-8 has-border-secondary has-border-1">
+<div class="link-list is-relative mt-8 mb-8 p-8 has-border-secondary has-border-1 is-align-wide">
     {>"shared/layout-before-main-content" /}
 
     {?title}
