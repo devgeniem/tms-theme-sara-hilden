@@ -65,8 +65,9 @@
             <div class="image-carousel__items image-carousel__items--modal column is-full" id="{carousel_id}-modal-carousel" data-slider-for="{carousel_id}">
                 {#rows}
                     <div class="image-carousel__item" id="{id}-modal">
+                        <div class="img-wrapper">
                         {@image id=image.id alt=image.alt title=image.description size="fullhd" width="{image.sizes.fullhd-width}" height="{image.sizes.fullhd-height}" loading="" /}
-
+                        </div>
                         {>"ui/image/image-block__meta" /}
                     </div>
                 {/rows}

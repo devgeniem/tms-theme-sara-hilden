@@ -1,11 +1,63 @@
-.image-carousel__modal-control {
-    &.slick-arrow {
-        background-color: transparent;
-        border:none;
-        .icon {
-            fill: $white;
+.image-carousel {
+
+    &__modal-control{
+
+        &.slick-arrow {
+            background-color: transparent;
+            border:none;
+
+            .icon {
+                fill: $white;
+            }
         }
     }
+
+    &__items--modal {
+
+        @include until($tablet) {
+            .slick-prev {
+                left:0;
+            }
+
+            .slick-next {
+                right: 0;
+            }
+        }
+       
+        .image-carousel__item {
+            max-height: 80vh;
+            display: flex !important;
+            flex-direction: column;
+            // flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .slick-track, 
+        .slick-slide{
+           max-height: 100%;
+        }
+    
+        .slick-list {
+            max-height: 100vh;
+        }
+    
+        .img-wrapper{
+            flex-basis:50%;
+
+            img{
+                height:100%;
+                width:auto;
+            }
+        }
+    
+        .image-block__meta {
+            flex-basis:50%;
+        }
+        
+
+    }
+
+    
 }
 
 .modal-content {
@@ -22,4 +74,3 @@
         }
     }
 }
-
