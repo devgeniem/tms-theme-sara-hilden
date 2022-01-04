@@ -27,6 +27,10 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
 
         add_filter( 'tms/theme/header/colors', [ $this, 'header' ] );
         add_filter( 'tms/theme/footer/colors', [ $this, 'footer' ] );
+
+        add_filter( 'tms/theme/error404/search_link', [ $this, 'error404_search_link' ] );
+        add_filter( 'tms/theme/error404/home_link', [ $this, 'error404_home_link' ] );
+        add_filter( 'tms/acf/tab/error404/fields', [ $this, 'remove_404_alignment_setting' ] );
     }
 
     /**
@@ -61,5 +65,45 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $classes['link_icon']   = 'is-secondary';
 
         return $classes;
+    }
+
+    /**
+     * 404 home link
+     *
+     * @param array $link Home link.
+     *
+     * @return array
+     */
+    public function error404_home_link( array $link ) : array {
+        $link['classes'] = 'is-primary';
+        $link['icon']    = 'arrow-right';
+        $link['class']   = 'icon--medium';
+
+        return $link;
+    }
+
+    /**
+     * 404 search link
+     *
+     * @param array $link Search link.
+     *
+     * @return array
+     */
+    public function error404_search_link( array $link ) : array {
+        $link['classes'] = 'is-primary';
+        $link['class']   = 'icon--medium';
+
+        return $link;
+    }
+
+    /**
+     * Remove 404 alignment field
+     *
+     * @param array $fields Tab fields.
+     *
+     * @return array
+     */
+    public function remove_404_alignment_setting( array $fields ) : array {
+        return array_filter( $fields, fn( $f ) => $f->get_name() !== '404_alignment' );
     }
 }
