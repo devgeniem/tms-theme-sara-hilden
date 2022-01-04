@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-525: Subpages block & laout styles
 - TMS-527: Key figures styles
 - TMS-526: Social media feed
+- TMS-492: Site header #18
 - TMS-542: Add 404 styles #17
 - TMS-511: Image block meta styles
 - TMS-510: Content page hero
