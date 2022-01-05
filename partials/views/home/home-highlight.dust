@@ -14,12 +14,6 @@
                     </h2>
                 {/highlight.post_title}
 
-                {?highlight.category}
-                    <a href="{category.permalink|s}" class="pill {category_link_classes}">
-                        {highlight.category.name|s}
-                    </a>
-                {/highlight.category}
-
                 <div class="entry__excerpt mt-4 mt-5-desktop mb-5-desktop">
                     <span class="is-block">{@strtodate value=highlight.post_date /}</span>
                     {highlight.excerpt|s}
