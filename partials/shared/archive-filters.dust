@@ -5,9 +5,9 @@
                 {?filters}
                     <div class="column is-6-tablet is-flex">
                         <div class="mb-4">
-                            <span class="is-block h6 mb-1">
+                            <h2 class="is-block h6 mb-1">
                                 {strings.filter|s}
-                            </span>
+                            </h2>
 
                             <div class="filters__list">
                                 {#filters}

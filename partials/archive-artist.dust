@@ -37,7 +37,9 @@
                         </div>
                     {:else}
                         <div class="column pt-8 pb-8 is-text-centered is-size-5">
-                            {Strings.s.home.no_results|s}
+                            <h2 class="no-results-title">
+                                {Strings.s.home.no_results|s}
+                            </h2>
                         </div>
                     {/results}
                 </div>

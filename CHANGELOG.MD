@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-525: Subpages block & laout styles
 - TMS-527: Key figures styles
 - TMS-526: Social media feed
+- TMS-528-2: Removed display_artist field from ContentColumnFields.
+- TMS-537-2: Classes for text align with editor
+- TMS-530: Image Gallery styles
 - TMS-492: Site header #18
 - TMS-542: Add 404 styles #17
 - TMS-511: Image block meta styles
@@ -31,7 +34,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-537:
     - Link style in text block layout
     - textblock layout maxwidth and centered
-    - Classes for text alignment
 - TMS-499: Base typography #11
 - TMS-494: Add breadcrumb styles #4
 - TMS-495: Add footer styles #3

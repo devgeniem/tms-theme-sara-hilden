@@ -1,12 +1,13 @@
 .gallery-controls {
     .gallery-button {
-background-color: transparent !important;
+        background-color: transparent !important;
         border:none;
 
         .icon {
             fill: $white !important;
         }
 
+        &:hover,
         &:focus {
                 outline: 0.125rem solid $white !important;
         }
