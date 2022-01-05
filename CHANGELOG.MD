@@ -7,8 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- TMS-492: Site header #18
+- TMS-542: Add 404 styles #17
+- TMS-511: Image block meta styles
+- TMS-510: Content page hero
+- TMS-493: Sibling navigation #12
 - TMS-512: Front page logo wall colors
-- TMS-537: 
+- TMS-537:
     - Link style in text block layout
     - textblock layout maxwidth and centered
 - TMS-499: Base typography #11

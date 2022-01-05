@@ -1,7 +1,7 @@
 // stylelint-disable declaration-no-important
 
-$button-primary-border-color: #767676;
-$button-secondary-border-color: #f1eeeb;
+$button-primary-border-color: $color-sarahilden-gray;
+$button-secondary-border-color: $light;
 
 .button {
     border-radius: 0 !important;
@@ -15,7 +15,7 @@ $button-secondary-border-color: #f1eeeb;
         border-color: $button-primary-border-color !important;
 
         .icon {
-            fill: $button-primary-border-color !important;
+            fill: currentColor !important;
         }
 
         &:hover,
@@ -35,7 +35,6 @@ $button-secondary-border-color: #f1eeeb;
         &:active,
         &.is-active {
             border-color: $button-primary-border-color !important;
-            outline: none !important;
             background-color: $black !important;
             box-shadow: none;
             color: $white !important;
@@ -52,7 +51,7 @@ $button-secondary-border-color: #f1eeeb;
         color: $white !important;
 
         .icon {
-            fill: $button-secondary-border-color !important;
+            fill: currentColor !important;
         }
 
         &:hover,
@@ -71,7 +70,6 @@ $button-secondary-border-color: #f1eeeb;
         &:active,
         &.is-active {
             border-color: $button-secondary-border-color !important;
-            outline: none !important;
             background-color: $white !important;
             box-shadow: none;
             color: $black !important;
