@@ -93,6 +93,10 @@ class ExhibitionGroup {
                 'title'        => 'Sijainti',
                 'instructions' => '',
             ],
+            'is_upcoming'   => [
+                'title'        => 'Tulossa',
+                'instructions' => '',
+            ],
         ];
 
         $tab = ( new Field\Tab( $strings['tab'] ) )
@@ -106,7 +110,15 @@ class ExhibitionGroup {
         $date_field = ( new Field\Text( $strings['date']['title'] ) )
             ->set_key( "${key}_date" )
             ->set_name( 'date' )
+            ->set_wrapper_width( 85 )
             ->set_instructions( $strings['date']['instructions'] );
+
+        $is_upcoming_field = ( new Field\TrueFalse( $strings['is_upcoming']['title'] ) )
+            ->set_key( "${key}_is_upcoming" )
+            ->set_name( 'is_upcoming' )
+            ->set_wrapper_width( 15 )
+            ->use_ui()
+            ->set_instructions( $strings['is_upcoming']['instructions'] );
 
         $opening_times_field = ( new Field\Text( $strings['opening_times']['title'] ) )
             ->set_key( "${key}_opening_times" )
@@ -121,6 +133,7 @@ class ExhibitionGroup {
         $tab->add_fields( [
             $title_field,
             $date_field,
+            $is_upcoming_field,
             $opening_times_field,
             $location_field,
         ] );
