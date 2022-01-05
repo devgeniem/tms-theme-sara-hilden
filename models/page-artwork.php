@@ -5,13 +5,15 @@
  */
 
 use TMS\Theme\Base\Traits\Pagination;
+use TMS\Theme\Sara_Hilden\PostType\Artist;
 use TMS\Theme\Sara_Hilden\PostType\Artwork;
+use TMS\Theme\Sara_Hilden\Taxonomy\ArtworkLocation;
 use TMS\Theme\Sara_Hilden\Taxonomy\ArtworkType;
 
 /**
  * PageArtwork
  */
-class PageArtwork extends ArchiveArtwork {
+class PageArtwork extends ArchiveArtist {
 
     use Pagination;
 
@@ -68,16 +70,6 @@ class PageArtwork extends ArchiveArtwork {
      */
     public function page_description() : string {
         return get_field( 'description' ) ?? '';
-    }
-
-    /**
-     * Modify query
-     *
-     * @param WP_Query $wp_query Instance of WP_Query.
-     *
-     * @return void
-     */
-    public static function modify_query( WP_Query $wp_query ) : void {
     }
 
     /**
@@ -171,6 +163,87 @@ class PageArtwork extends ArchiveArtwork {
 
         $this->set_pagination_data( $the_query );
 
-        return $this->format_posts( $the_query->posts );
+        $search_clause = self::get_search_query_var();
+        $is_filtered   = $search_clause || self::get_filter_query_var();
+
+        return [
+            'posts'   => $this->format_posts( $the_query->posts ),
+            'summary' => $is_filtered ? $this->results_summary( $the_query->found_posts, $search_clause ) : false,
+        ];
+    }
+
+    /**
+     * Sort options
+     *
+     * @return array
+     */
+    public function sort_options() {
+        return [];
+    }
+
+    /**
+     * Format posts for view
+     *
+     * @param array $posts Array of WP_Post instances.
+     *
+     * @return array
+     */
+    protected function format_posts( array $posts ) : array {
+        $artist_map = $this->get_artist_map();
+
+        return array_map( function ( $item ) use ( $artist_map ) {
+            if ( has_post_thumbnail( $item->ID ) ) {
+                $item->image = get_post_thumbnail_id( $item->ID );
+            }
+
+            $item->permalink = get_the_permalink( $item->ID );
+            $item->fields    = get_fields( $item->ID );
+            $item->types     = wp_get_post_terms( $item->ID, ArtworkType::SLUG, [ 'fields' => 'names' ] );
+
+            $locations = wp_get_post_terms( $item->ID, ArtworkLocation::SLUG, [ 'fields' => 'names' ] );
+
+            if ( ! empty( $locations ) ) {
+                $item->location = $locations[0];
+            }
+
+            if ( isset( $artist_map[ $item->ID ] ) ) {
+                $item->artist = implode( ', ', $artist_map[ $item->ID ] );
+            }
+
+            return $item;
+        }, $posts );
+    }
+
+    /**
+     * Get artworks artists map
+     *
+     * @return array
+     */
+    protected function get_artist_map() : array {
+        $artists = Artist::get_all();
+
+        if ( empty( $artists ) ) {
+            return [];
+        }
+
+        $map = [];
+
+        foreach ( $artists as $artist ) {
+            $artworks = get_field( 'artwork', $artist->ID );
+
+            if ( empty( $artworks ) ) {
+                continue;
+            }
+
+            foreach ( $artworks as $artwork ) {
+                if ( ! isset( $map[ $artwork->ID ] ) ) {
+                    $map[ $artwork->ID ] = [];
+                }
+
+                $map[ $artwork->ID ][] = $artist->post_title;
+            }
+        }
+
+        return $map;
     }
 }

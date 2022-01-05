@@ -141,7 +141,7 @@ class ArchiveArtist extends BaseModel {
     public function strings() : array {
         return [
             'search'         => [
-                'label'             => __( 'Search for artist', ),
+                'label'             => __( 'Search for artist', 'tms-theme-sara_hilden' ),
                 'submit_value'      => __( 'Search', 'tms-theme-sara_hilden' ),
                 'input_placeholder' => __( 'Search query', 'tms-theme-sara_hilden' ),
             ],
@@ -292,7 +292,13 @@ class ArchiveArtist extends BaseModel {
 
         $this->set_pagination_data( $wp_query );
 
-        return $this->format_posts( $wp_query->posts );
+        $search_clause = self::get_search_query_var();
+        $is_filtered   = $search_clause || self::get_filter_query_var();
+
+        return [
+            'posts'   => $this->format_posts( $wp_query->posts ),
+            'summary' => $is_filtered ? $this->results_summary( $wp_query->found_posts, $search_clause ) : false,
+        ];
     }
 
     /**
@@ -343,5 +349,46 @@ class ArchiveArtist extends BaseModel {
         $this->pagination->per_page = $per_page;
         $this->pagination->items    = $wp_query->found_posts;
         $this->pagination->max_page = (int) ceil( $wp_query->found_posts / $per_page );
+    }
+
+    /**
+     * Get results summary text.
+     *
+     * @param int $result_count Result count.
+     *
+     * @return string|bool
+     */
+    protected function results_summary( $result_count, $search_clause ) {
+
+        if ( ! empty( $search_clause ) ) {
+            $results_text = sprintf(
+            // translators: 1. placeholder is number of search results, 2. placeholder contains the search term(s).
+                _nx(
+                    '%1$1s result found for "%2$2s"',
+                    '%1$1s results found for "%2$2s"',
+                    $result_count,
+                    'filter with search clause results summary',
+                    'tms-theme-sara_hilden'
+                ),
+                $result_count,
+                $search_clause
+            );
+        }
+        else {
+            $results_text = sprintf(
+            // translators: 1. placeholder is number of search results
+                _nx(
+                    '%1$1s result found',
+                    '%1$1s results found',
+                    $result_count,
+                    'filter results summary',
+                    'tms-theme-sara_hilden'
+                ),
+                $result_count,
+                $search_clause
+            );
+        }
+
+        return $results_text;
     }
 }
