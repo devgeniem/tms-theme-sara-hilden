@@ -1,6 +1,6 @@
 // stylelint-disable declaration-no-important
 
-$button-primary-border-color: $border-light;
+$button-primary-border-color: $color-sarahilden-gray;
 $button-secondary-border-color: $light;
 
 .button {
@@ -36,7 +36,6 @@ $button-secondary-border-color: $light;
         &:active,
         &.is-active {
             border-color: $button-primary-border-color !important;
-            outline: none !important;
             background-color: $black !important;
             box-shadow: none;
             color: $white !important;
@@ -72,7 +71,6 @@ $button-secondary-border-color: $light;
         &:active,
         &.is-active {
             border-color: $button-secondary-border-color !important;
-            outline: none !important;
             background-color: $white !important;
             box-shadow: none;
             color: $black !important;
