@@ -21,12 +21,6 @@
                 <span class="entry__date">{@strtodate value=post_date /}</span>
                 {excerpt|s}
             </div>
-
-            {?category}
-                <span class="pill">
-                    {category.name|s}
-                </span>
-            {/category}
         </div>
     </article>
 </div>

@@ -18,11 +18,5 @@
             <span class="entry__date">{@strtodate value=post_date /}</span>
             {excerpt|s}
         </div>
-
-        {?category}
-            <a href="{category.permalink|s}" class="pill {category_link_classes}">
-                {category.name|s}
-            </a>
-        {/category}
     </article>
 </div>
