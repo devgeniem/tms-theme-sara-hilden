@@ -3,8 +3,6 @@
  *  Copyright (c) 2021. Geniem Oy
  */
 
-use TMS\Theme\Base\Settings;
-
 use TMS\Theme\Sara_Hilden\PostType\Artist;
 use TMS\Theme\Sara_Hilden\PostType\Artwork;
 use TMS\Theme\Sara_Hilden\Taxonomy\ArtworkLocation;
@@ -186,10 +184,9 @@ class ArchiveArtwork extends ArchiveArtist {
      * @return array
      */
     protected function format_posts( array $posts ) : array {
-        $display_artist = Settings::get_setting( 'artwork_archive_display_artist' );
-        $artist_map     = $display_artist ? $this->get_artist_map() : [];
+        $artist_map = $this->get_artist_map();
 
-        return array_map( function ( $item ) use ( $artist_map, $display_artist ) {
+        return array_map( function ( $item ) use ( $artist_map ) {
             if ( has_post_thumbnail( $item->ID ) ) {
                 $item->image = get_post_thumbnail_id( $item->ID );
             }
@@ -204,7 +201,7 @@ class ArchiveArtwork extends ArchiveArtist {
                 $item->location = $locations[0];
             }
 
-            if ( $display_artist && isset( $artist_map[ $item->ID ] ) ) {
+            if ( isset( $artist_map[ $item->ID ] ) ) {
                 $item->artist = implode( ', ', $artist_map[ $item->ID ] );
             }
 
