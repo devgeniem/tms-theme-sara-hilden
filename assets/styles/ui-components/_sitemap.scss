@@ -1,20 +1,35 @@
-.sitemap--toggle {
-    &.button.is-primary.is-active {
-        background-color: transparent !important;
+.sitemap{
+    &--wrapper {
+        @include mobile {
+            max-width: 90vw;
+        }
+    }
+    &--toggle {
+        &.button.is-primary.is-active {
+            background-color: transparent !important;
 
-        &:active,
-        &:focus,
-        &.is-focused {
-            background-color: $black !important;
+            &:active,
+            &:focus,
+            &.is-focused {
+                background-color: $black !important;
 
-            .icon {
-                fill: $white !important;
+                .icon {
+                    fill: $white !important;
+                }
+
             }
 
+            .icon {
+                fill: $button-primary-border-color !important;
+            }
         }
+    }
 
-        .icon {
-            fill: $button-primary-border-color !important;
+    ul {
+        @include mobile {
+            &.children {
+                padding-left: 1rem;
+            }
         }
     }
 }
