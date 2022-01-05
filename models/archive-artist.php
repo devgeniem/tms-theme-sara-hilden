@@ -141,7 +141,7 @@ class ArchiveArtist extends BaseModel {
     public function strings() : array {
         return [
             'search'         => [
-                'label'             => __( 'Search for artist', ),
+                'label'             => __( 'Search for artist', 'tms-theme-sara_hilden' ),
                 'submit_value'      => __( 'Search', 'tms-theme-sara_hilden' ),
                 'input_placeholder' => __( 'Search query', 'tms-theme-sara_hilden' ),
             ],
