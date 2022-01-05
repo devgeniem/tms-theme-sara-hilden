@@ -163,7 +163,13 @@ class PageArtwork extends ArchiveArtist {
 
         $this->set_pagination_data( $the_query );
 
-        return $this->format_posts( $the_query->posts );
+        $search_clause = self::get_search_query_var();
+        $is_filtered   = $search_clause || self::get_filter_query_var();
+
+        return [
+            'posts'   => $this->format_posts( $the_query->posts ),
+            'summary' => $is_filtered ? $this->results_summary( $the_query->found_posts, $search_clause ) : false,
+        ];
     }
 
     /**

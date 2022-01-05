@@ -7,8 +7,12 @@
                 {>"shared/archive-view-title" /}
                 {>"shared/archive-filters" /}
 
+                {?results.summary}
+                    <p>{results.summary|s}</p>
+                {/results.summary}
+
                 <div class="columns is-multiline is-variable is-6-desktop">
-                    {#results}
+                    {#results.posts}
                         <div class="column is-12 is-6-desktop">
                             <div class="columns is-mobile is-variable is-4-desktop">
                                 <div class="column">
@@ -41,7 +45,7 @@
                                 {Strings.s.home.no_results|s}
                             </h2>
                         </div>
-                    {/results}
+                    {/results.posts}
                 </div>
 
                 {>"shared/archive-pagination" /}
