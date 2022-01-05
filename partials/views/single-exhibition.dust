@@ -23,7 +23,7 @@
                 <div class="columns">
                     <div class="column is-12">
                         <article class="entry">
-                            <header class="entry__header mb-6">
+                            <header class="entry__header mb-6 mb-8-desktop mb-10-fullhd">
                                 <div class="columns">
                                     <div class="column is-6 is-offset-3 has-text-centered keep-vertical-spacing">
                                         {?SingleExhibition.content.fields.title}
@@ -46,7 +46,7 @@
                                             <div class="is-flex is-align-items-center">
                                                 {>"ui/icon" icon="date" class="icon--xlarge" /}
 
-                                                <p class="entry__meta-text mb-0 ml-3 ml-4-desktop has-text-weight-bold has-text-primary">
+                                                <p class="entry__meta-text mb-0 ml-3 ml-4-desktop ml-5-fullhd has-text-weight-bold has-text-primary">
                                                     {SingleExhibition.content.fields.date|s}
                                                 </p>
                                             </div>
@@ -56,7 +56,7 @@
                                             <div class="is-flex is-align-items-center">
                                                 {>"ui/icon" icon="time" class="icon--xlarge" /}
 
-                                                <p class="entry__meta-text mb-0 ml-3 ml-4-desktop has-text-weight-bold has-text-primary">
+                                                <p class="entry__meta-text mb-0 ml-3 ml-4-desktop ml-5-fullhd has-text-weight-bold has-text-primary">
                                                     {SingleExhibition.content.fields.opening_times|s}
                                                 </p>
                                             </div>
@@ -66,7 +66,7 @@
                                             <div class="is-flex is-align-items-center">
                                                 {>"ui/icon" icon="location" class="icon--xlarge" /}
 
-                                                <p class="entry__meta-text mb-0 ml-3 ml-4-desktop has-text-weight-bold has-text-primary is-uppercase">
+                                                <p class="entry__meta-text mb-0 ml-3 ml-4-desktop ml-5-fullhd has-text-weight-bold has-text-primary is-uppercase">
                                                     {SingleExhibition.content.fields.location|s}
                                                 </p>
                                             </div>
