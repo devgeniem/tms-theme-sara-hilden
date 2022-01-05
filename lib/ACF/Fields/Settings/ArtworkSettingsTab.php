@@ -9,6 +9,7 @@ use Geniem\ACF\Exception;
 use Geniem\ACF\Field;
 use Geniem\ACF\Field\Tab;
 use TMS\Theme\Base\Logger;
+use TMS\Theme\Base\PostType;
 
 /**
  * Class ArtworkSettingsTab
@@ -37,6 +38,10 @@ class ArtworkSettingsTab extends Tab {
         ],
         'artwork_additional_info_text' => [
             'title'        => 'Lisätiedon teksti',
+            'instructions' => '',
+        ],
+        'artwork_archive_page'         => [
+            'title'        => 'Teosten arkistosivu',
             'instructions' => '',
         ],
     ];
@@ -77,8 +82,16 @@ class ArtworkSettingsTab extends Tab {
 
             $info_repeater_field->add_field( $text_field );
 
+            $artwork_list_page_field = ( new Field\PostObject( $strings['artwork_archive_page']['title'] ) )
+                ->set_key( "${key}artwork_archive_page" )
+                ->set_name( 'artwork_archive_page' )
+                ->set_post_types( [ PostType\Page::SLUG ] )
+                ->set_return_format( 'id' )
+                ->set_instructions( $strings['artwork_archive_page']['instructions'] );
+
             $this->add_fields( [
                 $info_repeater_field,
+                $artwork_list_page_field,
             ] );
         }
         catch ( Exception $e ) {
