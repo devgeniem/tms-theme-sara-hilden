@@ -103,11 +103,9 @@ class ExhibitionGroup {
             ->set_name( 'title' )
             ->set_instructions( $strings['title']['instructions'] );
 
-        $date_field = ( new Field\DatePicker( $strings['date']['title'] ) )
+        $date_field = ( new Field\Text( $strings['date']['title'] ) )
             ->set_key( "${key}_date" )
             ->set_name( 'date' )
-            ->set_display_format( 'j.n.Y' )
-            ->set_return_format( 'j.n.Y' )
             ->set_instructions( $strings['date']['instructions'] );
 
         $opening_times_field = ( new Field\Text( $strings['opening_times']['title'] ) )
