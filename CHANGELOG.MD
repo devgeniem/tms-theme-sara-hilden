@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-503: Material block styles
 - TMS-528-2: Removed display_artist field from ContentColumnFields.
 - TMS-537-2: Classes for text align with editor
 - TMS-530: Image Gallery styles
