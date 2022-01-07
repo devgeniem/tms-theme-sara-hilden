@@ -42,6 +42,12 @@ $button-secondary-border-color: $light;
             .icon {
                 fill: currentColor !important;
             }
+
+            &:focus,
+            &.is-focused {
+                outline: .125rem dotted $black !important;
+            }
+
         }
     }
 
