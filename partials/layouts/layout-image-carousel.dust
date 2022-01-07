@@ -66,7 +66,7 @@
                 {#rows}
                     <div class="image-carousel__item" id="{id}-modal">
                         <div class="img-wrapper">
-                        {@image id=image.id alt=image.alt title=image.description size="fullhd" width="{image.sizes.fullhd-width}" height="{image.sizes.fullhd-height}" loading="" /}
+                        {@image id=image.id alt=image.alt title=image.alt size="fullhd" width="{image.sizes.fullhd-width}" height="{image.sizes.fullhd-height}" loading="" /}
                         </div>
                         {>"ui/image/image-block__meta" /}
                     </div>
