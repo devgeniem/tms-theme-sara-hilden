@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-528-2: Removed display_artist field from ContentColumnFields.
+- TMS-537-2: Classes for text align with editor
+- TMS-530: Image Gallery styles
 - TMS-492: Site header #18
 - TMS-542: Add 404 styles #17
 - TMS-511: Image block meta styles
