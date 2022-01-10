@@ -16,7 +16,7 @@
 
         .slick-list {
             max-height: 100%;
-            overflow-y: scroll;
+            overflow-y: auto;
         }
 
         @include until($tablet) {
