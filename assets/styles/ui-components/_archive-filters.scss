@@ -10,20 +10,6 @@
             text-transform: none !important;
         }
 
-        &--search {
-            input[type="text"] {
-                border-radius: 0 !important;
-
-                @include from($widescreen) {
-                    min-width: 17.5rem;
-                }
-            }
-
-            .button {
-                border-color: $primary !important;
-            }
-        }
-
         select {
             border-radius: 0 !important;
         }
@@ -35,6 +21,18 @@
             @include until($desktop) {
                 flex-wrap: wrap;
             }
+        }
+
+        input[type="text"] {
+            border-radius: 0 !important;
+
+            @include from($widescreen) {
+                min-width: 17.5rem;
+            }
+        }
+
+        .button {
+            border-color: $primary !important;
         }
     }
 }

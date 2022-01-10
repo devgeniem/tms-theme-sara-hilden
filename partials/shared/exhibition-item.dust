@@ -1,0 +1,40 @@
+<div class="exhibition-item column is-12">
+    <div class="columns is-mobile is-variable is-4-desktop">
+        <div class="column is-6">
+            {?exhibition.image}
+                <div class="featured-image image is-4by3">
+                    {@image id=exhibition.image size="large" class="objectfit-image" /}
+                </div>
+            {/exhibition.image}
+        </div>
+
+        <div class="column is-6">
+            <div class="inner is-flex is-align-items-center has-height-100">
+                <div
+                    class="inner keep-vertical-spacing">
+                    <h2 class="mt-4 mb-3 has-line-height-tight">
+                        <a href="{exhibition.permalink}" class="has-text-primary">
+                            {exhibition.post_title|s}
+                        </a>
+                    </h2>
+
+                    {?exhibition.date}
+                        <div class="is-flex is-align-items-center">
+                            {>"ui/icon" icon="date" class="icon--large entry__meta-icon" /}
+
+                            <p class="entry__meta-text has-text-primary has-text-small">
+                                {exhibition.date|s}
+                            </p>
+                        </div>
+                    {/exhibition.date}
+
+                    {?exhibition.post_excerpt}
+                        <p class="entry__summary mb-0 has-text-primary has-text-small">
+                            {exhibition.post_excerpt|s}
+                        </p>
+                    {/exhibition.post_excerpt}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
