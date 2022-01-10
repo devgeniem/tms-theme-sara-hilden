@@ -284,6 +284,7 @@ class ArchiveExhibition extends BaseModel {
         return array_map( function ( $item ) {
             $item->permalink   = get_the_permalink( $item->ID );
             $additional_fields = get_fields( $item->ID );
+            $item->post_title  = $additional_fields['title'] ?: $item->post_title;
             $item->fields      = $additional_fields;
             $start_date        = $item->fields['start_date'] ?? false;
 
@@ -295,6 +296,10 @@ class ArchiveExhibition extends BaseModel {
                 }
             }
 
+            if ( has_post_thumbnail( $item->ID ) ) {
+                $item->image = get_post_thumbnail_id( $item->ID );
+            }
+
             return $item;
         }, $posts );
     }
@@ -302,8 +307,8 @@ class ArchiveExhibition extends BaseModel {
     /**
      * Set pagination data
      *
-     * @param WP_Query $wp_query       Instance of WP_Query.
-     * @param string   $posts_per_page Number of items per page.
+     * @param WP_Query $wp_query Instance of WP_Query.
+     * @param string   $per_page Number of items per page.
      */
     protected function set_pagination_data( $wp_query, $per_page ) : void {
         $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
