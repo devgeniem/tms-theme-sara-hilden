@@ -118,22 +118,23 @@ class ExhibitionGroup {
             ->set_name( 'title' )
             ->set_instructions( $strings['title']['instructions'] );
 
-        $date_format = 'j.n.Y';
+        $display_format = 'j.n.Y';
+        $return_format  = 'Y-m-d';
 
         $start_date_field = ( new Field\DatePicker( $strings['start_date']['title'] ) )
             ->set_key( "${key}_start_date" )
             ->set_name( 'start_date' )
             ->set_wrapper_width( 43 )
-            ->set_display_format( $date_format )
-            ->set_return_format( $date_format )
+            ->set_display_format( $display_format )
+            ->set_return_format( $return_format )
             ->set_instructions( $strings['start_date']['instructions'] );
 
         $end_date_field = ( new Field\DatePicker( $strings['end_date']['title'] ) )
             ->set_key( "${key}_end_date" )
             ->set_name( 'end_date' )
             ->set_wrapper_width( 43 )
-            ->set_display_format( $date_format )
-            ->set_return_format( $date_format )
+            ->set_display_format( $display_format )
+            ->set_return_format( $return_format )
             ->set_instructions( $strings['end_date']['instructions'] );
 
         $is_upcoming_field = ( new Field\TrueFalse( $strings['is_upcoming']['title'] ) )
