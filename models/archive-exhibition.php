@@ -154,6 +154,10 @@ class ArchiveExhibition extends BaseModel {
             }
         }
 
+
+        $wp_query->set( 'orderby', [ 'start_date' => 'ASC' ] );
+        $wp_query->set( 'meta_key', 'start_date' );
+
         $wp_query->set( 'posts_per_page', $posts_per_page );
         $wp_query->set( 'meta_query', $meta_query );
     }
