@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-536: Notice banner styles #16
 - TMS-533: Contacts block styles
 - TMS-538: Sitemap styling
 - TMS-528-2: Removed display_artist field from ContentColumnFields.
