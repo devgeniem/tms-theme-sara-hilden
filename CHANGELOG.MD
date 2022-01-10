@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-526: Social media feed
 - TMS-503: Material block styles
 - TMS-529: Grid Fields.
+- TMS-502: Home view #35
+- TMS-536: Notice banner styles #16
 - TMS-528-2: Removed display_artist field from ContentColumnFields.
 - TMS-537-2: Classes for text align with editor
 - TMS-530: Image Gallery styles

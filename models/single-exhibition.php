@@ -3,6 +3,8 @@
  * Define the generic Page class.
  */
 
+use DustPress\Query;
+
 /**
  * The Page class.
  */
@@ -22,7 +24,17 @@ class SingleExhibition extends BaseModel {
      * @throws Exception If global $post is not available or $id param is not defined.
      */
     public function content() {
-        $single = \DustPress\Query::get_acf_post( get_queried_object_id() );
+        $single = Query::get_acf_post( get_queried_object_id() );
+
+        $start_date = $single->fields['start_date'] ?? false;
+
+        if ( ! empty( $start_date ) ) {
+            $single->date = $start_date;
+
+            if ( ! empty( $single->fields['end_date'] ) ) {
+                $single->date .= ' - ' . $single->fields['end_date'];
+            }
+        }
 
         return $single;
     }

@@ -5,6 +5,8 @@
 
 namespace TMS\Theme\Sara_Hilden;
 
+use ArchiveExhibition;
+
 /**
  * Class ThemeSupports
  *
@@ -39,6 +41,10 @@ class ThemeSupports implements \TMS\Theme\Base\Interfaces\Controller {
         $vars[] = \ArchiveArtist::SEARCH_QUERY_VAR;
         $vars[] = \ArchiveArtist::FILTER_QUERY_VAR;
         $vars[] = \ArchiveArtist::ORDERBY_QUERY_VAR;
+
+        $vars[] = ArchiveExhibition::SEARCH_QUERY_VAR;
+        $vars[] = ArchiveExhibition::YEAR_QUERY_VAR;
+        $vars[] = ArchiveExhibition::PAST_QUERY_VAR;
 
         return $vars;
     }

@@ -5,6 +5,7 @@
 
 namespace TMS\Theme\Sara_Hilden;
 
+use ArchiveExhibition;
 use TMS\Theme\Base\Interfaces;
 use TMS\Theme\Sara_Hilden\ThemeCustomizationController;
 
@@ -38,6 +39,7 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
 
         add_action( 'init', function () {
             \ArchiveArtist::hooks();
+            ArchiveExhibition::hooks();
         } );
     }
 }
