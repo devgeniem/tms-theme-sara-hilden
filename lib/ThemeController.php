@@ -5,6 +5,7 @@
 
 namespace TMS\Theme\Sara_Hilden;
 
+use ArchiveExhibition;
 use TMS\Theme\Base\Interfaces;
 use TMS\Theme\Sara_Hilden\ThemeCustomizationController;
 
@@ -24,6 +25,7 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
             TaxonomyController::class,
             Localization::class,
             ThemeCustomizationController::class,
+            ThemeSupports::class,
         ];
 
         array_walk( $classes, function ( $class ) {
@@ -32,6 +34,10 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
             if ( $instance instanceof Interfaces\Controller ) {
                 $instance->hooks();
             }
+        } );
+
+        add_action( 'init', function () {
+            ArchiveExhibition::hooks();
         } );
     }
 }

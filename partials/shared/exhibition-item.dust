@@ -1,0 +1,12 @@
+<div class="column is-12 is-6-desktop">
+    <div class="columns is-mobile is-variable is-4-desktop">
+        <div class="column">
+            <div
+                class="inner p-4 p-5-desktop keep-vertical-spacing has-border-1 has-border-secondary">
+                <h2 class="mt-4 mb-3 has-line-height-tight">
+                    TODO: ME
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
