@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Sara Hilden\n"
 "POT-Creation-Date: 2022-01-11 16:23+0200\n"
-"PO-Revision-Date: 2022-01-11 16:27+0200\n"
+"PO-Revision-Date: 2022-01-11 16:32+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -52,12 +52,12 @@ msgstr "Teokset"
 #: lib/PostType/Exhibition.php:56
 msgctxt "theme CPT"
 msgid "Exhibition"
-msgstr ""
+msgstr "Näyttelyt"
 
 #: lib/PostType/Exhibition.php:202
 msgctxt "Breadcrumb text"
 msgid "Exhibition"
-msgstr ""
+msgstr "Näyttelyt"
 
 #: models/archive-artist.php:144
 msgid "Search for artist"
@@ -132,9 +132,8 @@ msgstr[0] "%1$1s tulos haulle"
 msgstr[1] "%1$1s tulosta haulle"
 
 #: models/archive-exhibition.php:107 models/archive-exhibition.php:109
-#, fuzzy
 msgid "Search from archive"
-msgstr "Hae taiteilijaa"
+msgstr "Hae arkistosta"
 
 #: models/archive-exhibition.php:112
 msgid "Year"
