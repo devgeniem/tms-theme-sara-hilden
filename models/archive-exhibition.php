@@ -281,13 +281,15 @@ class ArchiveExhibition extends BaseModel {
             'current_exhibitions' => $current_exhibitions,
             'posts'               => $this->format_posts( $wp_query->posts ),
             'summary'             => $is_filtered ? $this->results_summary( $wp_query->found_posts, $search_clause ) : false,
-            'have_posts'          => ! empty( $wp_query->found_posts ) && ! empty( $current_exhibitions ),
+            'have_posts'          => $wp_query->have_posts() || ! empty( $current_exhibitions ),
             'partial'             => $is_past_archive ? 'shared/exhibition-item-simple' : 'shared/exhibition-item',
         ];
     }
 
     /**
+     * Get currently active exhibitions.
      *
+     * @return array of WP_Post objects.
      */
     protected function get_current_exhibitions() {
         $today = current_time( 'Y-m-d' );
@@ -331,7 +333,7 @@ class ArchiveExhibition extends BaseModel {
             $additional_fields = get_fields( $item->ID );
             $item->post_title  = $additional_fields['title'] ?: $item->post_title;
             $item->fields      = $additional_fields;
-            $date              = SingleExhibition::get_opening_times( $item->ID );
+            $date              = SingleExhibition::get_date( $item->ID );
 
             if ( ! empty( $date ) ) {
                 $item->date = $date;
@@ -364,7 +366,8 @@ class ArchiveExhibition extends BaseModel {
     /**
      * Get results summary text.
      *
-     * @param int $result_count Result count.
+     * @param int    $result_count  Result count.
+     * @param string $search_clause Active search clause.
      *
      * @return string|bool
      */
