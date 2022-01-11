@@ -144,8 +144,9 @@ class ArchiveExhibition extends BaseModel {
                 ],
             ];
 
-            $posts_per_page = self::PAST_ITEMS_PER_PAGE;
-            $year           = self::get_year_query_var();
+            $start_date_order = 'DESC';
+            $posts_per_page   = self::PAST_ITEMS_PER_PAGE;
+            $year             = self::get_year_query_var();
 
             if ( ! empty( $year ) ) {
                 $meta_query = [
@@ -164,7 +165,8 @@ class ArchiveExhibition extends BaseModel {
             }
         }
         else {
-            $meta_query = [
+            $start_date_order = 'ASC';
+            $meta_query       = [
                 [
                     'key'     => 'start_date',
                     'value'   => current_time( 'Y-m-d' ),
@@ -174,7 +176,7 @@ class ArchiveExhibition extends BaseModel {
             ];
         }
 
-        $wp_query->set( 'orderby', [ 'start_date' => 'ASC' ] );
+        $wp_query->set( 'orderby', [ 'start_date' => $start_date_order, 'title' => 'ASC' ] );
         $wp_query->set( 'meta_key', 'start_date' );
 
         $wp_query->set( 'posts_per_page', $posts_per_page );
