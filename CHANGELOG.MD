@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - TMS-526: Social media feed
+- TMS-515: Image carousel layout styles
 - TMS-535: Image Banner styles
 - TMS-523: Table styles
 - TMS-502: Home view #35
