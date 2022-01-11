@@ -1,0 +1,23 @@
+.accordion {
+    
+    &__row {
+        border-radius: 0;
+        border: .0075rem solid $black;
+        &:hover,
+        .is-hover {
+            border-color: $black;
+        }
+    }
+
+    &,
+    .has-text-paragraph {
+        color: $black !important;
+    }
+
+    &__title-button {
+        &:focus {
+            outline: .125rem dotted $black;
+            outline-offset: 0.25rem;
+        }
+    }
+}
