@@ -1,0 +1,21 @@
+.site-header-notice {
+    button {
+        border: 2px solid white;
+        .icon {
+            fill :$white !important;
+        }
+        &:hover,
+        .is-hover {
+            .icon {
+                fill :$black !important;
+            }
+        }
+        &:focus,
+        .is-focus {
+            outline: .125rem dotted $white !important;
+                .icon {
+                    fill :$black !important;
+                }
+        }
+    }
+}

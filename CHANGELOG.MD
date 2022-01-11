@@ -10,6 +10,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - TMS-528: Removed display_artist field from ContentColumnFields.
+- TMS-517: Header notice
+- TMS-524: Link list styles
+- TMS-532: Share links' styles
+- TMS-526: Social media feed
+- TMS-515: Image carousel layout styles
+- TMS-535: Image Banner styles
 - TMS-523: Table styles
 - TMS-524: Link list styles
 - TMS-525: Subpages block & laout styles
