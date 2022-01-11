@@ -125,6 +125,12 @@ class ArchiveExhibition extends BaseModel {
             return;
         }
 
+        $current_exhibitions = ( new ArchiveExhibition )->get_current_exhibitions();
+
+        if ( ! empty( $current_exhibitions ) ) {
+            $wp_query->set( 'post__not_in', wp_list_pluck( $current_exhibitions, 'ID' ) );
+        }
+
         $past_archive = ( new ArchiveExhibition )->is_past_archive();
 
         $meta_query[] = [
@@ -153,6 +159,9 @@ class ArchiveExhibition extends BaseModel {
                 $wp_query->set( 's', $s );
             }
         }
+
+        $wp_query->set( 'orderby', [ 'start_date' => 'ASC' ] );
+        $wp_query->set( 'meta_key', 'start_date' );
 
         $wp_query->set( 'posts_per_page', $posts_per_page );
         $wp_query->set( 'meta_query', $meta_query );
@@ -263,14 +272,50 @@ class ArchiveExhibition extends BaseModel {
         $search_clause = self::get_search_query_var();
         $is_filtered   = $search_clause || self::get_year_query_var();
 
+        $current_exhibitions = ! $is_past_archive ? $this->get_current_exhibitions() : false;
+
         return [
-            'result_count'       => count( $this->get_upcoming_exhibitions() ),
-            'past_results_count' => count( $this->get_past_exhibitions() ),
-            'show_past'          => $is_past_archive,
-            'posts'              => $this->format_posts( $wp_query->posts ),
-            'summary'            => $is_filtered ? $this->results_summary( $wp_query->found_posts, $search_clause ) : false,
-            'partial'            => $is_past_archive ? 'shared/exhibition-item-simple' : 'shared/exhibition-item',
+            'result_count'        => count( $this->get_upcoming_exhibitions() ),
+            'past_results_count'  => count( $this->get_past_exhibitions() ),
+            'show_past'           => $is_past_archive,
+            'current_exhibitions' => $current_exhibitions,
+            'posts'               => $this->format_posts( $wp_query->posts ),
+            'summary'             => $is_filtered ? $this->results_summary( $wp_query->found_posts, $search_clause ) : false,
+            'have_posts'          => ! empty( $wp_query->found_posts ) && ! empty( $current_exhibitions ),
+            'partial'             => $is_past_archive ? 'shared/exhibition-item-simple' : 'shared/exhibition-item',
         ];
+    }
+
+    /**
+     *
+     */
+    protected function get_current_exhibitions() {
+        $today = current_time( 'Y-m-d' );
+
+        $args = [
+            'post_type'      => Exhibition::SLUG,
+            'posts_per_page' => self::UPCOMING_ITEMS_PER_PAGE,
+            'post_status'    => 'publish',
+            'orderby'        => [ 'start_date' => 'ASC' ],
+            'meta_key'       => 'start_date',
+            'meta_query'     => [
+                [
+                    'key'     => 'start_date',
+                    'value'   => $today,
+                    'compare' => '<=',
+                    'type'    => 'DATE',
+                ],
+                [
+                    'key'     => 'end_date',
+                    'value'   => $today,
+                    'compare' => '>=',
+                ],
+            ],
+        ];
+
+        $query = new WP_Query( $args );
+
+        return $query->have_posts() ? $query->posts : [];
     }
 
     /**
@@ -286,14 +331,10 @@ class ArchiveExhibition extends BaseModel {
             $additional_fields = get_fields( $item->ID );
             $item->post_title  = $additional_fields['title'] ?: $item->post_title;
             $item->fields      = $additional_fields;
-            $start_date        = $item->fields['start_date'] ?? false;
+            $date              = SingleExhibition::get_opening_times( $item->ID );
 
-            if ( ! empty( $start_date ) ) {
-                $item->date = $start_date;
-
-                if ( ! empty( $item->fields['end_date'] ) ) {
-                    $item->date .= ' - ' . $item->fields['end_date'];
-                }
+            if ( ! empty( $date ) ) {
+                $item->date = $date;
             }
 
             if ( has_post_thumbnail( $item->ID ) ) {

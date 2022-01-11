@@ -25,15 +25,10 @@ class SingleExhibition extends BaseModel {
      */
     public function content() {
         $single = Query::get_acf_post( get_queried_object_id() );
+        $date   = self::get_opening_times( $single->ID );
 
-        $start_date = $single->fields['start_date'] ?? false;
-
-        if ( ! empty( $start_date ) ) {
-            $single->date = $start_date;
-
-            if ( ! empty( $single->fields['end_date'] ) ) {
-                $single->date .= ' - ' . $single->fields['end_date'];
-            }
+        if ( ! empty( $date ) ) {
+            $single->date = $date;
         }
 
         return $single;
@@ -56,5 +51,37 @@ class SingleExhibition extends BaseModel {
                 return true;
             }
         }
+    }
+
+    /**
+     * Get & format opening times.
+     *
+     * @param int $id The post ID.
+     */
+    static function get_opening_times( $id ) {
+        $start_date    = get_field( 'start_date', $id );
+        $opening_times = '';
+
+        if ( ! empty( $start_date ) ) {
+            $opening_times = self::reformat_datetime_string( $start_date );
+            $end_date      = get_field( 'end_date', $id );
+
+            if ( ! empty( $end_date ) ) {
+                $opening_times .= ' - ' . self::reformat_datetime_string( $end_date );
+            }
+        }
+
+        return $opening_times;
+    }
+
+    /**
+     * Format datetime string.
+     *
+     * @param string $date_string The date string.
+     */
+    static function reformat_datetime_string( $string ) {
+        $datetime = DateTime::createFromFormat( 'Y-m-d', $string );
+
+        return $datetime->format( 'j.n.Y' );
     }
 }

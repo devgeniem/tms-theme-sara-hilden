@@ -41,15 +41,20 @@
                 {/results.summary}
 
                 <div class="columns is-multiline is-variable is-6-desktop">
+                    {#results.current_exhibitions}
+                        {>"{results.partial}" exhibition=. /}
+                    {/results.current_exhibitions}
+
                     {#results.posts}
                         {>"{results.partial}" exhibition=. /}
-                    {:else}
+                    {/results.posts}
+
+                    {^have_posts}
                         <div class="column pt-8 pb-8 is-text-centered is-size-5">
                             <h2 class="no-results-title">
                                 {Strings.s.home.no_results|s}
                             </h2>
-                        </div>
-                    {/results.posts}
+                        </div>{/have_posts}
                 </div>
 
                 {>"shared/archive-pagination" /}
