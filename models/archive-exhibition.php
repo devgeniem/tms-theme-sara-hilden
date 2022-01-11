@@ -103,13 +103,14 @@ class ArchiveExhibition extends BaseModel {
      */
     public function strings() : array {
         return [
-            'search'     => [
+            'search'         => [
                 'label'             => __( 'Search from archive', 'tms-theme-sara_hilden' ),
                 'submit_value'      => __( 'Search', 'tms-theme-sara_hilden' ),
                 'input_placeholder' => __( 'Search from archive', 'tms-theme-sara_hilden' ),
             ],
-            'no_results' => __( 'No results', 'tms-theme-sara_hilden' ),
-            'year_label' => __( 'Year', 'tms-theme-sara_hilden' ),
+            'no_results'     => __( 'No results', 'tms-theme-sara_hilden' ),
+            'year_label'     => __( 'Year', 'tms-theme-sara_hilden' ),
+            'upcoming_badge' => __( 'Upcoming', 'tms-theme-sara_hilden' ),
         ];
     }
 
@@ -131,25 +132,28 @@ class ArchiveExhibition extends BaseModel {
             $wp_query->set( 'post__not_in', wp_list_pluck( $current_exhibitions, 'ID' ) );
         }
 
-        $past_archive = ( new ArchiveExhibition )->is_past_archive();
-
-        $meta_query[] = [
-            'key'     => 'is_upcoming',
-            'compare' => $past_archive ? '!=' : '=',
-            'value'   => true,
-        ];
-
         $posts_per_page = self::UPCOMING_ITEMS_PER_PAGE;
 
-        if ( $past_archive ) {
+        if ( ( new ArchiveExhibition )->is_past_archive() ) {
+            $meta_query = [
+                [
+                    'key'     => 'end_date',
+                    'value'   => current_time( 'Y-m-d' ),
+                    'compare' => '<=',
+                    'type'    => 'DATE',
+                ],
+            ];
+
             $posts_per_page = self::PAST_ITEMS_PER_PAGE;
             $year           = self::get_year_query_var();
 
             if ( ! empty( $year ) ) {
-                $meta_query[] = [
-                    'key'     => 'exhibition_year',
-                    'compare' => '=',
-                    'value'   => $year,
+                $meta_query = [
+                    [
+                        'key'     => 'exhibition_year',
+                        'compare' => '=',
+                        'value'   => $year,
+                    ],
                 ];
             }
 
@@ -158,6 +162,16 @@ class ArchiveExhibition extends BaseModel {
             if ( ! empty( $s ) ) {
                 $wp_query->set( 's', $s );
             }
+        }
+        else {
+            $meta_query = [
+                [
+                    'key'     => 'start_date',
+                    'value'   => current_time( 'Y-m-d' ),
+                    'compare' => '>=',
+                    'type'    => 'DATE',
+                ],
+            ];
         }
 
         $wp_query->set( 'orderby', [ 'start_date' => 'ASC' ] );
@@ -266,7 +280,6 @@ class ArchiveExhibition extends BaseModel {
 
         $is_past_archive = $this->is_past_archive();
         $per_page        = $is_past_archive ? self::PAST_ITEMS_PER_PAGE : self::UPCOMING_ITEMS_PER_PAGE;
-
         $this->set_pagination_data( $wp_query, $per_page );
 
         $search_clause = self::get_search_query_var();
@@ -275,49 +288,15 @@ class ArchiveExhibition extends BaseModel {
         $current_exhibitions = ! $is_past_archive ? $this->get_current_exhibitions() : false;
 
         return [
-            'result_count'        => count( $this->get_upcoming_exhibitions() ),
+            'result_count'        => count( $this->get_current_or_future_exhibitions() ),
             'past_results_count'  => count( $this->get_past_exhibitions() ),
             'show_past'           => $is_past_archive,
-            'current_exhibitions' => $current_exhibitions,
+            'current_exhibitions' => ! empty( $current_exhibitions ) ? $this->format_posts( $current_exhibitions ) : false,
             'posts'               => $this->format_posts( $wp_query->posts ),
             'summary'             => $is_filtered ? $this->results_summary( $wp_query->found_posts, $search_clause ) : false,
             'have_posts'          => $wp_query->have_posts() || ! empty( $current_exhibitions ),
             'partial'             => $is_past_archive ? 'shared/exhibition-item-simple' : 'shared/exhibition-item',
         ];
-    }
-
-    /**
-     * Get currently active exhibitions.
-     *
-     * @return array of WP_Post objects.
-     */
-    protected function get_current_exhibitions() {
-        $today = current_time( 'Y-m-d' );
-
-        $args = [
-            'post_type'      => Exhibition::SLUG,
-            'posts_per_page' => self::UPCOMING_ITEMS_PER_PAGE,
-            'post_status'    => 'publish',
-            'orderby'        => [ 'start_date' => 'ASC' ],
-            'meta_key'       => 'start_date',
-            'meta_query'     => [
-                [
-                    'key'     => 'start_date',
-                    'value'   => $today,
-                    'compare' => '<=',
-                    'type'    => 'DATE',
-                ],
-                [
-                    'key'     => 'end_date',
-                    'value'   => $today,
-                    'compare' => '>=',
-                ],
-            ],
-        ];
-
-        $query = new WP_Query( $args );
-
-        return $query->have_posts() ? $query->posts : [];
     }
 
     /**
@@ -408,12 +387,18 @@ class ArchiveExhibition extends BaseModel {
     /**
      * @return array
      */
-    private function get_exhibitions() : array {
+    private function query_exhibitions( $additional_args = [] ) : array {
         $args = [
             'post_type'      => Exhibition::SLUG,
+            'posts_per_page' => self::UPCOMING_ITEMS_PER_PAGE,
             'post_status'    => 'publish',
-            'posts_per_page' => 200,
+            'orderby'        => [ 'start_date' => 'ASC', 'title' => 'ASC' ],
+            'meta_key'       => 'start_date',
         ];
+
+        if ( ! empty( $additional_args ) ) {
+            $args = array_merge( $args, $additional_args );
+        }
 
         $query = new WP_Query( $args );
 
@@ -421,28 +406,78 @@ class ArchiveExhibition extends BaseModel {
     }
 
     /**
-     * Get upcoming exhibitions
+     * Get exhibitions currently active exhibitions.
      *
-     * @return array
+     * @return array of WP_Post objects.
      */
-    private function get_upcoming_exhibitions() : array {
-        $posts = $this->get_exhibitions();
+    protected function get_current_exhibitions() {
+        $today = current_time( 'Y-m-d' );
 
-        return array_filter( $posts, function ( $item ) {
-            return get_post_meta( $item->ID, 'is_upcoming', true );
-        } );
+        return $this->query_exhibitions( [
+            'meta_query' => [
+                [
+                    'key'     => 'start_date',
+                    'value'   => $today,
+                    'compare' => '<=',
+                    'type'    => 'DATE',
+                ],
+                [
+                    'key'     => 'end_date',
+                    'value'   => $today,
+                    'compare' => '>=',
+                ],
+            ],
+        ] );
     }
 
     /**
-     * Get past exhibitions
+     * Get exhibitions, that have either start_date or end_date in future.
+     *
+     * @return array
+     */
+    private function get_current_or_future_exhibitions() : array {
+        $today = current_time( 'Y-m-d' );
+
+        return $this->query_exhibitions(
+            [
+                'meta_query' => [
+                    'relation' => 'OR',
+                    [
+                        'key'     => 'start_date',
+                        'value'   => $today,
+                        'compare' => '>=',
+                        'type'    => 'DATE',
+                    ],
+                    [
+                        'key'     => 'end_date',
+                        'value'   => $today,
+                        'compare' => '>=',
+                        'type'    => 'DATE',
+                    ],
+                ],
+            ]
+        );
+    }
+
+    /**
+     * Get past exhibitions.
      *
      * @return array
      */
     private function get_past_exhibitions() : array {
-        $posts = $this->get_exhibitions();
+        $today = current_time( 'Y-m-d' );
 
-        return array_filter( $posts, function ( $item ) {
-            return ! get_post_meta( $item->ID, 'is_upcoming', true );
-        } );
+        return $this->query_exhibitions(
+            [
+                'meta_query' => [
+                    [
+                        'key'     => 'end_date',
+                        'value'   => $today,
+                        'compare' => '<=',
+                        'type'    => 'DATE',
+                    ],
+                ],
+            ]
+        );
     }
 }

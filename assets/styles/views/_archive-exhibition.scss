@@ -32,6 +32,16 @@
         }
     }
 
+    &__results {
+        &--past {
+            @include from($desktop) {
+                max-width: 66.6rem;
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+    }
+
     &__item-count-container {
         width: 2.25rem;
         height: 2.25rem;
