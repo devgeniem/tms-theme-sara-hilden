@@ -1,4 +1,4 @@
-<div class="exhibition-item exhibition-item--simple column is-12 is-6-desktop">
+<div class="exhibition-item exhibition-item--simple column is-6 is-4-fullhd">
     <div
         class="inner pt-6 pr-4 pb-4 pl-4 pt-6-tablet pr-5-tablet pl-5-tablet p-7-fullhd keep-vertical-spacing has-border-1 has-border-secondary">
         <h2 class="mt-4 mb-3 has-line-height-tight">
@@ -24,7 +24,7 @@
         {/exhibition.post_excerpt}
 
         <div class="mt-6 mt-8-desktop has-text-right">
-            <a class="exhibition-item--arrow-link" href="{exhibition.permalink}" aria-hidden="true" tabindex="-1">
+            <a class="exhibition-item__arrow-link" href="{exhibition.permalink}" aria-hidden="true" tabindex="-1">
                 {>"ui/icon" icon="arrow-right" class="icon--large" /}
             </a>
         </div>

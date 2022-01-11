@@ -25,7 +25,7 @@ class SingleExhibition extends BaseModel {
      */
     public function content() {
         $single = Query::get_acf_post( get_queried_object_id() );
-        $date   = self::get_opening_times( $single->ID );
+        $date   = self::get_date( $single->ID );
 
         if ( ! empty( $date ) ) {
             $single->date = $date;
@@ -58,7 +58,7 @@ class SingleExhibition extends BaseModel {
      *
      * @param int $id The post ID.
      */
-    static function get_opening_times( $id ) {
+    static function get_date( $id ) {
         $start_date    = get_field( 'start_date', $id );
         $opening_times = '';
 
@@ -77,7 +77,9 @@ class SingleExhibition extends BaseModel {
     /**
      * Format datetime string.
      *
-     * @param string $date_string The date string.
+     * @param string $string The date string.
+     *
+     * @return string
      */
     static function reformat_datetime_string( $string ) {
         $datetime = DateTime::createFromFormat( 'Y-m-d', $string );
