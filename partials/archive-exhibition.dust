@@ -6,56 +6,38 @@
             <div class="container">
                 {>"shared/archive-view-title" /}
 
-                {?tabs}
-                    <div class="columns pt-6 pb-6">
-                        <div
-                            class="post-type-archive-exhibition__tab column is-6 has-text-weight-semibold {?tabs.upcoming.is_active}is-active{/tabs.upcoming.is_active}">
-                            <a class="post-type-archive-exhibition__tab-link"
-                               href="{tabs.upcoming.link|s}">{tabs.upcoming.text|s}
-                                <div class="post-type-archive-exhibition__item-count-container">
-                                    <p
-                                        class="post-type-archive-exhibition__item-count">{results.result_count|s}</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div
-                            class="post-type-archive-exhibition__tab column is-6 has-text-weight-semibold {?tabs.past.is_active}is-active{/tabs.past.is_active}">
-                            <a class="post-type-archive-exhibition__tab-link" href="{tabs.past.link|s}">
-                                {tabs.past.text|s}
-                                <div class="post-type-archive-exhibition__item-count-container">
-                                    <p
-                                        class="post-type-archive-exhibition__item-count">{results.past_results_count|s}</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                {/tabs}
+                {>"shared/exhibition-archive-tabs"  /}
 
                 {?results.show_past}
                     {>"shared/archive-exhibition-filters"  /}
                 {/results.show_past}
 
                 {?results.summary}
-                    <p>{results.summary|s}</p>
+                    <p class="has-text-centered">{results.summary|s}</p>
                 {/results.summary}
 
-                <div class="columns is-multiline is-variable is-6-desktop">
-                    {#results.current_exhibitions}
-                        {>"{results.partial}" exhibition=. /}
-                    {/results.current_exhibitions}
+                <div
+                    class="archive-exhibition__results columns mt-5 mt-8-desktop">
+                    <div class="column {^results.show_past}is-10-desktop is-offset-1-desktop{/results.show_past}">
+                        <div class="columns is-multiline is-variable is-tablet keep-vertical-spacing">
+                            {#results.current_exhibitions}
+                                {>"{results.partial}" exhibition=. /}
+                            {/results.current_exhibitions}
 
-                    {#results.posts}
-                        {>"{results.partial}" exhibition=. /}
-                    {/results.posts}
-
-                    {^have_posts}
-                        <div class="column pt-8 pb-8 is-text-centered is-size-5">
-                            <h2 class="no-results-title">
-                                {Strings.s.home.no_results|s}
-                            </h2>
-                        </div>{/have_posts}
+                            {#results.posts}
+                                {>"{results.partial}" exhibition=. /}
+                            {/results.posts}
+                        </div>
+                    </div>
                 </div>
+
+                {^results.have_posts}
+                    <div class="column pt-8 pb-8 is-text-centered is-size-5">
+                        <h2 class="no-results-title">
+                            {Strings.s.home.no_results|s}
+                        </h2>
+                    </div>
+                {/results.have_posts}
 
                 {>"shared/archive-pagination" /}
             </div>
