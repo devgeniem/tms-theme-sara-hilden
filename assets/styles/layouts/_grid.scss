@@ -1,0 +1,7 @@
+.grid {
+    &__item__details p {
+        @include from($tablet) {
+        -webkit-line-clamp: 8;
+        }
+    }
+}
