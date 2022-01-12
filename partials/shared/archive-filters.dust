@@ -49,6 +49,11 @@
                                     </button>
                                 </div>
 
+                                {?active_filter_data}
+                                    <input type="hidden" name="{active_filter_data.name|s}"
+                                           value="{active_filter_data.value|s}">
+                                {/active_filter_data}
+
                                 {?sort_options}
                                     <div class="filters--sort-by-container mt-5">
                                         <label for="artist-sort" class="is-block h6 mb-1">
