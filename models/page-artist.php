@@ -233,11 +233,11 @@ class PageArtist extends BaseModel {
 
         $options = [
             [
-                'label' => __( 'Nimen mukaan', 'tms-theme-sara_hilden' ),
+                'label' => __( 'Name', 'tms-theme-sara_hilden' ),
                 'value' => '',
             ],
             [
-                'label' => __( 'Nimen mukaan, nouseva', 'tms-theme-sara_hilden' ),
+                'label' => __( 'Name, ascending', 'tms-theme-sara_hilden' ),
                 'value' => 'desc',
             ],
             [
