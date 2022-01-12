@@ -28,6 +28,35 @@ class SingleArtist extends BaseModel {
     }
 
     /**
+     * Prepend additional information rows with artist years.
+     *
+     * @return array Additional information rows.
+     */
+    public function additional_information() {
+        $additional_information = get_field( 'additional_information' );
+
+        $death_year = get_field( 'death_year' );
+
+        if ( ! empty( $death_year ) ) {
+            array_unshift( $additional_information, [
+                'additional_information_title' => __( 'Death year', 'tms-theme-sara_hilden' ),
+                'additional_information_text'  => $death_year,
+            ] );
+        }
+
+        $birth_year = get_field( 'birth_year' );
+
+        if ( ! empty( $birth_year ) ) {
+            array_unshift( $additional_information, [
+                'additional_information_title' => __( 'Birth year', 'tms-theme-sara_hilden' ),
+                'additional_information_text'  => $birth_year,
+            ] );
+        }
+
+        return $additional_information;
+    }
+
+    /**
      * Get artwork.
      *
      * @return mixed

@@ -23,9 +23,9 @@
                                             </p>
                                         {/content.fields.short_description}
 
-                                        {?content.fields.additional_information}
-                                            {>"shared/additional-info-list" list_class="mt-6" data=content.fields.additional_information /}
-                                        {/content.fields.additional_information}
+                                        {?SingleArtist.additional_information}
+                                            {>"shared/additional-info-list" list_class="mt-6" data=SingleArtist.additional_information /}
+                                        {/SingleArtist.additional_information}
                                     </div>
 
                                     <div class="column is-5-desktop is-offset-1-desktop">
