@@ -100,23 +100,18 @@ class PageArtist extends BaseModel {
         }
 
         // Handle ordering by birth date.
-        $order      = $orderby_query_var === 'birth_date_asc' ? 'ASC' : 'DESC';
-        $meta_query = [
+        $order = $orderby_query_var === 'birth_date_asc' ? 'ASC' : 'DESC';
+
+        $args['meta_query'] = [
             'relation'          => 'AND',
             'birth_date_clause' => [
-                'key'     => 'birth_year',
-                'compare' => 'EXISTS',
+                'key' => 'birth_year',
             ],
             'last_name_clause'  => [
-                'key'     => 'last_name',
-                'compare' => 'EXISTS',
+                'key' => 'last_name',
             ],
         ];
-
-        $orderby = [ 'birth_date_clause' => $order, 'last_name_clause' => 'ASC' ];
-
-        $args['meta_query'] = $meta_query;
-        $args['orderby']    = $orderby;
+        $args['orderby']    = [ 'birth_date_clause' => $order, 'last_name_clause' => 'ASC' ];
     }
 
     /**
