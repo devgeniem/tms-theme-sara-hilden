@@ -7,6 +7,7 @@ namespace TMS\Theme\Sara_Hilden\PostType;
 
 use Closure;
 use TMS\Theme\Base\Interfaces\PostType;
+use TMS\Theme\Base\Settings;
 use TMS\Theme\Sara_Hilden\Taxonomy\ArtistCategory;
 use WP_Query;
 
@@ -149,7 +150,7 @@ class Artist implements PostType {
             'show_in_menu'    => true,
             'show_ui'         => true,
             'can_export'      => true,
-            'has_archive'     => true,
+            'has_archive'     => false,
             'rewrite'         => $rewrite,
             'show_in_rest'    => true,
             'capability_type' => 'artist',
@@ -187,19 +188,26 @@ class Artist implements PostType {
      * @return array[]
      */
     private function get_breadcrumbs_base( $is_cpt_archive = false ) : array {
-        return [
+        $breadcrumbs = [
             'home' => [
                 'title'     => _x( 'Home', 'Breadcrumbs', 'tms-theme-sara_hilden' ),
                 'permalink' => trailingslashit( get_home_url() ),
                 'icon'      => '',
             ],
-            [
-                'title'     => _x( 'Artists', 'Breadcrumb text', 'tms-theme-sara_hilden' ),
-                'permalink' => get_post_type_archive_link( self::SLUG ),
+        ];
+
+        $archive_page_id = Settings::get_setting( 'artist_archive_page' );
+
+        if ( ! empty( $archive_page_id ) ) {
+            $breadcrumbs[] = [
+                'title'     => get_the_title( $archive_page_id ),
+                'permalink' => get_permalink( $archive_page_id ),
                 'icon'      => false,
                 'is_active' => $is_cpt_archive,
-            ],
-        ];
+            ];
+        }
+
+        return $breadcrumbs;
     }
 
     /**

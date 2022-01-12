@@ -1,7 +1,7 @@
 <?php
 /**
- *  Copyright (c) 2021. Geniem Oy
- *
+ * Copyright (c) 2021. Geniem Oy
+ * Template Name: Taiteilija-arkisto
  */
 
 use TMS\Theme\Base\Traits\Pagination;
@@ -11,9 +11,14 @@ use TMS\Theme\Sara_Hilden\Taxonomy\ArtistCategory;
 /**
  * Archive for Artist CPT
  */
-class ArchiveArtist extends BaseModel {
+class PageArtist extends BaseModel {
 
     use Pagination;
+
+    /**
+     * Template
+     */
+    const TEMPLATE = 'models/page-artist.php';
 
     /**
      * Search input name.
@@ -36,16 +41,6 @@ class ArchiveArtist extends BaseModel {
      * @var object
      */
     protected object $pagination;
-
-    /**
-     * Hooks
-     */
-    public static function hooks() : void {
-        add_action(
-            'pre_get_posts',
-            [ __CLASS__, 'modify_query' ]
-        );
-    }
 
     /**
      * Get search query var value
@@ -83,23 +78,23 @@ class ArchiveArtist extends BaseModel {
     /**
      * Modify query order.
      *
-     * @param WP_Query $wp_query WP Query.
+     * @param array $args WP Query args.
      */
-    private static function modify_wp_query_order( WP_Query &$wp_query ) : void {
+    private static function modify_wp_query_order( array &$args ) : void {
         $orderby_query_var = self::get_orderby_query_var();
 
         // Default order: last name, ascending.
         if ( empty( $orderby_query_var ) ) {
-            $wp_query->set( 'orderby', [ 'last_name' => 'ASC' ] );
-            $wp_query->set( 'meta_key', 'last_name' );
+            $args['orderby']  = [ 'last_name' => 'ASC' ];
+            $args['meta_key'] = 'last_name';
 
             return;
         }
 
         // Last name, descending.
         if ( $orderby_query_var === 'desc' ) {
-            $wp_query->set( 'orderby', [ 'last_name' => 'DESC' ] );
-            $wp_query->set( 'meta_key', 'last_name' );
+            $args['orderby']  = [ 'last_name' => 'DESC' ];
+            $args['meta_key'] = 'last_name';
 
             return;
         }
@@ -120,8 +115,8 @@ class ArchiveArtist extends BaseModel {
 
         $orderby = [ 'birth_date_clause' => $order, 'last_name_clause' => 'ASC' ];
 
-        $wp_query->set( 'meta_query', $meta_query );
-        $wp_query->set( 'orderby', $orderby );
+        $args['meta_query'] = $meta_query;
+        $args['orderby']    = $orderby;
     }
 
     /**
@@ -130,7 +125,16 @@ class ArchiveArtist extends BaseModel {
      * @return string
      */
     public function page_title() : string {
-        return post_type_archive_title( '', false );
+        return get_the_title();
+    }
+
+    /**
+     * Page description
+     *
+     * @return string
+     */
+    public function page_description() : string {
+        return get_field( 'description' ) ?? '';
     }
 
     /**
@@ -157,41 +161,6 @@ class ArchiveArtist extends BaseModel {
     }
 
     /**
-     * Modify query
-     *
-     * @param WP_Query $wp_query Instance of WP_Query.
-     *
-     * @return void
-     */
-    public static function modify_query( WP_Query $wp_query ) : void {
-        if ( is_admin() || ( ! $wp_query->is_main_query() || ! $wp_query->is_post_type_archive( Artist::SLUG ) ) ) {
-            return;
-        }
-
-        self::modify_wp_query_order( $wp_query );
-
-        $artist_category = self::get_filter_query_var();
-
-        if ( ! empty( $artist_category ) ) {
-            $wp_query->set(
-                'tax_query',
-                [
-                    [
-                        'taxonomy' => ArtistCategory::SLUG,
-                        'terms'    => $artist_category,
-                    ],
-                ]
-            );
-        }
-
-        $s = self::get_search_query_var();
-
-        if ( ! empty( $s ) ) {
-            $wp_query->set( 's', $s );
-        }
-    }
-
-    /**
      * Return current search data.
      *
      * @return string[]
@@ -213,16 +182,13 @@ class ArchiveArtist extends BaseModel {
      * @return array
      */
     public function filters() {
-        $categories = get_terms( [
-            'taxonomy'   => ArtistCategory::SLUG,
-            'hide_empty' => true,
-        ] );
+        $categories = get_field( 'artist_categories' );
 
         if ( empty( $categories ) || is_wp_error( $categories ) ) {
             return [];
         }
 
-        $base_url   = get_post_type_archive_link( Artist::SLUG );
+        $base_url   = get_the_permalink();
         $categories = array_map( function ( $item ) use ( $base_url ) {
             return [
                 'name'      => $item->name,
@@ -288,16 +254,60 @@ class ArchiveArtist extends BaseModel {
      * @return array
      */
     public function results() {
-        global $wp_query;
+        $args = [
+            'post_type' => Artist::SLUG,
+            'paged'     => ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1,
+        ];
 
-        $this->set_pagination_data( $wp_query );
+        self::modify_wp_query_order( $args );
+
+        $categories = self::get_filter_query_var();
+
+        if ( empty( $categories ) ) {
+            $categories = get_field( 'artist_categories' );
+            $categories = ! empty( $categories ) ? array_map( fn( $c ) => $c->term_id, $categories ) : [];
+        }
+
+        $args['tax_query'] = [
+            [
+                'taxonomy' => ArtistCategory::SLUG,
+                'terms'    => $categories,
+            ],
+        ];
+
+        $s = self::get_search_query_var();
+
+        if ( ! empty( $s ) ) {
+            $args['s'] = $s;
+        }
+
+        $artist_category = self::get_filter_query_var();
+
+        if ( ! empty( $artist_category ) ) {
+            $args['tax_query'] = [
+                [
+                    'taxonomy' => ArtistCategory::SLUG,
+                    'terms'    => $artist_category,
+                ],
+            ];
+        }
+
+        $s = self::get_search_query_var();
+
+        if ( ! empty( $s ) ) {
+            $args['s'] = $s;
+        }
+
+        $the_query = new WP_Query( $args );
+
+        $this->set_pagination_data( $the_query );
 
         $search_clause = self::get_search_query_var();
         $is_filtered   = $search_clause || self::get_filter_query_var();
 
         return [
-            'posts'   => $this->format_posts( $wp_query->posts ),
-            'summary' => $is_filtered ? $this->results_summary( $wp_query->found_posts, $search_clause ) : false,
+            'posts'   => $this->format_posts( $the_query->posts ),
+            'summary' => $is_filtered ? $this->results_summary( $the_query->found_posts, $search_clause ) : false,
         ];
     }
 
@@ -359,7 +369,6 @@ class ArchiveArtist extends BaseModel {
      * @return string|bool
      */
     protected function results_summary( $result_count, $search_clause ) {
-
         if ( ! empty( $search_clause ) ) {
             $results_text = sprintf(
             // translators: 1. placeholder is number of search results, 2. placeholder contains the search term(s).

@@ -1,7 +1,7 @@
 {>"shared/base" /}
 
 {<content}
-    {#ArchiveArtist}
+    {#PageArtist}
         <main class="main-content section" id="main-content">
             <div class="container">
                 {>"shared/archive-view-title" /}
@@ -51,5 +51,5 @@
                 {>"shared/archive-pagination" /}
             </div>
         </main>
-    {/ArchiveArtist}
+    {/PageArtist}
 {/content}

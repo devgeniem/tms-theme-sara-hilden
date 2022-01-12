@@ -11,17 +11,17 @@ use Geniem\ACF\Group;
 use Geniem\ACF\RuleGroup;
 use Geniem\ACF\Field;
 use TMS\Theme\Base\Logger;
-use TMS\Theme\Sara_Hilden\Taxonomy\ArtworkType;
+use TMS\Theme\Sara_Hilden\Taxonomy\ArtistCategory;
 
 /**
- * Class PageArtworkGroup
+ * Class PageArtistGroup
  *
  * @package TMS\Theme\Base\ACF
  */
-class PageArtworkGroup {
+class PageArtistGroup {
 
     /**
-     * PageArtworkGroup constructor.
+     * PageGroup constructor.
      */
     public function __construct() {
         add_action(
@@ -43,10 +43,10 @@ class PageArtworkGroup {
             $group_title = 'Arkiston asetukset';
 
             $field_group = ( new Group( $group_title ) )
-                ->set_key( 'fg_page_artwork_settings' );
+                ->set_key( 'fg_page_artist_settings' );
 
             $rule_group = ( new RuleGroup() )
-                ->add_rule( 'page_template', '==', \PageArtwork::TEMPLATE );
+                ->add_rule( 'page_template', '==', \PageArtist::TEMPLATE );
 
             $field_group
                 ->add_rule_group( $rule_group )
@@ -55,12 +55,12 @@ class PageArtworkGroup {
             $key = $field_group->get_key();
 
             $strings = [
-                'description'   => [
+                'description'       => [
                     'title'        => 'Kuvaus',
                     'instructions' => '',
                 ],
-                'artwork_types' => [
-                    'title'        => 'Teosten kategoriat',
+                'artist_categories' => [
+                    'title'        => 'Taitelijoiden kategoriat',
                     'instructions' => '',
                 ],
             ];
@@ -72,20 +72,20 @@ class PageArtworkGroup {
                 ->set_tabs( 'visual' )
                 ->set_instructions( $strings['description']['instructions'] );
 
-            $artwork_types_field = ( new Field\Taxonomy( $strings['artwork_types']['title'] ) )
-                ->set_key( "${key}_artwork_types" )
-                ->set_name( 'artwork_types' )
-                ->set_taxonomy( ArtworkType::SLUG )
+            $artist_category_field = ( new Field\Taxonomy( $strings['artist_categories']['title'] ) )
+                ->set_key( "${key}_artist_categories" )
+                ->set_name( 'artist_categories' )
+                ->set_taxonomy( ArtistCategory::SLUG )
                 ->set_return_format( 'object' )
                 ->allow_null()
-                ->set_instructions( $strings['artwork_types']['instructions'] );
+                ->set_instructions( $strings['artist_categories']['instructions'] );
 
             $field_group->add_fields(
                 apply_filters(
                     'tms/acf/group/' . $field_group->get_key() . '/fields',
                     [
                         $description_field,
-                        $artwork_types_field,
+                        $artist_category_field,
                     ]
                 )
             );
@@ -103,7 +103,7 @@ class PageArtworkGroup {
     }
 
     /**
-     * Hide components from PageArtwork
+     * Hide components from PageArtist
      *
      * @param array $rules ACF group rules.
      *
@@ -113,13 +113,13 @@ class PageArtworkGroup {
         $rules[] = [
             'param'    => 'page_template',
             'operator' => '!=',
-            'value'    => \PageArtwork::TEMPLATE,
+            'value'    => \PageArtist::TEMPLATE,
         ];
 
         return $rules;
     }
 }
 
-( new PageArtworkGroup() );
+( new PageArtistGroup() );
 
 

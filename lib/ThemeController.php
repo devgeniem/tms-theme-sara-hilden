@@ -5,6 +5,7 @@
 
 namespace TMS\Theme\Sara_Hilden;
 
+use PageArtist;
 use TMS\Theme\Base\Interfaces;
 use TMS\Theme\Sara_Hilden\ThemeCustomizationController;
 
@@ -33,10 +34,6 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
             if ( $instance instanceof Interfaces\Controller ) {
                 $instance->hooks();
             }
-        } );
-
-        add_action( 'init', function () {
-            \ArchiveArtist::hooks();
         } );
     }
 }
