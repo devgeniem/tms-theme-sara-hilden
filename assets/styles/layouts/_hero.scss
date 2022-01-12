@@ -1,0 +1,56 @@
+.hero {
+    height: auto;
+    
+    @include from($mobile) {
+        height: 20rem;
+    }
+
+    @include from($tablet) {
+        height: 29.411rem;
+    }
+
+    @include from($desktop) {
+        height: 43.7rem;
+    }
+
+    &--box &__inner {
+        transform: none;
+    }
+
+    &__bg-wrapper {
+        @include hero-height;
+    }
+
+    &__inner {
+        position: static;
+    }
+    
+    &__box {
+        left: 0;
+        bottom: -7rem;
+        &.is-left {
+            margin-left: 0;
+            text-align: left;
+
+            p {
+                margin-left: 0;
+            }
+        }
+    }
+
+    /** 
+    *  Video controls
+    */
+
+    &__control {
+        transform: none;
+        top: unset;
+        left: unset;
+        right: 1.5rem;
+        bottom: 1.5rem;
+        width: 2rem;
+        height: 2rem;
+        padding: 1rem;
+    }
+
+}
