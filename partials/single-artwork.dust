@@ -29,22 +29,37 @@
                                                 {>"shared/additional-info-list" data=additional_info /}
                                             {/additional_info}
 
-                                            {?artist_link}
-                                                <a href="{artist_link.link}"
-                                                   class="button is-primary-invert is-outlined button--icon mt-4 mt-6-desktop">
-                                                    <span class="has-width-100">
-                                                        {artist_link.text|s}
-                                                    </span>
+                                            {?artist_links}
+                                                <div class="single-artwork__artist-links">
+                                                    {#artist_links}
+                                                        <a href="{.link}"
+                                                           class="button is-primary-invert is-outlined button--icon">
+                                                            <span class="has-width-100">
+                                                                {.text|s}
+                                                            </span>
 
-                                                    {>"ui/icon" icon="chevron-right" class="is-primary icon--large mr-1" /}
-                                                </a>
-                                            {/artist_link}
+                                                            {>"ui/icon" icon="chevron-right" class="is-primary icon--large mr-1" /}
+                                                        </a>
+                                                    {/artist_links}
+                                                </div>
+                                            {/artist_links}
                                         </div>
                                     </div>
 
                                     <div class="column is-6-desktop">
-                                        <div class="entry__content ml-3-tablet keep-vertical-spacing is-family-sans-serif">
+                                        <div
+                                            class="entry__content ml-3-tablet keep-vertical-spacing is-family-sans-serif">
                                             {@content /}
+
+                                            {?share_links}
+                                                <div class="entry__share-links">
+                                                    <h2 class="h6 mt-6 mb-6 mt-8-desktop mt-10-desktop has-text-right">
+                                                        {Strings.s.share.share_to_social_media|s}
+                                                    </h2>
+
+                                                    {>"ui/share-links" ul_class="is-justify-content-flex-end" li_class="ml-4" /}
+                                                </div>
+                                            {/share_links}
                                         </div>
                                     </div>
                                 </div>
