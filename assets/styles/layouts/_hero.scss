@@ -6,10 +6,6 @@
     }
 
     @include from($tablet) {
-        height: 29.411rem;
-    }
-
-    @include from($desktop) {
         height: 43.7rem;
     }
 
