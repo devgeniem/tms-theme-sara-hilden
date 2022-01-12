@@ -6,11 +6,11 @@
             <video src="{video}" class="hero__video is-hidden" loop muted playsinline></video>
 
             <button class="hero__control hero__control--play" aria-label="{Strings.s.video.play|s}">
-                {>"ui/icon" icon="play" class="icon--xxxlarge"  /}
+                {>"ui/icon" icon="play" class="icon--xlarge"  /}
             </button>
 
             <button class="hero__control hero__control--pause" aria-label="{Strings.s.video.pause|s}">
-                {>"ui/icon" icon="pause" class="icon--xxxlarge"  /}
+                {>"ui/icon" icon="pause" class="icon--xlarge"  /}
             </button>
         </div>
     {/video}
