@@ -72,11 +72,6 @@ class Artwork implements PostType {
             10,
             3
         );
-
-        add_filter(
-            'tms/base/breadcrumbs/after_prepare',
-            Closure::fromCallable( [ $this, 'format_archive_breadcrumbs' ] ),
-        );
     }
 
     /**
@@ -232,20 +227,5 @@ class Artwork implements PostType {
         ];
 
         return $breadcrumbs;
-    }
-
-    /**
-     * Format archive view breadcrumbs.
-     *
-     * @param array $breadcrumbs Default breadcrumbs.
-     *
-     * @return array[]
-     */
-    public function format_archive_breadcrumbs( $breadcrumbs ) {
-        if ( ! is_post_type_archive( self::SLUG ) ) {
-            return $breadcrumbs;
-        }
-
-        return $this->get_breadcrumbs_base( true );
     }
 }

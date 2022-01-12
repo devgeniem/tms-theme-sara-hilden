@@ -13,7 +13,7 @@ use TMS\Theme\Sara_Hilden\Taxonomy\ArtworkType;
 /**
  * PageArtwork
  */
-class PageArtwork extends ArchiveArtist {
+class PageArtwork extends PageArtist {
 
     use Pagination;
 

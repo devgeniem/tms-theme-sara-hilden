@@ -12,7 +12,7 @@
                             <div class="column is-3">
                                 {?image_id}
                                     <div class="entry__figure image is-4by3">
-                                        {@image id=image_id size="medium" class="objectfit-image" /}
+                                        {@image id=image_id size="large" class="objectfit-image" /}
                                     </div>
                                 {/image_id}
                             </div>
