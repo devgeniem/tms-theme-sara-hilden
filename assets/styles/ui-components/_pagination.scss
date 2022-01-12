@@ -1,6 +1,11 @@
 .pagination {
     &-item__link {
         border: .125rem solid $primary;
+
+        &.hellip {
+            border: 0;
+            color: $primary;
+        }
     }
 
     .is-current {
