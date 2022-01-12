@@ -7,6 +7,11 @@
 
     @include from($tablet) {
         height: 43.7rem;
+        height: auto;
+    }
+
+    &__inner {
+        position: static;
     }
 
     &--box &__inner {
@@ -17,9 +22,7 @@
         @include hero-height;
     }
 
-    &__inner {
-        position: static;
-    }
+    
     
     &__box {
         left: 0;
