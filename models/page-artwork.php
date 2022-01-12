@@ -55,6 +55,28 @@ class PageArtwork extends ArchiveArtist {
     }
 
     /**
+     * Return translated strings.
+     *
+     * @return array[]
+     */
+    public function strings() : array {
+        return [
+            'search'         => [
+                'label'             => __( 'Search for artwork', 'tms-theme-sara_hilden' ),
+                'submit_value'      => __( 'Search', 'tms-theme-sara_hilden' ),
+                'input_placeholder' => __( 'Search query', 'tms-theme-sara_hilden' ),
+            ],
+            'terms'          => [
+                'show_all' => __( 'Show All', 'tms-theme-sara_hilden' ),
+            ],
+            'no_results'     => __( 'No results', 'tms-theme-sara_hilden' ),
+            'filter'         => __( 'Filter', 'tms-theme-sara_hilden' ),
+            'sort'           => __( 'Sort', 'tms-theme-sara_hilden' ),
+            'art_categories' => __( 'Categories', 'tms-theme-sara_hilden' ),
+        ];
+    }
+
+    /**
      * Page title
      *
      * @return string

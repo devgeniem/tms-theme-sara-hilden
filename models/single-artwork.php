@@ -202,17 +202,27 @@ class SingleArtwork extends SingleArtist {
     /**
      * Returns artist link.
      */
-    public function artist_link() {
+    public function artist_links() {
         $artists = array_keys( $this->get_artist_map() );
 
         if ( empty( $artists ) ) {
             return false;
         }
 
-        return [
-            'link' => get_permalink( $artists[0] ),
-            'text' => __( 'View artist', 'tms-theme-sara_hilden' ),
-        ];
+        $has_multiple = count( $artists ) > 1;
+
+        return array_map( function ( $artist ) use ( $has_multiple ) {
+            $view_artists_text = __( 'View artist', 'tms-theme-sara_hilden' );
+
+            if ( $has_multiple ) {
+                $view_artists_text .= ': ' . get_the_title( $artist );
+            }
+
+            return [
+                'link' => get_permalink( $artist ),
+                'text' => $view_artists_text,
+            ];
+        }, $artists );
     }
 
     /**
