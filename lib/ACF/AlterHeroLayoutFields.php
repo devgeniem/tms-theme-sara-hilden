@@ -35,6 +35,7 @@ class AlterHeroLayoutFields {
             unset( $fields['align'] );
             $fields['link']->set_wrapper_width( 100 );
             $fields['image']->set_required();
+            $fields['description']->set_maxlength( 200 );
 
             // $fields['rows']->sub_fields['aspect_ratio']->set_wrapper_width( 50 );
         }

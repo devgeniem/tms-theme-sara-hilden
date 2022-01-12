@@ -1,4 +1,9 @@
 .hero {
+
+    &--box &__inner {
+        transform: none;
+    }
+    
     &__box {
         left: 0;
         bottom: -7rem;
