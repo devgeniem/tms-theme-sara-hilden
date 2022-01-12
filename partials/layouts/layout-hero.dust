@@ -1,0 +1,37 @@
+<section {?anchor}id="{anchor|s}"{/anchor}
+         class="hero is-relative has-background-cover {container_class|s} mb-12" {@inlinebg id=image size="fullhd" /}>
+
+    {?video}
+        <div class="is-overlay is-clipped" aria-hidden="true" tabindex="-1">
+            <video src="{video}" class="hero__video is-hidden" loop muted playsinline></video>
+
+            <button class="hero__control hero__control--play" aria-label="{Strings.s.video.play|s}">
+                {>"ui/icon" icon="play" class="icon--xxxlarge"  /}
+            </button>
+
+            <button class="hero__control hero__control--pause" aria-label="{Strings.s.video.pause|s}">
+                {>"ui/icon" icon="pause" class="icon--xxxlarge"  /}
+            </button>
+        </div>
+    {/video}
+
+    <div class="hero__inner has-height-100">
+        <div class="container has-height-100">
+            <div class="columns has-height-100">
+                <div class="column has-height-100 is-relative">
+                    <div class="hero__box is-absolute {box_classes|s}">
+                        {?title}
+                            <h1 class="mt-0 h2 no-hyphens">
+                                {title|s}
+                            </h1>
+                        {/title}
+
+                        {description|s}
+
+                        {>"ui/button-link" link=link classes=button_classes icon="arrow-right" icon_classes="icon--medium" /}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
