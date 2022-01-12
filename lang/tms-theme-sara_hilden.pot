@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TMS Theme Sara Hilden\n"
-"POT-Creation-Date: 2022-01-11 16:23+0200\n"
-"PO-Revision-Date: 2022-01-11 16:15+0200\n"
+"POT-Creation-Date: 2022-01-12 09:55+0200\n"
+"PO-Revision-Date: 2022-01-12 09:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -64,34 +64,36 @@ msgid "Search for artist"
 msgstr ""
 
 #: models/archive-artist.php:145 models/archive-exhibition.php:108
+#: models/page-artwork.php:66
 msgid "Search"
 msgstr ""
 
-#: models/archive-artist.php:146
+#: models/archive-artist.php:146 models/page-artwork.php:67
 msgid "Search query"
 msgstr ""
 
-#: models/archive-artist.php:149
+#: models/archive-artist.php:149 models/page-artwork.php:70
 msgid "Show All"
 msgstr ""
 
 #: models/archive-artist.php:151 models/archive-exhibition.php:111
+#: models/page-artwork.php:72
 msgid "No results"
 msgstr ""
 
-#: models/archive-artist.php:152
+#: models/archive-artist.php:152 models/page-artwork.php:73
 msgid "Filter"
 msgstr ""
 
-#: models/archive-artist.php:153
+#: models/archive-artist.php:153 models/page-artwork.php:74
 msgid "Sort"
 msgstr ""
 
-#: models/archive-artist.php:154
+#: models/archive-artist.php:154 models/page-artwork.php:75
 msgid "Categories"
 msgstr ""
 
-#: models/archive-artist.php:242 models/page-artwork.php:120
+#: models/archive-artist.php:242 models/page-artwork.php:142
 msgid "All"
 msgstr ""
 
@@ -111,11 +113,11 @@ msgstr ""
 msgid "Youngest first"
 msgstr ""
 
-#: models/archive-artist.php:327 models/single-artwork.php:214
+#: models/archive-artist.php:327 models/single-artwork.php:215
 msgid "View artist"
 msgstr ""
 
-#: models/archive-artist.php:367 models/archive-exhibition.php:359
+#: models/archive-artist.php:367 models/archive-exhibition.php:361
 #, php-format
 msgctxt "filter with search clause results summary"
 msgid "%1$1s result found for \"%2$2s\""
@@ -123,7 +125,7 @@ msgid_plural "%1$1s results found for \"%2$2s\""
 msgstr[0] ""
 msgstr[1] ""
 
-#: models/archive-artist.php:381 models/archive-exhibition.php:373
+#: models/archive-artist.php:381 models/archive-exhibition.php:375
 #, php-format
 msgctxt "filter results summary"
 msgid "%1$1s result found"
@@ -143,16 +145,20 @@ msgstr ""
 msgid "Upcoming"
 msgstr ""
 
-#: models/archive-exhibition.php:215
+#: models/archive-exhibition.php:217
 msgid "Current exhibitions"
 msgstr ""
 
-#: models/archive-exhibition.php:220
+#: models/archive-exhibition.php:222
 msgid "Archives"
 msgstr ""
 
-#: models/archive-exhibition.php:250
+#: models/archive-exhibition.php:252
 msgid "Filter by year"
+msgstr ""
+
+#: models/page-artwork.php:65
+msgid "Search for artwork"
 msgstr ""
 
 #: models/single-artwork.php:81
