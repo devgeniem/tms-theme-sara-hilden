@@ -196,6 +196,20 @@ class PageArtwork extends PageArtist {
     }
 
     /**
+     * Supply data for active filter hidden input.
+     *
+     * @return string[]
+     */
+    public function active_filter_data() : ?array {
+        $active_filter = self::get_filter_query_var();
+
+        return $active_filter ? [
+            'name'  => self::FILTER_QUERY_VAR,
+            'value' => $active_filter,
+        ] : null;
+    }
+
+    /**
      * Sort options
      *
      * @return array

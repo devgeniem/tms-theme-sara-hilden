@@ -172,6 +172,20 @@ class PageArtist extends BaseModel {
     }
 
     /**
+     * Supply data for active filter hidden input.
+     *
+     * @return string[]
+     */
+    public function active_filter_data() : ?array {
+        $active_filter = self::get_filter_query_var();
+
+        return $active_filter ? [
+            'name'  => self::FILTER_QUERY_VAR,
+            'value' => $active_filter,
+        ] : null;
+    }
+
+    /**
      * Filters
      *
      * @return array
@@ -219,11 +233,11 @@ class PageArtist extends BaseModel {
 
         $options = [
             [
-                'label' => __( 'A-Ö', 'tms-theme-sara_hilden' ),
+                'label' => __( 'Nimen mukaan', 'tms-theme-sara_hilden' ),
                 'value' => '',
             ],
             [
-                'label' => __( 'Ö-A', 'tms-theme-sara_hilden' ),
+                'label' => __( 'Nimen mukaan, nouseva', 'tms-theme-sara_hilden' ),
                 'value' => 'desc',
             ],
             [
