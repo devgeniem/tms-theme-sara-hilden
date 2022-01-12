@@ -42,6 +42,12 @@ $button-secondary-border-color: $light;
             .icon {
                 fill: currentColor !important;
             }
+
+            &:focus,
+            &.is-focused {
+                outline: .125rem dotted $black !important;
+            }
+
         }
     }
 
@@ -78,9 +84,20 @@ $button-secondary-border-color: $light;
                 fill: currentColor !important;
             }
         }
+
+        &.is-inverted {
+            &:focus,
+            &.is-focused { 
+                outline: .125rem dotted $white !important;
+            }
+        }
     }
 
     &.is-small {
         border-radius: 0 !important;
+    }
+
+    &.is-rounded {
+        border-radius: 50% !important;
     }
 }
