@@ -8,7 +8,7 @@
                 {>"shared/archive-filters" /}
 
                 {?results.summary}
-                    <p>{results.summary|s}</p>
+                    <p role="status">{results.summary|s}</p>
                 {/results.summary}
 
                 <div class="columns is-multiline is-variable is-6-desktop">
