@@ -3,7 +3,7 @@
         <div class="overlay overlay--dark-gradient"></div>
     {/image_id}
 
-    <h3 class="h6 m-0 is-relative is-capitalized">{title|s}</h3>
+    <h3 class="h6 m-0 is-relative">{title|s}</h3>
 
     {>"ui/icon" icon="arrow-right" class="icon--large is-relative ml-4 ml-8-desktop {icon_classes|s}" /}
 </a>
