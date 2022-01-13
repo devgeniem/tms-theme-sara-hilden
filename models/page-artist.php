@@ -332,9 +332,13 @@ class PageArtist extends BaseModel {
             $item->permalink   = get_the_permalink( $item->ID );
             $additional_fields = get_fields( $item->ID );
 
-            $item->years  = ! empty( $additional_fields['death_year'] )
-                ? $additional_fields['death_year']
-                : $additional_fields['birth_year'];
+            if ( ! empty( $additional_fields['birth_year'] ) && ! empty( $additional_fields['death_year'] ) ) {
+                $item->years = $additional_fields['birth_year'] . ' - ' . $additional_fields['death_year'];
+            }
+            elseif ( ! empty( $additional_fields['birth_year'] ) ) {
+                $item->years = $additional_fields['birth_year'];
+            }
+
             $item->fields = $additional_fields;
 
             $item->link = [
