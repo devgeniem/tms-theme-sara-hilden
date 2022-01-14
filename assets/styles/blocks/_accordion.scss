@@ -1,5 +1,11 @@
 .accordion {
     
+    &__description {
+        margin-left: 0 !important;
+        margin-right:0 !important;
+        max-width: none !important;
+    }
+
     &__row {
         border-radius: 0;
         border: .0075rem solid $black;
@@ -19,5 +25,9 @@
             outline: .125rem dotted $black;
             outline-offset: 0.25rem;
         }
+    }
+
+    a {
+        text-decoration: underline;
     }
 }
