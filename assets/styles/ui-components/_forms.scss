@@ -2,15 +2,19 @@
     background-color: $light;
     color: $black;
 
-    select, 
-    input, 
+    select,
+    input,
     textarea {
         border-radius: 0;
         padding: 0.8rem !important;
     }
-    
+
     input[type="submit"] {
         font-weight: 700;
         padding: 0.8rem 2rem !important;
     }
+}
+
+input[type="text"] {
+    border-radius: 0;
 }
