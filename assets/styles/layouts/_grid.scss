@@ -1,0 +1,32 @@
+.grid {
+    &__item {
+        &__details {
+            z-index: 9;
+            p {
+                @include from($tablet) {
+                -webkit-line-clamp: 8;
+                }
+            }
+        }
+        
+        &__image {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position:absolute;
+            
+            @include from($tablet) {
+                position: relative;
+            }
+
+            &.image.is-square {
+                padding-top: 0;
+                
+                @include from($tablet) {
+                    padding-top: 100%;
+                }
+            }
+        }
+    }
+}
