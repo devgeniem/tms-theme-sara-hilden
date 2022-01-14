@@ -34,8 +34,8 @@ class AlterGridFieldsData {
      */
     public function alter_format( array $layout ) : array {
         foreach ( $layout['repeater'] as $key => $item ) {
-            $layout['repeater'][ $key ]['classes'] = str_replace( [ 'has-colors-primary', 'has-colors-secondary' ], [ 'has-colors-white', 'has-colors-light' ], $layout['repeater'][ $key ]['classes'] );
-            $layout['repeater'][ $key ]['button'] = 'is-primary has-text-weight-semibold';
+            $layout['repeater'][ $key ]['classes'] = str_replace( [ 'has-colors-primary', 'has-colors-secondary' ], [ 'has-colors-white', 'has-colors-light' ], $layout['repeater'][ $key ]['classes'] ); // phpcs:ignore
+            $layout['repeater'][ $key ]['button']  = 'is-primary has-text-weight-semibold';
         }
         return $layout;
     }
