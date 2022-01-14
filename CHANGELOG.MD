@@ -14,6 +14,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-519: Call to action layout
 - TMS-509: Front page hero layout
 - TMS-523: Table styles
+- TMS-503: Material block styles
+- TMS-529: Grid Fields.
+- TMS-527: Key figures styles
+- TMS-519: Call to action layout
+- TMS-509: Front page hero layout
 - TMS-524: Link list styles
 - TMS-525: Subpages block & laout styles
 - TMS-527: Key figures styles
