@@ -1,0 +1,80 @@
+{>"shared/base" /}
+
+{<content}
+    {#SingleDynamicEventCpt}
+        <main class="main-content" id="main-content">
+            <article class="entry">
+                {?SingleDynamicEventCpt.hero_image}
+                    {>"views/page/page-hero" image=SingleDynamicEventCpt.hero_image /}
+                {/SingleDynamicEventCpt.hero_image}
+
+                {?Header.breadcrumbs}
+                    <div class="section pt-6 pb-0">
+                        <div class="container">
+                            <div class="columns">
+                                <div class="column">
+                                    {>"ui/breadcrumbs" breadcrumbs=Header.breadcrumbs /}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {/Header.breadcrumbs}
+
+                <section class="section pt-6 pt-8-tablet">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column is-10 is-offset-1">
+                                {?event.normalized.short_description}
+                                    <div class="entry__content is-content-grid mb-5 has-text-lead has-text-centered">
+                                        <p class="mt-4 mb-4 has-text-large">
+                                            {event.normalized.short_description|s}
+                                        </p>
+                                    </div>
+                                {/event.normalized.short_description}
+
+                                <div
+                                    class="entry__info section pt-6 pb-6 pb-8-desktop has-text-weight-bold is-uppercase has-border-bottom-1 has-border-secondary {template_classes.hero_info|s}">
+                                    {>"views/single-dynamic-event/single-dynamic-event-hero-meta" /}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="columns">
+                            <div class="column">
+                                <div class="columns is-multiline is-variable is-8 mt-5 mt-8-desktop mb-8">
+                                    <div class="column is-5-desktop is-offset-1-desktop keep-vertical-spacing">
+                                        {event.normalized.description|s}
+                                    </div>
+
+                                    <div class="column is-5-desktop">
+                                        {>"views/single-dynamic-event/single-dynamic-event-info" /}
+                                    </div>
+                                </div>
+
+                                <div class="entry__content is-content-grid mb-8 mb-10-desktop keep-vertical-spacing">
+                                    {@content /}
+                                </div>
+
+                                {?share_links}
+                                    <div class="columns">
+                                        <div class="column is-10-desktop is-offset-1-desktop">
+                                            <div class="entry__share-links">
+                                                <h2 class="h6 mt-6 mb-6">
+                                                    {Strings.s.share.share_event|s}
+                                                </h2>
+
+                                                {>"ui/share-links" share_links=share_links li_class="mr-4" /}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {/share_links}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </main>
+
+        {>"ui/components" components=components /}
+    {/SingleDynamicEventCpt}
+{/content}

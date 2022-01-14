@@ -6,7 +6,9 @@
             <div class="has-background-white is-relative p-8 pl-4 pl-0-desktop mr-12-desktop">
                 <div class="columns">
                     <div class="column is-8-desktop">
-                        {>"ui/entry-title" class="m-0" /}
+                        <h1 class="entry__title m-0">
+                            {@title /}
+                        </h1>
                     </div>
                 </div>
             </div>
