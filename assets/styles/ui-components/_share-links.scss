@@ -14,11 +14,11 @@
         &.is-focused {
             background-color: $link !important;
             .icon {
-                fill: $white !important;
+                fill: $white !important; 
             }
         }
     }
     .icon {
-        fill: $link !important;
+        fill: $link !important; 
     }
 }
