@@ -1,0 +1,13 @@
+.table {
+    background-color: $white;
+}
+.tablepress {
+
+     .even td {
+        background-color: $light !important;
+    }
+
+    .odd td {
+        background-color: $white !important;
+    }
+}
