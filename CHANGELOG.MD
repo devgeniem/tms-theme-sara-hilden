@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-509: Front page hero layout
 - TMS-524: Link list styles
 - TMS-532: Share links' styles
 - TMS-526: Social media feed
