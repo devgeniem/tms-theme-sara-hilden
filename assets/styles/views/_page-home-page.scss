@@ -1,0 +1,9 @@
+.page-template-page-front-page {
+    .main-content {
+        .hero:first-child {
+            @include from($widescreen) {
+                margin-bottom: 10rem !important;
+            }
+        }
+    }
+}

@@ -5,6 +5,11 @@
 
 namespace TMS\Theme\Sara_Hilden;
 
+use Closure;
+use function add_action;
+use function add_filter;
+use function get_stylesheet_directory;
+
 /**
  * Class Assets
  *
@@ -37,6 +42,13 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
             return $mod_time;
 
         }, 10, 2 );
+
+        add_filter(
+            'tms/theme/icons',
+            Closure::fromCallable( [ $this, 'get_theme_icons' ] ),
+            15,
+            0
+        );
     }
 
     /**
@@ -70,5 +82,40 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
      */
     public function base_theme_asset_path( $full_path, $file ) : string { // // phpcs:ignore
         return get_template_directory_uri() . '/assets/dist/' . $file;
+    }
+
+    /**
+     * This enables cache busting for theme CSS and JS files by
+     * returning a microtime timestamp for the given files.
+     * If the file is not found for some reason, it uses the theme version.
+     *
+     * @param string $filename The file to check.
+     *
+     * @return int|string A microtime amount or the theme version.
+     */
+    protected static function get_theme_asset_mod_time( $filename = '' ) {
+        return file_exists( DPT_ASSET_CACHE_URI . '/' . $filename )
+            ? filemtime( DPT_ASSET_CACHE_URI . '/' . $filename )
+            : DPT_THEME_VERSION;
+    }
+
+    /**
+     * Get available icon choices.
+     *
+     * @return string[]
+     */
+    protected function get_theme_icons() {
+        $icons = parent::get_theme_icons();
+
+        $sara_hilden_icons = [
+            'cafesara'      => 'Cafe Sara',
+            'veistospuisto' => 'Veistospuisto',
+        ];
+
+        $icons = array_merge( $icons, $sara_hilden_icons );
+
+        asort( $icons );
+
+        return $icons;
     }
 }
