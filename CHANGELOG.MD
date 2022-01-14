@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-528: Removed display_artist field from ContentColumnFields.
 - TMS-517: Header notice
 - TMS-522: Accordion
+- TMS-527: Key figures styles
 - TMS-519: Call to action layout
 - TMS-509: Front page hero layout
 - TMS-524: Link list styles
