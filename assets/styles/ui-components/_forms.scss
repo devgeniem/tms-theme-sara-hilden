@@ -1,3 +1,12 @@
+form {
+    select,
+    input,
+    textarea {
+        border-radius: 0;
+        border-color: $primary;
+    }
+}
+
 .container .gform_wrapper {
     background-color: $light;
     color: $black;
@@ -13,8 +22,4 @@
         font-weight: 700;
         padding: 0.8rem 2rem !important;
     }
-}
-
-input[type="text"] {
-    border-radius: 0;
 }

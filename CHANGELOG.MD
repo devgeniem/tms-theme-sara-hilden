@@ -9,38 +9,29 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- TMS-517: Header notice
 - TMS-522: Accordion
-- TMS-519: Call to action layout
-- TMS-509: Front page hero layout
-- TMS-523: Table styles
 - TMS-503: Material block styles
 - TMS-529: Grid Fields.
 - TMS-527: Key figures styles
 - TMS-519: Call to action layout
 - TMS-509: Front page hero layout
 - TMS-524: Link list styles
-- TMS-525: Subpages block & laout styles
-- TMS-527: Key figures styles
+- TMS-532: Share links' styles
 - TMS-526: Social media feed
-- TMS-503: Material block styles
-- TMS-529: Grid Fields.
+- TMS-515: Image carousel layout styles
+- TMS-535: Image Banner styles
+- TMS-523: Table styles
 - TMS-502: Home view #35
-- TMS-536: Notice banner styles #1
+- TMS-536: Notice banner styles #16
+- TMS-533: Contacts block styles
 - TMS-538: Sitemap styling
 - TMS-528-2: Removed display_artist field from ContentColumnFields.
 - TMS-537-2: Classes for text align with editor
+- TMS-530: Image Gallery styles
 - TMS-492: Site header #18
 - TMS-542: Add 404 styles #17
 - TMS-511: Image block meta styles
 - TMS-510: Content page hero
-- TMS-515: Image carousel layout styles
-- TMS-530: Image Gallery styles
-- TMS-532: Share links' styles
-- TMS-535: Image Banner styles
-- TMS:538: Sitemap styling
-- TMS-533: Contacts block styles
-- TMS-534: Gravity Form styles
 - TMS-493: Sibling navigation #12
 - TMS-512: Front page logo wall colors
 - TMS-537:
