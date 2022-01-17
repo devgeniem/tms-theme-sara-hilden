@@ -29,6 +29,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         add_filter( 'tms/theme/footer/colors', [ $this, 'footer' ] );
 
         add_filter( 'tms/theme/event/group_title', [ $this, 'event_info_group_title_classes' ] );
+        add_filter( 'tms/theme/event/hero_icon_classes', fn() => '' );
         add_filter( 'tms/theme/event/info_group_classes', fn() => '' );
 
         add_filter( 'tms/theme/error404/search_link', [ $this, 'error404_search_link' ] );

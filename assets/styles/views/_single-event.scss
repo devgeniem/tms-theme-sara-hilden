@@ -1,4 +1,12 @@
 .page-template-page-event {
+    .entry {
+        &__hero-info {
+            .icon {
+                fill: $color-sarahilden-gray !important;
+            }
+        }
+    }
+
     .info-group {
         &__label {
             color: $primary;
