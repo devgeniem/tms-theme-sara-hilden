@@ -6,17 +6,4 @@
             }
         }
     }
-
-    .info-group {
-        &__label {
-            color: $primary;
-            font-size: 1rem;
-            font-weight: $weight-bold !important;
-            text-transform: uppercase;
-
-            .icon {
-                fill: $color-sarahilden-gray !important;
-            }
-        }
-    }
 }
