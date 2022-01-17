@@ -3,9 +3,7 @@
      <a href="{permalink}" class="has-text-black is-block">
         {?featured_image}
             <div class="image is-5by3 mb-5">
-               
-                    {@image id=featured_image size="medium_large" class="objectfit-image" /}
-                
+                {@image id=featured_image size="medium_large" class="objectfit-image" /}
             </div>
         {/featured_image}
 
