@@ -22,9 +22,11 @@
                         class="archive-exhibition__results columns">
                         <div class="column {^results.show_past}is-10-desktop is-offset-1-desktop{/results.show_past}">
                             <div class="columns is-multiline is-variable is-tablet keep-vertical-spacing">
-                                {#results.current_exhibitions}
-                                    {>"{results.partial}" exhibition=. /}
-                                {/results.current_exhibitions}
+                                {^results.show_past}
+                                    {#results.current_exhibitions}
+                                        {>"{results.partial}" exhibition=. /}
+                                    {/results.current_exhibitions}
+                                {/results.show_past}
 
                                 {#results.posts}
                                     {>"{results.partial}" exhibition=. /}
