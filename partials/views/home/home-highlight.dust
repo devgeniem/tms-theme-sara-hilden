@@ -3,7 +3,7 @@
         <a href="{highlight.permalink}" class="has-text-black is-block">
             <div class="columns is-vcentered is-desktop is-gapless">
                 <div class="highlight-article__image-container column is-6-desktop is-7-widescreen is-relative">
-                        {@image id=highlight.featured_image size="large" class="objecfit-image" /}
+                    {@image id=highlight.featured_image size="large" class="objecfit-image" /}
                 </div>
 
                 <div class="column is-6-desktop is-5-widescreen has-text-secondary-paragraph">
