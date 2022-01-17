@@ -6,7 +6,7 @@
                     {@image id=exhibition.image size="large" class="objectfit-image" /}
 
                     {?exhibition.fields.is_upcoming}
-                        <div class="exhibition-item__image-badge">
+                        <div class="exhibition-item__image-badge" aria-hidden="true">
                             <span class="exhibition-item__badge-text has-text-small">
                                 {strings.upcoming_badge|s}
                             </span>
@@ -24,6 +24,10 @@
                         <a href="{exhibition.permalink}" class="has-text-primary">
                             {exhibition.post_title|s}
                         </a>
+
+                        <span class="sr-only">
+                            {strings.upcoming_badge|s}
+                        </span>
                     </h2>
 
                     {?exhibition.date}
