@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-522: Accordion
 - TMS-503: Material block styles
 - TMS-529: Grid Fields.
 - TMS-527: Key figures styles
