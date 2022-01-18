@@ -1,0 +1,44 @@
+.subpages__items {
+
+    a {
+        &:hover {
+            color: $black !important;
+        }
+    }
+    
+    .h6 {
+        color: inherit;
+        text-transform: none;
+    }
+
+    .icon {
+        fill: $black !important;
+    }
+
+    .has-background-image {
+
+        .icon {
+            fill: $white !important;
+        }
+
+        &:hover {
+            color: $white !important;
+        }
+    }
+    
+        .has-background-black  {
+
+            &:hover {
+                color: $white !important;
+            }
+
+            .icon {
+                fill: $white !important;
+            }
+            
+        }
+        
+        .has-background-white {
+            border: 2px solid $black;
+        }
+}

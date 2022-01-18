@@ -30,6 +30,7 @@ $button-secondary-border-color: $light;
             outline: .125rem dotted $black !important;
             outline-offset: .25rem !important;
             background-color: $black !important;
+            color: $white !important;
         }
 
         &:active,
@@ -95,5 +96,9 @@ $button-secondary-border-color: $light;
 
     &.is-small {
         border-radius: 0 !important;
+    }
+
+    &.is-rounded {
+        border-radius: 50% !important;
     }
 }
