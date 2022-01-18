@@ -28,6 +28,8 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         add_filter( 'tms/theme/header/colors', [ $this, 'header' ] );
         add_filter( 'tms/theme/footer/colors', [ $this, 'footer' ] );
 
+        add_filter( 'tms/theme/single_blog/classes', [ $this, 'single_blog_classes' ] );
+
         add_filter( 'tms/theme/error404/search_link', [ $this, 'error404_search_link' ] );
         add_filter( 'tms/theme/error404/home_link', [ $this, 'error404_home_link' ] );
         add_filter( 'tms/acf/tab/error404/fields', [ $this, 'remove_404_alignment_setting' ] );
@@ -105,5 +107,20 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      */
     public function remove_404_alignment_setting( array $fields ) : array {
         return array_filter( $fields, fn( $f ) => $f->get_name() !== '404_alignment' );
+    }
+
+    /**
+     * Override event item classes.
+     *
+     * @param array $classes Classes.
+     *
+     * @return array
+     */
+    public function single_blog_classes( $classes ) : array {
+        $classes['info_section']         = '';
+        $classes['info_section_authors'] = '';
+        $classes['info_section_button']  = 'is-primary';
+
+        return $classes;
     }
 }
