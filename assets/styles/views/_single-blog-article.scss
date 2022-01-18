@@ -1,0 +1,33 @@
+.single-blog-article {
+    .entry {
+        &__blog-info-container {
+            background-color: $color-vaalea-neutraali;
+
+            .button-toggle {
+                margin: $theme-spacing 0 !important;
+                font-size: .9rem !important;
+                font-weight: $weight-semibold !important;
+                text-decoration: underline !important;
+            }
+        }
+
+        &__blog-description {
+            .h5 {
+                margin-bottom: $theme-spacing !important;
+                font-size: 1.75rem !important;
+                font-weight: $weight-normal !important;
+                line-height: 148%;
+                text-transform: none !important;
+            }
+        }
+
+        &__blog-author-text {
+            .h5 {
+                font-size: 1.35rem !important;
+                font-weight: $weight-bold;
+                letter-spacing: .02rem !important;
+                line-height: 139%;
+            }
+        }
+    }
+}
