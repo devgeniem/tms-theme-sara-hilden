@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-642: Quote
 - TMS-534: Gravity Form styles
 - TMS-518: Article hightlights
 - TMS-525: Subpages block & layout styles
