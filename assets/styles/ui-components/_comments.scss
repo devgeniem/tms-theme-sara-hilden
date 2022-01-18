@@ -1,0 +1,95 @@
+// sass-lint:disable no-ids
+
+.section {
+    &--comments {
+        border: 0 !important;
+    }
+}
+
+.comments-area {
+    .comment {
+        &__body {
+            border: 1px solid $color-sarahilden-gray;
+        }
+
+        &__heading {
+            font-weight: $weight-bold !important;
+        }
+
+        &__content {
+            font-size: .9rem !important;
+        }
+
+        &__author-badge {
+            margin-left: $theme-spacing-quarter !important;
+            font-size: .85rem !important;
+            vertical-align: baseline;
+
+            &::before {
+                content: "/";
+                margin-right: $theme-spacing-quarter;
+            }
+
+            &::after {
+                content: "";
+            }
+        }
+    }
+
+    .comment-notes {
+        font-weight: $weight-semibold !important;
+    }
+
+    .comments {
+        &__form-container {
+            @include from($desktop) {
+                margin-top: $theme-spacing-four;
+            }
+
+            label {
+                display: block;
+                margin-bottom: $theme-spacing-quarter;
+                font-size: .9rem !important;
+                font-weight: $weight-normal !important;
+            }
+        }
+    }
+
+    //
+    //.comment {
+    //    > .comment {
+    //        padding-left: $theme-spacing-oneandhalf;
+    //    }
+    //}
+    //
+    .comment-form-comment,
+    .comment-form-author,
+    .comment-form-email,
+    .comment-form-url {
+        label {
+            display: block;
+            margin-bottom: $theme-spacing-quarter;
+            font-size: .9rem !important;
+            font-weight: $weight-normal !important;
+        }
+
+        input,
+        textarea {
+            padding: $theme-spacing-half;
+            border-radius: 0 !important;
+            border-color: $color-sarahilden-gray;
+        }
+    }
+
+
+    //
+    //.required {
+    //    color: $primary;
+    //}
+    //
+    //#cancel-comment-reply-link {
+    //    display: block;
+    //    margin-top: $theme-spacing-three-quarters;
+    //}
+    //
+}
