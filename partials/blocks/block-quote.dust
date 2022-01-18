@@ -7,9 +7,11 @@
 
         {?author}
             <div
-                class="quote__author mt-5 is-uppercase is-size-7 has-text-centered {#classes.author}{.}{@sep} {/sep}{/classes.author}">
+                class="quote__author mt-5 is-uppercase is-size-7 has-text-centered {#classes.author}{.}{@sep} {/sep}{/classes.author}" aria-hidden="true">
                 {author|s}
+                
             </div>
+            <span class="is-sr-only">{author|s}</span>
         {/author}
     </div>
 {/quote}
