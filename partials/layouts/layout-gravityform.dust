@@ -1,0 +1,13 @@
+{?gravityform}
+    <section class="gravityform section has-background-light" {?anchor}id="{anchor|s}"{/anchor}>
+        <div class="container">
+            <div class="columns is-justify-content-center">
+                <div class="column is-8-widescreen is-10-desktop is-10-tablet">
+
+                {gravityform|s}
+
+                </div>
+            </div>
+        </div>
+    </section>
+{/gravityform}
