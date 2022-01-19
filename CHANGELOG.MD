@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - TMS-642: Quote
+<<<<<<< HEAD
+=======
+- TMS-534: Gravity Form styles
+>>>>>>> tms-506
 - TMS-518: Article hightlights
 - TMS-525: Subpages block & layout styles
 - TMS-522: Accordion
@@ -22,7 +26,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-532: Share links' styles
 - TMS-526: Social media feed
 - TMS-515: Image carousel layout styles
+<<<<<<< HEAD
 - TMS-534: Gravity Form styles
+=======
+>>>>>>> tms-506
 - TMS-535: Image Banner styles
 - TMS-523: Table styles
 - TMS-502: Home view #35
