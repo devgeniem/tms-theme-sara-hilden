@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-500: Single Exhibition #27
 - TMS-497-2: Artists & Artwork #52
 - TMS-517: Header notice
 - TMS-642: Quote
