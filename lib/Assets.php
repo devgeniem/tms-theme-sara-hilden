@@ -85,21 +85,6 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
     }
 
     /**
-     * This enables cache busting for theme CSS and JS files by
-     * returning a microtime timestamp for the given files.
-     * If the file is not found for some reason, it uses the theme version.
-     *
-     * @param string $filename The file to check.
-     *
-     * @return int|string A microtime amount or the theme version.
-     */
-    protected static function get_theme_asset_mod_time( $filename = '' ) {
-        return file_exists( DPT_ASSET_CACHE_URI . '/' . $filename )
-            ? filemtime( DPT_ASSET_CACHE_URI . '/' . $filename )
-            : DPT_THEME_VERSION;
-    }
-
-    /**
      * Get available icon choices.
      *
      * @return string[]
