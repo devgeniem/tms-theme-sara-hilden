@@ -1,0 +1,41 @@
+.page-template-page-artwork,
+.page-template-page-artist,
+.archive {
+    .filters {
+        a {
+            letter-spacing: .01rem;
+        }
+
+        .h6 {
+            font-weight: $weight-normal;
+            text-transform: none !important;
+        }
+
+        &--search {
+            input[type="text"] {
+                border-radius: 0 !important;
+
+                @include from($widescreen) {
+                    min-width: 17.5rem;
+                }
+            }
+
+            .button {
+                border-color: $primary !important;
+            }
+        }
+
+        select {
+            border-radius: 0 !important;
+        }
+
+        &--search-container {
+            display: flex;
+            gap: $theme-spacing-half;
+
+            @include until($desktop) {
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
