@@ -1,12 +1,14 @@
 <section
     class="page__hero section is-relative p-0 has-background-cover" {?image}{@inlinebg id=image size="fullhd" /}{:else}{@inlinebg id=Page.hero_image size="fullhd" /}{/image}>
-    <div class="is-absolute has-bottom-0 is-fullwidth ">
-        <div class="container is-fullwidth is-relative">
-            <div class="has-background-white is-absolute is-fullheight partial-overlay"></div>
+    <div class="is-absolute has-bottom-0 has-width-100 ">
+        <div class="container has-width-100 is-relative">
+            <div class="has-background-white is-absolute has-height-100 partial-overlay"></div>
             <div class="has-background-white is-relative p-8 pl-4 pl-0-desktop mr-12-desktop">
                 <div class="columns">
                     <div class="column is-8-desktop">
-                        {>"ui/entry-title" class="m-0" /}
+                        <h1 class="entry__title m-0">
+                            {@title /}
+                        </h1>
                     </div>
                 </div>
             </div>
