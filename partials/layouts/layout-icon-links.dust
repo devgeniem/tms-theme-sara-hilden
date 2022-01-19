@@ -1,0 +1,32 @@
+<section {?anchor}id="{anchor|s}"{/anchor}
+         class="icon-links section has-background-primary-light--opaque-light has-text-centered">
+    <div class="container pt-8 pb-8 pt-10-desktop pb-10-desktop has-border-1 has-border-secondary">
+        <div class="columns">
+            <div class="column">
+                <div class="icon-links__grid">
+                    {#rows}
+                        <div class="icon-links__item keep-vertical-spacing">
+                            {?icon}
+                                {>"ui/icon" class="icon--xxxlarge is-primary mb-4" /}
+                            {/icon}
+
+                            {?title}
+                                <h2 class="h4 mt-0 mb-5">
+                                    {title|s}
+                                </h2>
+                            {/title}
+
+                            {?description}
+                                <div class="icon-links__item-description mb-5">
+                                    {description|s}
+                                </div>
+                            {/description}
+
+                            {>"ui/button-link" classes="is-primary" icon="arrow-right" icon_classes="icon--medium" /}
+                        </div>
+                    {/rows}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
