@@ -5,6 +5,7 @@ $button-secondary-border-color: $light;
 
 .button {
     border-radius: 0 !important;
+    letter-spacing: .04rem;
 
     &:hover,
     &:focus {

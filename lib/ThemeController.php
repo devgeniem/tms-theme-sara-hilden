@@ -6,6 +6,7 @@
 namespace TMS\Theme\Sara_Hilden;
 
 use ArchiveExhibition;
+use PageArtist;
 use TMS\Theme\Base\Interfaces;
 use TMS\Theme\Sara_Hilden\ThemeCustomizationController;
 
