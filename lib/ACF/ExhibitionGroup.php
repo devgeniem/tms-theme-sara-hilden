@@ -168,6 +168,9 @@ class ExhibitionGroup {
 
     /**
      * Set meta key year based on start date field
+     *
+     * @param mixed $value Meta value.
+     * @param int   $post_id POst ID.
      */
     protected function update_year_meta_field( $value, $post_id ) {
         if ( empty( $value ) ) {

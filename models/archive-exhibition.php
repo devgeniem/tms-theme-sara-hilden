@@ -1,7 +1,6 @@
 <?php
 /**
  *  Copyright (c) 2021. Geniem Oy
- *
  */
 
 use TMS\Theme\Base\Traits\Pagination;
