@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-505: Dynamic event #55
 - TMS-504: Event #54
 - TMS-501: Exhibition archive #53
 - TMS-500: Single Exhibition #27
