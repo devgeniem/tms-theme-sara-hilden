@@ -1,0 +1,14 @@
+.key-figures {
+    
+    &__number {
+        word-break: break-all;
+        &.is-text-big {
+            @include from($tablet) {
+                font-size: 4rem;
+            }
+
+        }
+    }
+    
+}
+
