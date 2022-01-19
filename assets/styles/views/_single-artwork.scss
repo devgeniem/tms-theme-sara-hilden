@@ -1,0 +1,9 @@
+.single-artwork {
+    &__artist-links {
+        margin: -$theme-spacing-quarter;
+
+        .button {
+            margin: $theme-spacing-quarter;
+        }
+    }
+}
