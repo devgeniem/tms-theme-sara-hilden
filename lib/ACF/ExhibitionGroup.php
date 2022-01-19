@@ -28,6 +28,13 @@ class ExhibitionGroup {
             'init',
             Closure::fromCallable( [ $this, 'register_fields' ] )
         );
+
+        add_action(
+            'acf/update_value/key=fg_exhibition_fields_start_date',
+            Closure::fromCallable( [ $this, 'update_year_meta_field' ] ),
+            10,
+            2
+        );
     }
 
     /**
@@ -77,8 +84,12 @@ class ExhibitionGroup {
     protected function get_details_tab( string $key ) : Field\Tab {
         $strings = [
             'tab'           => 'Lisätiedot',
-            'date'          => [
-                'title'        => 'Päiväys',
+            'start_date'    => [
+                'title'        => 'Alkupvm',
+                'instructions' => '',
+            ],
+            'end_date'      => [
+                'title'        => 'Loppupvm',
                 'instructions' => '',
             ],
             'title'         => [
@@ -107,16 +118,29 @@ class ExhibitionGroup {
             ->set_name( 'title' )
             ->set_instructions( $strings['title']['instructions'] );
 
-        $date_field = ( new Field\Text( $strings['date']['title'] ) )
-            ->set_key( "${key}_date" )
-            ->set_name( 'date' )
-            ->set_wrapper_width( 85 )
-            ->set_instructions( $strings['date']['instructions'] );
+        $display_format = 'j.n.Y';
+        $return_format  = 'Y-m-d';
+
+        $start_date_field = ( new Field\DatePicker( $strings['start_date']['title'] ) )
+            ->set_key( "${key}_start_date" )
+            ->set_name( 'start_date' )
+            ->set_wrapper_width( 43 )
+            ->set_display_format( $display_format )
+            ->set_return_format( $return_format )
+            ->set_instructions( $strings['start_date']['instructions'] );
+
+        $end_date_field = ( new Field\DatePicker( $strings['end_date']['title'] ) )
+            ->set_key( "${key}_end_date" )
+            ->set_name( 'end_date' )
+            ->set_wrapper_width( 43 )
+            ->set_display_format( $display_format )
+            ->set_return_format( $return_format )
+            ->set_instructions( $strings['end_date']['instructions'] );
 
         $is_upcoming_field = ( new Field\TrueFalse( $strings['is_upcoming']['title'] ) )
             ->set_key( "${key}_is_upcoming" )
             ->set_name( 'is_upcoming' )
-            ->set_wrapper_width( 15 )
+            ->set_wrapper_width( 14 )
             ->use_ui()
             ->set_instructions( $strings['is_upcoming']['instructions'] );
 
@@ -132,13 +156,32 @@ class ExhibitionGroup {
 
         $tab->add_fields( [
             $title_field,
-            $date_field,
+            $start_date_field,
+            $end_date_field,
             $is_upcoming_field,
             $opening_times_field,
             $location_field,
         ] );
 
         return $tab;
+    }
+
+    /**
+     * Set meta key year based on start date field
+     *
+     * @param string $value   Date value as as string.
+     * @param int    $post_id Target post ID.
+     *
+     * @return mixed
+     */
+    protected function update_year_meta_field( $value, $post_id ) {
+        if ( empty( $value ) ) {
+            return $value;
+        }
+
+        update_post_meta( $post_id, 'exhibition_year', substr( $value, 0, 4 ) );
+
+        return $value;
     }
 }
 

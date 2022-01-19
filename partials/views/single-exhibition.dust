@@ -41,16 +41,17 @@
                                 </div>
 
                                 <div class="column is-10 is-offset-1 has-border-bottom-1 has-border-secondary">
-                                    <div class="entry__details pt-6 pb-6 is-flex is-justify-content-space-around is-flex-wrap-wrap">
-                                        {?SingleExhibition.content.fields.date}
+                                    <div
+                                        class="entry__details pt-6 pb-6 is-flex is-justify-content-space-around is-flex-wrap-wrap">
+                                        {?SingleExhibition.content.date}
                                             <div class="is-flex is-align-items-center">
                                                 {>"ui/icon" icon="date" class="icon--xlarge" /}
 
                                                 <p class="entry__meta-text mb-0 ml-3 ml-4-desktop ml-5-fullhd has-text-weight-bold has-text-primary">
-                                                    {SingleExhibition.content.fields.date|s}
+                                                    {SingleExhibition.content.date|s}
                                                 </p>
                                             </div>
-                                        {/SingleExhibition.content.fields.date}
+                                        {/SingleExhibition.content.date}
 
                                         {?SingleExhibition.content.fields.opening_times}
                                             <div class="is-flex is-align-items-center">
