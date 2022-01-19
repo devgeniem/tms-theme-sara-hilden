@@ -2,7 +2,7 @@
     <div class="highlight-article">
         <a href="{highlight.permalink}" class="has-text-black is-block">
             <div class="columns is-vcentered is-desktop is-gapless">
-                <div class="highlight-article__image-container column is-6-desktop is-7-widescreen is-relative">
+                <div class="highlight-article__image-container column is-6-desktop is-7-widescreen is-relative is-16by9">
                     {@image id=highlight.featured_image size="large" class="objectfit-image" /}
                 </div>
 

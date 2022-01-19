@@ -373,7 +373,8 @@ class PageArtist extends BaseModel {
     /**
      * Get results summary text.
      *
-     * @param int $result_count Result count.
+     * @param int    $result_count  Result count.
+     * @param string $search_clause Search clause.
      *
      * @return string|bool
      */
