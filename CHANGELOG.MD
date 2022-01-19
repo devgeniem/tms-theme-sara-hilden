@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
-
+- TMS-640: Event search #58
 - TMS-531: Related articles #57
 - TMS-513: Icon links #56
 - TMS-505: Dynamic event #55
