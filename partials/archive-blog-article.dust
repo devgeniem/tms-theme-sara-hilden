@@ -32,7 +32,7 @@
                                             {>"ui/button-toggle" class="mb-5" text=Strings.s.blog_article.toggle_details target="js-archive-description-toggle-target" /}
 
                                             <p id="js-archive-description-toggle-target"
-                                               class="is-hidden has-text-left">{page_description|s}</p>
+                                               class="is-hidden has-text-left m-0">{page_description|s}</p>
                                         </div>
                                     </div>
                                 </div>
