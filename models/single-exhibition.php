@@ -58,7 +58,7 @@ class SingleExhibition extends BaseModel {
      *
      * @param int $id The post ID.
      */
-    static function get_date( $id ) {
+    public static function get_date( $id ) {
         $start_date    = get_field( 'start_date', $id );
         $opening_times = '';
 
@@ -81,7 +81,7 @@ class SingleExhibition extends BaseModel {
      *
      * @return string
      */
-    static function reformat_datetime_string( $string ) {
+    public static function reformat_datetime_string( $string ) {
         $datetime = DateTime::createFromFormat( 'Y-m-d', $string );
 
         return $datetime->format( 'j.n.Y' );
