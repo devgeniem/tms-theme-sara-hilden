@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-642: Quote
+- TMS-534: Gravity Form styles
+- TMS-518: Article hightlights
+- TMS-525: Subpages block & layout styles
+- TMS-522: Accordion
+- TMS-503: Material block styles
+- TMS-529: Grid Fields.
+- TMS-527: Key figures styles
+- TMS-519: Call to action layout
+- TMS-509: Front page hero layout
 - TMS-524: Link list styles
 - TMS-532: Share links' styles
 - TMS-526: Social media feed
