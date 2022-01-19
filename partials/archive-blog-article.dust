@@ -20,7 +20,7 @@
                             {/page_title}
 
                             {?page_subtitle}
-                                <p class="mb-6">
+                                <p class="mb-8">
                                     {page_subtitle|s}
                                 </p>
                             {/page_subtitle}
