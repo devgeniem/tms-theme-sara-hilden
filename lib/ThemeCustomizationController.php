@@ -28,6 +28,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         add_filter( 'tms/theme/header/colors', [ $this, 'header' ] );
         add_filter( 'tms/theme/footer/colors', [ $this, 'footer' ] );
 
+        add_filter( 'tms/theme/search/search_item', [ $this, 'event_search_classes' ] );
+        add_filter( 'tms/theme/event/group_title', [ $this, 'event_info_group_title_classes' ] );
+        add_filter( 'tms/theme/event/hero_icon_classes', fn() => '' );
+        add_filter( 'tms/theme/event/info_group_classes', fn() => '' );
+
         add_filter( 'tms/theme/single_blog/classes', [ $this, 'single_blog_classes' ] );
         add_filter( 'comment_form_submit_button', [ $this, 'comments_submit' ], 15, 0 );
 
@@ -112,6 +117,33 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
 
     /**
      * Override blog view classes.
+     *
+     * @param array $classes Classes.
+     *
+     * @return array
+     */
+    public function event_info_group_title_classes( $classes ) : array {
+        $classes['title'] = '';
+        $classes['icon']  = '';
+
+        return $classes;
+    }
+
+    /**
+     * Override event item classes.
+     *
+     * @param array $classes Classes.
+     *
+     * @return array
+     */
+    public function event_search_classes( $classes ) : array {
+        $classes['search_form'] = 'has-background-light';
+
+        return $classes;
+    }
+
+    /**
+     * Override event item classes.
      *
      * @param array $classes Classes.
      *
