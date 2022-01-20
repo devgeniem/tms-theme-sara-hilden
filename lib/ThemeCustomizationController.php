@@ -33,6 +33,9 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         add_filter( 'tms/theme/event/hero_icon_classes', fn() => '' );
         add_filter( 'tms/theme/event/info_group_classes', fn() => '' );
 
+        add_filter( 'tms/theme/single_blog/classes', [ $this, 'single_blog_classes' ] );
+        add_filter( 'comment_form_submit_button', [ $this, 'comments_submit' ], 15, 0 );
+
         add_filter( 'tms/theme/error404/search_link', [ $this, 'error404_search_link' ] );
         add_filter( 'tms/theme/error404/home_link', [ $this, 'error404_home_link' ] );
         add_filter( 'tms/acf/tab/error404/fields', [ $this, 'remove_404_alignment_setting' ] );
@@ -113,7 +116,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
     }
 
     /**
-     * Override event item classes.
+     * Override blog view classes.
      *
      * @param array $classes Classes.
      *
@@ -137,5 +140,35 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $classes['search_form'] = 'has-background-light';
 
         return $classes;
+    }
+
+    /**
+     * Override event item classes.
+     *
+     * @param array $classes Classes.
+     *
+     * @return array
+     */
+    public function single_blog_classes( $classes ) : array {
+        $classes['info_section']         = '';
+        $classes['info_section_authors'] = '';
+        $classes['info_section_button']  = 'is-primary';
+
+        return $classes;
+    }
+
+    /**
+     * Override comment form submit button.
+     *
+     * @return string
+     */
+    public function comments_submit() : string {
+        return sprintf(
+            '<button name="submit" type="submit" id="submit" class="button button--icon is-primary-invert" >%s %s</button>',
+            __( 'Send Comment', 'tms-theme-base' ),
+            '<svg class="icon icon--arrow-right icon--large">
+                <use xlink:href="#icon-arrow-right"></use>
+            </svg>'
+        );
     }
 }
