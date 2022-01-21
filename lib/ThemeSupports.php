@@ -7,6 +7,7 @@ namespace TMS\Theme\Sara_Hilden;
 
 use ArchiveExhibition;
 use PageArtist;
+use PageArtwork;
 
 /**
  * Class ThemeSupports
@@ -36,16 +37,16 @@ class ThemeSupports implements \TMS\Theme\Base\Interfaces\Controller {
      * @return array
      */
     protected function query_vars( $vars ) {
-        $vars[] = \PageArtwork::SEARCH_QUERY_VAR;
-        $vars[] = \PageArtwork::FILTER_QUERY_VAR;
+        $vars[] = ArchiveExhibition::SEARCH_QUERY_VAR;
+        $vars[] = ArchiveExhibition::YEAR_QUERY_VAR;
+        $vars[] = ArchiveExhibition::PAST_QUERY_VAR;
+
+        $vars[] = PageArtwork::SEARCH_QUERY_VAR;
+        $vars[] = PageArtwork::FILTER_QUERY_VAR;
 
         $vars[] = PageArtist::SEARCH_QUERY_VAR;
         $vars[] = PageArtist::FILTER_QUERY_VAR;
         $vars[] = PageArtist::ORDERBY_QUERY_VAR;
-
-        $vars[] = ArchiveExhibition::SEARCH_QUERY_VAR;
-        $vars[] = ArchiveExhibition::YEAR_QUERY_VAR;
-        $vars[] = ArchiveExhibition::PAST_QUERY_VAR;
 
         return $vars;
     }

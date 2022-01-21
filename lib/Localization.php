@@ -48,6 +48,10 @@ class Localization extends \TMS\Theme\Base\Localization implements \TMS\Theme\Ba
         $post_types[ PostType\Artwork::SLUG ]    = PostType\Artwork::SLUG;
         $post_types[ PostType\Exhibition::SLUG ] = PostType\Exhibition::SLUG;
 
+        $post_types[ PostType\Exhibition::SLUG ] = PostType\Exhibition::SLUG;
+        $post_types[ PostType\Artist::SLUG ]     = PostType\Artist::SLUG;
+        $post_types[ PostType\Artwork::SLUG ]    = PostType\Artwork::SLUG;
+
         return $post_types;
     }
 
