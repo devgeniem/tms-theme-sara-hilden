@@ -173,6 +173,12 @@ class ArchiveExhibition extends BaseModel {
             $posts_per_page   = self::PAST_ITEMS_PER_PAGE;
             $start_date_order = 'DESC';
 
+            $meta_query[] = [
+                'key'     => 'end_date',
+                'compare' => '<',
+                'value'   => date( 'Ymd' ),
+            ];
+
             $year = self::get_year_query_var();
 
             if ( ! empty( $year ) ) {
@@ -181,9 +187,9 @@ class ArchiveExhibition extends BaseModel {
                     'compare' => '=',
                     'value'   => $year,
                 ];
-
-                $wp_query->set( 'meta_query', $meta_query );
             }
+
+            $wp_query->set( 'meta_query', $meta_query );
 
             $s = self::get_search_query_var();
 
@@ -260,7 +266,7 @@ class ArchiveExhibition extends BaseModel {
         $upcoming_exhibitions = $this->results->upcoming;
 
         $unfiltered_past_exhibitions = array_filter( $this->results->all, [ $this, 'is_past' ] );
-        $past_exhibitions            = array_filter( $wp_query->posts, [ $this, 'is_past' ] );
+        $past_exhibitions            = $wp_query->posts;
         $this->results->past         = $past_exhibitions;
 
         $results = $is_past_archive ? $past_exhibitions : $upcoming_exhibitions;
