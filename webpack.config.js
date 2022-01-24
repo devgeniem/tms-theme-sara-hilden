@@ -142,18 +142,8 @@ const allOptimizations = {
     },
 };
 
-const hyphenopolyPath = path.resolve( __dirname, 'node_modules', 'hyphenopoly' );
-
 // All plugins to use.
 const allPlugins = [
-    new CopyPlugin( {
-        patterns: [
-            { from: path.resolve( hyphenopolyPath, 'patterns', 'fi.hpb' ), to: 'hyphenopoly' },
-            { from: path.resolve( hyphenopolyPath, 'patterns', 'sv.hpb' ), to: 'hyphenopoly' },
-            { from: path.resolve( hyphenopolyPath, 'patterns', 'en-us.hpb' ), to: 'hyphenopoly' },
-            { from: path.resolve( hyphenopolyPath, 'hyphenEngine.wasm' ), to: 'hyphenopoly' },
-        ],
-    } ),
 
     // Use BrowserSync.
     new BrowserSyncPlugin(
