@@ -9,6 +9,28 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-506: Single Blog Article #60
+
+## [0.1.0]
+
+### Added
+
+- TMS-641: Simplify single meta #59
+- TMS-640: Event search #58
+- TMS-531: Related articles #57
+- TMS-513: Icon links #56
+- TMS-505: Dynamic event #55
+- TMS-504: Event #54
+- TMS-501: Exhibition archive #53
+- TMS-500: Single Exhibition #27
+- TMS-497-2: Artists & Artwork #52
+- TMS-517: Header notice
+- TMS-642: Quote
+- TMS-534: Gravity Form styles
+- TMS-518: Article hightlights
+- TMS-525: Subpages block & layout styles
+- TMS-522: Accordion
+- TMS-503: Material block styles
 - TMS-529: Grid Fields.
 - TMS-527: Key figures styles
 - TMS-519: Call to action layout

@@ -49,6 +49,18 @@ $button-colors: (
 
 $color-background-primary-light--opaque-light: $secondary;
 $button-border-radius: 0;
+$button-font-weight: $weight-semibold;
+
+$pill-border-radius: 0;
+$pill-outlined-color: $black;
+
+$pagination-item-color: $black;
+$pagination-item-color-current: $white;
+$pagination-item-background-color: $white;
+$pagination-item-background-color-hover: $pagination-item-background-color;
+$pagination-item-background-color-focus: $pagination-item-background-color;
+$pagination-item-border-radius: 0;
+
 $sibling-navigation-item-border-color: $border-light;
 $sibling-navigation-item-active-border-color: $border-light;
 $sibling-navigation-item-color: $black;
@@ -66,6 +78,8 @@ $fly-out-nav-secondary-border-color: $light;
 $fly-out-nav-secondary-link: $link;
 $fly-out-nav-secondary-link-hover: $link-hover;
 $fly-out-nav-search-button-icon: currentColor;
+
+$duet-radius: 0;
 
 @import "../../../tms-theme-base/assets/styles/main";
 @import "main";
