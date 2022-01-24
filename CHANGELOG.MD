@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - TMS-506: Single Blog Article #60
+- TMS-541: Search view #66
 
 ## [0.1.0]
 
