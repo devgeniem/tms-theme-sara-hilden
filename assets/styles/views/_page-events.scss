@@ -1,0 +1,13 @@
+.page-template-page-events-search {
+    .events-form {
+        background-color: $color-sarahilden-gray;
+    }
+}
+
+.events {
+    &__item {
+        .icon {
+            fill: $color-sarahilden-gray !important;
+        }
+    }
+}

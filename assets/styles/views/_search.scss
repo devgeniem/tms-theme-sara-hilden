@@ -1,0 +1,57 @@
+.search {
+    &__form {
+        label {
+            text-transform: none;
+        }
+
+        input[type="text"] {
+            width: 100% !important;
+        }
+    }
+
+    &__button {
+        .icon {
+            color: $color-sarahilden-gray !important;
+        }
+    }
+
+    &__event-search {
+        a {
+            font-size: 1rem;
+            font-weight: 400;
+            text-transform: none;
+        }
+    }
+
+    .search-item {
+        .breadcrumb {
+            li {
+                &::before {
+                    width: .2rem;
+                    height: .2rem;
+                }
+            }
+
+            a {
+                padding: 0 $theme-spacing-three-quarters;
+            }
+
+            li:first-child {
+                a {
+                    padding: 0 .75rem 0 0;
+                }
+            }
+        }
+
+        &__title {
+            a {
+                text-decoration: none;
+
+                &:hover,
+                &:focus {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

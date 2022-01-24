@@ -12,4 +12,13 @@
             color: $primary-invert !important;
         }
     }
+
+    &.is-primary {
+        &:hover,
+        &:focus {
+            border-color: $primary !important;
+            background-color: $primary-invert !important;
+            color: $primary !important;
+        }
+    }
 }

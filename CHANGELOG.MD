@@ -10,6 +10,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - TMS:507: Blog Archive
+  
+## [0.1.0]
+
+### Added
+
+
+- TMS-506: Single Blog Article #60
+- TMS-541: Search view #66
+- TMS-641: Simplify single meta #59
+- TMS-640: Event search #58
+- TMS-531: Related articles #57
+- TMS-513: Icon links #56
+- TMS-505: Dynamic event #55
+- TMS-504: Event #54
+- TMS-501: Exhibition archive #53
+- TMS-500: Single Exhibition #27
 - TMS-497-2: Artists & Artwork #52
 - TMS-517: Header notice
 - TMS-642: Quote
