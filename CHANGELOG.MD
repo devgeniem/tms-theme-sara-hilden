@@ -10,7 +10,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - TMS:507: Blog Archive
-  
+- 
+## [1.0.1] - 2022-01-25
+
+- Hotfix reinstall packages
+
+## [1.0.0] - 2022-01-25
+
+### Added
+
+- TMS-506: Single Blog Article #60
+- TMS-541: Search view #66
+- Fix/exhibition-archive-pagination #67
+
 ## [0.1.0]
 
 ### Added
