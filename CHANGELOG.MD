@@ -11,6 +11,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS:507: Blog Archive
 - TMS-647: Build optimizations
+
+## [1.0.1] - 2022-01-25
+
+- Hotfix reinstall packages
+
+## [1.0.0] - 2022-01-25
+
+### Added
+
 - TMS-506: Single Blog Article #60
 - TMS-541: Search view #66
 - Fix/exhibition-archive-pagination #67
@@ -19,6 +28,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+
+- TMS-506: Single Blog Article #60
+- TMS-541: Search view #66
 - TMS-641: Simplify single meta #59
 - TMS-640: Event search #58
 - TMS-531: Related articles #57
