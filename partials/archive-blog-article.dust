@@ -29,7 +29,7 @@
                                 <div class="container">
                                     <div class="columns mb-8">
                                         <div class="column is-10 is-offset-1">
-                                            {>"ui/button-toggle" class="mb-5" text=Strings.s.blog_article.toggle_details target="js-archive-description-toggle-target" /}
+                                            {>"ui/button-toggle" class="mb-5 has-text-black" text=Strings.s.blog_article.toggle_details target="js-archive-description-toggle-target" /}
 
                                             <p id="js-archive-description-toggle-target"
                                                class="is-hidden has-text-centered m-0">{page_description|s}</p>
