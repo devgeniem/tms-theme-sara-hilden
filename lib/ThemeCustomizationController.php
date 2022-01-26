@@ -164,7 +164,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      */
     public function comments_submit() : string {
         return sprintf(
-            '<button name="submit" type="submit" id="submit" class="button button--icon is-primary-invert" >%s %s</button>',
+            '<button name="submit" type="submit" id="submit" class="button button--icon is-primary-invert" >%s %s</button>', // phpcs:ignore
             __( 'Send Comment', 'tms-theme-base' ),
             '<svg class="icon icon--arrow-right icon--large">
                 <use xlink:href="#icon-arrow-right"></use>
