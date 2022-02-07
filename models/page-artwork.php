@@ -166,14 +166,14 @@ class PageArtwork extends PageArtist {
         if ( empty( $categories ) ) {
             $categories = get_field( 'artwork_types' );
             $categories = ! empty( $categories ) ? array_map( fn( $c ) => $c->term_id, $categories ) : [];
-        }
 
-        $args['tax_query'] = [
-            [
-                'taxonomy' => ArtworkType::SLUG,
-                'terms'    => $categories,
-            ],
-        ];
+            $args['tax_query'] = [
+                [
+                    'taxonomy' => ArtworkType::SLUG,
+                    'terms'    => $categories,
+                ],
+            ];
+        }
 
         $s = self::get_search_query_var();
 
