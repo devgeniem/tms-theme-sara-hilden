@@ -166,14 +166,14 @@ class PageArtwork extends PageArtist {
         if ( empty( $categories ) ) {
             $categories = get_field( 'artwork_types' );
             $categories = ! empty( $categories ) ? array_map( fn( $c ) => $c->term_id, $categories ) : [];
-        }
 
-        $args['tax_query'] = [
-            [
-                'taxonomy' => ArtworkType::SLUG,
-                'terms'    => $categories,
-            ],
-        ];
+            $args['tax_query'] = [
+                [
+                    'taxonomy' => ArtworkType::SLUG,
+                    'terms'    => $categories,
+                ],
+            ];
+        }
 
         $s = self::get_search_query_var();
 
@@ -189,7 +189,7 @@ class PageArtwork extends PageArtist {
         $is_filtered   = $search_clause || self::get_filter_query_var();
 
         return [
-            'posts'       => $this->format_posts( $the_query->posts ),
+            'posts'       => $this->format_posts( $the_query->get_posts() ),
             'is_filtered' => $is_filtered,
             'summary'     => $is_filtered ? $this->results_summary( $the_query->found_posts, $search_clause ) : false,
         ];
