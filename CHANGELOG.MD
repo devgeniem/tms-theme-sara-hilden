@@ -7,10 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-470: Gravity form's submit as button
+### Changed
+- TMS-430: Fix related artwork logic #69
+
+## [1.0.2]
+
 ### Added
 
-- TMS:507: Blog Archive
 - TMS-647: Build optimizations
+- TMS-507: Blog Archive #68
 
 ## [1.0.1] - 2022-01-25
 
