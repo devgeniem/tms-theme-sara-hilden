@@ -2,6 +2,7 @@
 /**
  *  Copyright (c) 2022. Geniem Oy
  */
+
 namespace TMS\Theme\Sara_Hilden;
 
 use Geniem\Role;
