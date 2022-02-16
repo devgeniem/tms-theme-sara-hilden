@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- TMS-732: Capabilities for Roles
+- TMS-723: Capabilities for Roles
 ## [1.0.3] - 2022-02-15
 
 ### Changed
