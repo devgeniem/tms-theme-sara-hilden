@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-776: Fix query on PageArtist model. #87
 
+### Changed
+
+- TMS-773: Set the footer logo max-height. #88
+
 ## [1.1.0] - 2022-03-15
 
 ### Fixed
