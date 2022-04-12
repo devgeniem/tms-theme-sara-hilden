@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 - TMS-773: Set the footer logo max-height. #88
+- TMS-774: Changed the image block meta data layout.
 
 ## [1.1.0] - 2022-03-15
 
