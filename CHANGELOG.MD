@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-771: Overwrite custom links removal via filter. #86
+
+## [1.1.0] - 2022-03-15
+
+### Fixed
+
+- TMS-728: Fix media gallery texts of featured image in artwork.
+
+## [1.0.4] - 2022-02-17
+
+### Added
+
 - TMS-723: Capabilities for Roles
 
 ## [1.0.3] - 2022-02-15
