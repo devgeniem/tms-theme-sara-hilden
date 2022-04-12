@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-773: Set the footer logo max-height.
+
 ## [1.1.0] - 2022-03-15
 
 ### Fixed
