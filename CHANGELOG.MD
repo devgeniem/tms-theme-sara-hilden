@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- TMS-775: Remove automatic hyphenation from headings in footer.
+- TMS-775: Remove automatic hyphenation from headings in footer. #90
 
 ## [1.1.0] - 2022-03-15
 
