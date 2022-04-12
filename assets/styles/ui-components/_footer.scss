@@ -26,4 +26,9 @@ $footer-copy-link-border-color: $black;
             background-color: transparent !important;
         }
     }
+
+    // No automatic hyphenation for footer's headings
+    h2 {
+        hyphens: manual;
+    }
 }
