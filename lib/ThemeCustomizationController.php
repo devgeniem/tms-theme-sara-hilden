@@ -39,6 +39,8 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         add_filter( 'tms/theme/error404/search_link', [ $this, 'error404_search_link' ] );
         add_filter( 'tms/theme/error404/home_link', [ $this, 'error404_home_link' ] );
         add_filter( 'tms/acf/tab/error404/fields', [ $this, 'remove_404_alignment_setting' ] );
+
+        add_filter( 'tms/theme/remove_custom_links', [ $this, 'remove_custom_links' ] );
     }
 
     /**
@@ -170,5 +172,14 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
                 <use xlink:href="#icon-arrow-right"></use>
             </svg>'
         );
+    }
+
+    /**
+     * Override custom links removal.
+     *
+     * @return boolean
+     */
+    public function remove_custom_links() : bool {
+        return false;
     }
 }
