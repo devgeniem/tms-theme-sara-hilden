@@ -10,6 +10,11 @@ $footer-copy-link-border-color: $black;
     background-color: $light !important;
     color: $black !important;
 
+    &__logo {
+        width: auto;
+        max-height: 83px;
+    }
+
     &__copy-links {
         li:not(:last-child)::after {
             background-color: $black;
