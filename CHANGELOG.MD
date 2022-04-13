@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- TMS-776: Fix query on PageArtist model. #87
+
 ### Added
 
 - TMS-771: Overwrite custom links removal via filter. #86

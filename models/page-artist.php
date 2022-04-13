@@ -85,16 +85,18 @@ class PageArtist extends BaseModel {
 
         // Default order: last name, ascending.
         if ( empty( $orderby_query_var ) ) {
-            $args['orderby']  = [ 'last_name' => 'ASC' ];
+            $args['orderby']  = 'meta_value';
             $args['meta_key'] = 'last_name';
+            $args['order']    = 'ASC';
 
             return;
         }
 
         // Last name, descending.
         if ( $orderby_query_var === 'desc' ) {
-            $args['orderby']  = [ 'last_name' => 'DESC' ];
+            $args['orderby']  = 'meta_value';
             $args['meta_key'] = 'last_name';
+            $args['order']    = 'DESC';
 
             return;
         }
@@ -277,12 +279,14 @@ class PageArtist extends BaseModel {
             $categories = ! empty( $categories ) ? array_map( fn( $c ) => $c->term_id, $categories ) : [];
         }
 
-        $args['tax_query'] = [
-            [
-                'taxonomy' => ArtistCategory::SLUG,
-                'terms'    => $categories,
-            ],
-        ];
+        if ( ! empty( $categories ) ) {
+            $args['tax_query'] = [
+                [
+                    'taxonomy' => ArtistCategory::SLUG,
+                    'terms'    => $categories,
+                ],
+            ];
+        }
 
         $s = self::get_search_query_var();
 
