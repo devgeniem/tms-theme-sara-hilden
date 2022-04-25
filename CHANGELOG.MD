@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-800: Image Gallery is_clickable selection added back #94
 
+### Changed
+
+- TMS-806: Contact headings align left
+
 ## [1.2.0] - 2022-04-25
 
 ### Changed
