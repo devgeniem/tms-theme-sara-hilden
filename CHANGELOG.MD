@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- TMS-800: Image Gallery is_clickable selection added back #94
+
 ## [1.2.0] - 2022-04-25
 
 ### Changed
