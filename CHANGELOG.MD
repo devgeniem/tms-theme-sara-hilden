@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- TMS-808: Retain the original image ratio on:
+- TMS-808: Retain the original image ratio on: #95
   - Layout content columns
   - Layout accordion image
   - Single artist and artwork images
