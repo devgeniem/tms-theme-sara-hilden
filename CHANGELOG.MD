@@ -7,19 +7,39 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-### Added
+### Changed
 
-- TMS-771: Overwrite custom links removal via filter. #86
+- TMS-808: Retain the original image ratio on: #95
+  - Layout content columns
+  - Layout accordion image
+  - Single artist and artwork images
+  - Single post featured image
+
+## [1.2.1] - 2022-04-26
+
+### Fixed
+
+- TMS-800: Image Gallery is_clickable selection added back #94
+
+### Changed
+
+- TMS-806: Contact headings align left
+
+## [1.2.0] - 2022-04-25
+
+### Changed
+
+- TMS-775: Remove automatic hyphenation from headings in footer. #90
+- TMS-774: Changed the image block meta data layout. #89
+- TMS-773: Set the footer logo max-height. #88
 
 ### Fixed
 
 - TMS-776: Fix query on PageArtist model. #87
 
-### Changed
+### Added
 
-- TMS-773: Set the footer logo max-height. #88
-- TMS-774: Changed the image block meta data layout.
-- TMS-775: Remove automatic hyphenation from headings in footer. #90
+- TMS-771: Overwrite custom links removal via filter. #86
 
 ## [1.1.0] - 2022-03-15
 

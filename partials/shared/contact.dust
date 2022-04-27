@@ -1,6 +1,6 @@
-<div class="column {column_class|s} has-text-small keep-vertical-spacing">
+<div class="column is-offset-0-mobile {column_class|s} ml-0 has-text-small keep-vertical-spacing">
     <div class="columns">
-        <div class="column is-10-tablet is-offset-1-tablet is-12-desktop">
+        <div class="column is-10-tablet is-12-desktop">
             <div class="columns is-multiline is-mobile is-4">
                 {?image}
                     <div class="column is-12-mobile is-12-tablet is-4-desktop">
