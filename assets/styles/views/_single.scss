@@ -1,0 +1,10 @@
+.single-post {
+    .entry {
+        &__figure {
+            img {
+                width: auto;
+                max-height: 860px;
+            }
+        }
+    }
+}
