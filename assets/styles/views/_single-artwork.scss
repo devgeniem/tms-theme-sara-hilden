@@ -1,4 +1,13 @@
 .single-artwork {
+    .entry {
+        &__figure {
+            img {
+                width: auto;
+                max-height: 860px;
+            }
+        }
+    }
+
     &__artist-links {
         margin: -$theme-spacing-quarter;
 
