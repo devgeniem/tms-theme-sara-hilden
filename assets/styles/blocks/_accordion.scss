@@ -1,14 +1,14 @@
 .accordion {
-    
     &__description {
+        max-width: none !important;
+        margin-right: 0 !important;
         margin-left: 0 !important;
-        margin-right:0 !important;
-        max-width: none !important  ;
     }
 
     &__row {
-        border-radius: 0;
         border: .0075rem solid $black;
+        border-radius: 0;
+
         &:hover,
         .is-hover {
             border-color: $black;
@@ -23,11 +23,18 @@
     &__title-button {
         &:focus {
             outline: .125rem dotted $black;
-            outline-offset: 0.25rem;
+            outline-offset: .25rem;
         }
     }
 
     a {
         text-decoration: underline;
+    }
+
+    .image {
+        img {
+            width: auto;
+            max-height: 860px;
+        }
     }
 }
