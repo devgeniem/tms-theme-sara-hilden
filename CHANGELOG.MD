@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- TMS-224: add api image to single article template
+
 ### Changed
 
 - TMS-808: Retain the original image ratio on: #95
@@ -14,10 +18,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - Layout accordion image
   - Single artist and artwork images
   - Single post featured image
-
-### Added
-
-- TMS-224: add api image to single article template
 
 ## [1.2.1] - 2022-04-26
 

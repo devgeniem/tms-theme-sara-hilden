@@ -34,7 +34,7 @@
     .image {
         img {
             width: auto;
-            max-height: 860px;
+            max-height: $image-max-height;
         }
     }
 }
