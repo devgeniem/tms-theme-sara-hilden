@@ -14,8 +14,8 @@
                                     </h1>
 
                                     {?content.image}
-                                        <div class="entry__figure pt-2">
-                                            {@image id=content.image.id size="single" /}
+                                        <div class="entry__figure pt-2 has-text-centered">
+                                            {@image id=content.image.id size="large" /}
                                         </div>
                                     {/content.image}
 
