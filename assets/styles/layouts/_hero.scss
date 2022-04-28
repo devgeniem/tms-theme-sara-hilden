@@ -31,7 +31,7 @@
     &__bg-wrapper {
         @include hero-bg-wrapper-height;
     }
-    
+
     &__box {
         left: 0;
         bottom: -7rem;
@@ -70,13 +70,27 @@
                 fill: $black;
             }
         }
-        
+
         &:focus,
         .is-focused {
             outline: 0.125rem dotted $white !important;
             outline-offset: 0.25rem;
-        }       
+        }
 
     }
 
+}
+
+.page-template-page-front-page {
+    .hero {
+        h1 {
+            @include from($tablet) {
+                font-size: 2.55rem !important;
+            }
+
+            @include from($desktop) {
+                font-size: 2.95rem !important;
+            }
+        }
+    }
 }
