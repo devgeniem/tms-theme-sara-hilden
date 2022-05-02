@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.3.0] - 2022-05-02
+
 ### Changed
 
 - TMS-811: Bigger font size on front page hero's title. #97
