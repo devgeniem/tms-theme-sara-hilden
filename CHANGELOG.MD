@@ -7,16 +7,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- TMS-812: Fix Exhibition upcoming sr-text visibility.
+
 ## [1.3.0] - 2022-05-02
 
 ### Changed
 
 - TMS-811: Bigger font size on front page hero's title. #97
 - TMS-808: Retain the original image ratio on: #95
-  - Layout content columns
-  - Layout accordion image
-  - Single artist and artwork images
-  - Single post featured image
+    - Layout content columns
+    - Layout accordion image
+    - Single artist and artwork images
+    - Single post featured image
 
 ## [1.2.1] - 2022-04-26
 
