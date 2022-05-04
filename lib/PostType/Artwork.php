@@ -124,7 +124,7 @@ class Artwork implements PostType {
      */
     private function register() {
         $labels = [
-            'name'                  => 'Teokset',
+            'name'                  => _x( 'Artwork', 'theme CPT', 'tms-theme-sara_hilden' ),
             'singular_name'         => 'Taideteos',
             'menu_name'             => 'Teokset',
             'name_admin_bar'        => 'Teokset',
