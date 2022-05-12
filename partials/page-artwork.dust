@@ -16,8 +16,9 @@
                         <div class="column is-6 is-3-desktop">
                             {?image}
                                 <div class="image is-4by3">
-                                    <a href="{permalink}" aria-hidden="true" tabindex="-1">
-                                        <img src="{image|url}" alt="{image_alt|html}">
+                                    <a href="{permalink|url}" aria-hidden="true" tabindex="-1">
+                                        <img class="objectfit-image" loading="lazy" src="{image|url}"
+                                             alt="{image_alt|html}">
                                     </a>
                                 </div>
                             {/image}
