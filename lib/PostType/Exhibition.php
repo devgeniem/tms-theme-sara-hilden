@@ -94,7 +94,7 @@ class Exhibition implements PostType {
      */
     private function register() {
         $labels = [
-            'name'                  => 'Näyttelyt',
+            'name'                  => _x( 'Exhibition', 'theme CPT', 'tms-theme-sara_hilden' ),
             'singular_name'         => 'Näyttely',
             'menu_name'             => 'Näyttelyt',
             'name_admin_bar'        => 'Näyttelyt',
