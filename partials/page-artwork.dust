@@ -17,7 +17,7 @@
                             {?image}
                                 <div class="image is-4by3">
                                     <a href="{permalink}" aria-hidden="true" tabindex="-1">
-                                        {@image id=image size="large" class="objectfit-image" /}
+                                        <img src="{image|url}" alt="{image_alt|html}">
                                     </a>
                                 </div>
                             {/image}
