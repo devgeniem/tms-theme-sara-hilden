@@ -11,13 +11,30 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-224: add api image to single article template
 
+## [1.4.1] - 2022-06-12
+
+### Fixed
+
+TMS-827: Use image size medium #103
+
+## [1.4.0] - 2022-06-05
+
+### Fixed
+
+- TMS-813: Translate CPT name #102
+- TMS-812: Fix Exhibition upcoming sr-text visibility #101
+- TMS-816: Display image meta in single artwork view #99
+
+## [1.3.0] - 2022-05-02
+
 ### Changed
 
+- TMS-811: Bigger font size on front page hero's title. #97
 - TMS-808: Retain the original image ratio on: #95
-  - Layout content columns
-  - Layout accordion image
-  - Single artist and artwork images
-  - Single post featured image
+    - Layout content columns
+    - Layout accordion image
+    - Single artist and artwork images
+    - Single post featured image
 
 ## [1.2.1] - 2022-04-26
 

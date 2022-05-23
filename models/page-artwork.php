@@ -230,7 +230,11 @@ class PageArtwork extends PageArtist {
 
         return array_map( function ( $item ) use ( $artist_map ) {
             if ( has_post_thumbnail( $item->ID ) ) {
-                $item->image = get_post_thumbnail_id( $item->ID );
+                $item->image = get_the_post_thumbnail_url( $item->ID, 'medium_large' );
+
+                $image_id        = get_post_thumbnail_id( $item->ID );
+                $image           = get_post( $image_id );
+                $item->image_alt = $image->post_content ?? '';
             }
 
             $item->permalink = get_the_permalink( $item->ID );
