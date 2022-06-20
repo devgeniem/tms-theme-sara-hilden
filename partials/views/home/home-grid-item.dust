@@ -1,20 +1,26 @@
 <div class="column is-6 is-4-desktop is-3-widescreen">
     <article class="entry mb-6">
-     <a href="{permalink}" class="has-text-black is-block">
-        {?featured_image}
-            <div class="image is-5by3 mb-5">
-                {@image id=featured_image size="medium_large" class="objectfit-image" /}
+        <a href="{permalink}" class="has-text-black is-block">
+            {?featured_image}
+                <div class="image is-5by3 mb-5">
+                    {@image id=featured_image size="medium_large" class="objectfit-image" /}
+                </div>
+            {/featured_image}
+
+            {?api_image_url}
+                <div class="image is-5by3 mb-5">
+                    <img class="api_image objectfit-image" src="{api_image_url|url}" loading="lazy"/>
+                </div>
+            {/api_image_url}
+
+            <h2 class="entry__title h4 mt-0 mb-5">
+                {post_title|s}
+            </h2>
+
+            <div class="entry__excerpt mt-5 mb-5 has-text-small">
+                <span class="entry__date">{@strtodate value=post_date /}</span>
+                {excerpt|s}
             </div>
-        {/featured_image}
-
-        <h2 class="entry__title h4 mt-0 mb-5">
-            {post_title|s}
-        </h2>
-
-        <div class="entry__excerpt mt-5 mb-5 has-text-small">
-            <span class="entry__date">{@strtodate value=post_date /}</span>
-            {excerpt|s}
-        </div>
         </a>
     </article>
 </div>
