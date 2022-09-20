@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- PIEN-7610: Handle api_image_url and fix case where featured image doesn't exist.
+
+## [1.5.2] - 2022-08-23
+
+### Fixed
+
+- TMS-894: Fix composer
+
 ## [1.5.1] - 2022-06-21
 
 ### Fixed
