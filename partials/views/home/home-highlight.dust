@@ -2,17 +2,17 @@
     <div class="highlight-article">
         <a href="{highlight.permalink}" class="has-text-black is-block">
             <div class="columns is-vcentered is-desktop is-gapless">
-                {?featured_image}
+                {?highlight.featured_image}
                     <div class="highlight-article__image-container column is-6-desktop is-7-widescreen is-relative">
                         {@image id=highlight.featured_image size="large" class="objectfit-image" /}
                     </div>
-                {/featured_image}
+                {/highlight.featured_image}
 
-                {?api_image_url}
+                {?highlight.api_image_url}
                     <div class="highlight-article__image-container column is-6-desktop is-7-widescreen is-relative">
-                        <img class="objectfit-image is-block" src="{api_image_url|url}" loading="lazy"/>
+                        <img class="objectfit-image is-block" src="{highlight.api_image_url|url}" loading="lazy"/>
                     </div>
-                {/api_image_url}
+                {/highlight.api_image_url}
 
                 <div class="column is-6-desktop is-5-widescreen has-text-secondary-paragraph">
                     <div class="highlight-article__fields p-5 pt-9-desktop pr-6-desktop pb-9-desktop pl-6-desktop">
