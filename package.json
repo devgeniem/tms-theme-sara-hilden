@@ -17,7 +17,7 @@
     "eslint": "^7.32.0",
     "eslint-loader": "^4.0.2",
     "hyphenopoly": "^3.4.0",
-    "indicate": "^2.4.0",
+    "indicate": "^6.0.0",
     "micromodal": "^0.4.10",
     "modaal": "^0.4.4",
     "normalize.css": "^8.0.1",
