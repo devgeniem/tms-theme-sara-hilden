@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-397: Added logo-wall fields for Exhibition CPT single page
+
+## [1.5.4] - 2022-10-17
+
+### Fixed
+
+- PIEN-7726: Fix showing images in home page highlight.
+
+## [1.5.3] - 2022-09-20
+
 ### Fixed
 
 - PIEN-7610: Handle api_image_url and fix case where featured image doesn't exist.
