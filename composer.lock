@@ -159,16 +159,16 @@
         },
         {
             "name": "devgeniem/dustpress",
-            "version": "1.36.0",
+            "version": "1.36.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/dustpress.git",
-                "reference": "04bcdbd5fcc1322351af79148798fafe7bfe9737"
+                "reference": "a5fd0668a3376a664da612c6d9b79194a24d8cff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/dustpress/zipball/04bcdbd5fcc1322351af79148798fafe7bfe9737",
-                "reference": "04bcdbd5fcc1322351af79148798fafe7bfe9737",
+                "url": "https://api.github.com/repos/devgeniem/dustpress/zipball/a5fd0668a3376a664da612c6d9b79194a24d8cff",
+                "reference": "a5fd0668a3376a664da612c6d9b79194a24d8cff",
                 "shasum": ""
             },
             "require": {
@@ -219,9 +219,9 @@
             ],
             "support": {
                 "issues": "https://github.com/devgeniem/dustpress/issues",
-                "source": "https://github.com/devgeniem/dustpress/tree/1.36.0"
+                "source": "https://github.com/devgeniem/dustpress/tree/1.36.3"
             },
-            "time": "2021-11-30T14:38:53+00:00"
+            "time": "2023-01-11T13:30:40+00:00"
         }
     ],
     "packages-dev": [
@@ -1117,5 +1117,5 @@
         "php": ">=7.4|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.3.0"
 }
