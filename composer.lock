@@ -349,23 +349,23 @@
         },
         {
             "name": "devgeniem/acf-codifier",
-            "version": "1.37.0",
+            "version": "1.38.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/acf-codifier.git",
-                "reference": "005f265cb8006e1a44e5c30d3f6efb6117cce193"
+                "reference": "26196518b1497a374f9621bc32ce9fd9062c691e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/acf-codifier/zipball/005f265cb8006e1a44e5c30d3f6efb6117cce193",
-                "reference": "005f265cb8006e1a44e5c30d3f6efb6117cce193",
+                "url": "https://api.github.com/repos/devgeniem/acf-codifier/zipball/26196518b1497a374f9621bc32ce9fd9062c691e",
+                "reference": "26196518b1497a374f9621bc32ce9fd9062c691e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
             },
             "conflict": {
-                "devgeniem/redipress": "<1.9"
+                "devgeniem/redipress": "<2.0"
             },
             "require-dev": {
                 "victorjonsson/markdowndocs": "^1.3"
@@ -395,9 +395,9 @@
             ],
             "support": {
                 "issues": "https://github.com/devgeniem/acf-codifier/issues",
-                "source": "https://github.com/devgeniem/acf-codifier/tree/1.37.0"
+                "source": "https://github.com/devgeniem/acf-codifier/tree/1.38.1"
             },
-            "time": "2021-11-30T10:01:12+00:00"
+            "time": "2023-01-23T12:05:21+00:00"
         },
         {
             "name": "devgeniem/geniem-rules-codesniffer",
@@ -1117,5 +1117,5 @@
         "php": ">=7.4|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.3.0"
 }
