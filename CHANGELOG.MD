@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.5.5] - 2023-01-27
+
 - TMS-397: Added logo-wall fields for Exhibition CPT single page
 
 ## [1.5.4] - 2022-10-17
