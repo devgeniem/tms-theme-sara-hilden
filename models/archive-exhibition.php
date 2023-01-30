@@ -141,11 +141,12 @@ class ArchiveExhibition extends BaseModel {
             'search'         => [
                 'label'             => __( 'Search from archive', 'tms-theme-sara_hilden' ),
                 'submit_value'      => __( 'Search', 'tms-theme-sara_hilden' ),
-                'input_placeholder' => __( 'Search from archive', 'tms-theme-sara_hilden' ),
+                'input_placeholder' => __( 'Type a search word', 'tms-theme-sara_hilden' ),
             ],
-            'no_results'     => __( 'No results', 'tms-theme-sara_hilden' ),
-            'year_label'     => __( 'Year', 'tms-theme-sara_hilden' ),
-            'upcoming_badge' => __( 'Upcoming', 'tms-theme-sara_hilden' ),
+            'no_results'       => __( 'No results', 'tms-theme-sara_hilden' ),
+            'year_label'       => __( 'Year', 'tms-theme-sara_hilden' ),
+            'year_filter_info' => __( 'Selecting the year filter limits the exhibition view.', 'tms-theme-sara_hilden' ),
+            'upcoming_badge'   => __( 'Upcoming', 'tms-theme-sara_hilden' ),
         ];
     }
 
