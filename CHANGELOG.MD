@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.5.6] - 2023-02-02
+
+- PIEN-8179: Added wrapping for exhibitions year filter info-text on tablets or smaller screens
+
 ## [1.5.5] - 2023-01-27
 
 - TMS-397: Added logo-wall fields for Exhibition CPT single page
