@@ -138,7 +138,7 @@ class ArchiveExhibition extends BaseModel {
      */
     public function strings() : array {
         return [
-            'search'         => [
+            'search'           => [
                 'label'             => __( 'Search from archive', 'tms-theme-sara_hilden' ),
                 'submit_value'      => __( 'Search', 'tms-theme-sara_hilden' ),
                 'input_placeholder' => __( 'Type a search word', 'tms-theme-sara_hilden' ),
