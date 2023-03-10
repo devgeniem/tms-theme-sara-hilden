@@ -24,6 +24,12 @@
             }
         }
 
+        &--sort-by-container {
+            select {
+                min-width: 84px;
+            }
+        }
+
         input[type="text"] {
             border-radius: 0 !important;
 
@@ -42,6 +48,13 @@
 
         .align-items-end {
             align-items: flex-end;
+        }
+
+        @include until($tablet) {
+            .column {
+                flex-wrap: wrap;
+                gap: 6px;
+            }
         }
     }
 }
