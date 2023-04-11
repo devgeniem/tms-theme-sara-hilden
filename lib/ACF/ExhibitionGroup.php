@@ -93,32 +93,32 @@ class ExhibitionGroup {
         $file_types_list = implode( ', ', $this->allowed_filetypes );
 
         $strings = [
-            'tab'           => 'Lisätiedot',
-            'start_date'    => [
+            'tab'                => 'Lisätiedot',
+            'start_date'         => [
                 'title'        => 'Alkupvm',
                 'instructions' => '',
             ],
-            'end_date'      => [
+            'end_date'           => [
                 'title'        => 'Loppupvm',
                 'instructions' => '',
             ],
-            'title'         => [
+            'title'              => [
                 'title'        => 'Otsikko',
                 'instructions' => '',
             ],
-            'opening_times' => [
+            'opening_times'      => [
                 'title'        => 'Aukioloajat',
                 'instructions' => '',
             ],
-            'location'      => [
+            'location'           => [
                 'title'        => 'Sijainti',
                 'instructions' => '',
             ],
-            'is_upcoming'   => [
+            'is_upcoming'        => [
                 'title'        => 'Tulossa',
                 'instructions' => '',
             ],
-            'logo_wall_header' => [
+            'logo_wall_header'   => [
                 'title'        => 'Logoseinän otsikko',
                 'instructions' => '',
             ],
@@ -127,11 +127,11 @@ class ExhibitionGroup {
                 'instructions' => '',
                 'button'       => 'Lisää logo',
             ],
-            'logo_wall_logo'   => [
+            'logo_wall_logo'     => [
                 'title'        => 'Logo',
                 'instructions' => "Sallitut tiedostomuodot: {$file_types_list}.",
             ],
-            'logo_wall_link'   => [
+            'logo_wall_link'     => [
                 'title'        => 'Linkki',
                 'instructions' => '',
             ],
