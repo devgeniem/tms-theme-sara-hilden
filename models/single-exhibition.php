@@ -46,8 +46,8 @@ class SingleExhibition extends BaseModel {
             'location'      => [ 'icon' => 'icon-location' ],
         ];
 
-        foreach ( $meta_fields as $meta ) {
-            if ( ! empty( get_field( $meta ) ) ) {
+        foreach ( $meta_fields as $key => $meta ) {
+            if ( ! empty( get_field( $key ) ) ) {
                 return true;
             }
         }
