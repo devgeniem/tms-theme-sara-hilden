@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.6.1] - 2023-04-17
+
+- PIEN-8493: Remove unused function that caused an error
+
 ## [1.6.0] - 2023-04-11
 
 - PIEN-8157: PHP 8.1
