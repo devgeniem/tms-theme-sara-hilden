@@ -35,25 +35,6 @@ class SingleExhibition extends BaseModel {
     }
 
     /**
-     * Have details?
-     *
-     * @return bool|void
-     */
-    public function has_details() {
-        $meta_fields = [
-            'date'          => [ 'icon' => 'icon-date' ],
-            'opening_times' => [ 'icon' => 'icon-time' ],
-            'location'      => [ 'icon' => 'icon-location' ],
-        ];
-
-        foreach ( $meta_fields as $key => $meta ) {
-            if ( ! empty( get_field( $key ) ) ) {
-                return true;
-            }
-        }
-    }
-
-    /**
      * Get & format opening times.
      *
      * @param int $id The post ID.
