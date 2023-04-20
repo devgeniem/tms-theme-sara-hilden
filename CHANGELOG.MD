@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- PIEN-8524: Display API images #140
+
 ## [1.6.1] - 2023-04-17
 
 - PIEN-8493: Remove unused function that caused an error
