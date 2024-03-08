@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1017: Add image alt-text to imported news single-article
+
+## [1.6.4] - 2023-10-23
+
+- TMS-970: Add image meta to content-columns component
+
+## [1.6.3] - 2023-10-12
+
+- TMS-936: Image carousel accessibility fixes
+
+## [1.6.2] - 2023-04-27
+
+### Fixed
+
+- PIEN-8524: Display API images #140
+
 ## [1.6.1] - 2023-04-17
 
 - PIEN-8493: Remove unused function that caused an error
