@@ -1,10 +1,10 @@
 .image-carousel {
 
-    &__modal-control{
+    &__modal-control {
 
         &.slick-arrow {
             background-color: transparent;
-            border:none;
+            border: none;
 
             .icon {
                 fill: $white;
@@ -21,7 +21,7 @@
 
         @include until($tablet) {
             .slick-prev {
-                left:0;
+                left: 0;
             }
 
             .slick-next {
@@ -30,9 +30,9 @@
         }
 
         .slick-slide {
-            padding:0 !important;
+            padding: 0 !important;
         }
-       
+
         .image-carousel__item {
             height: 80vh;
             display: flex !important;
@@ -40,33 +40,28 @@
             align-items: stretch;
             justify-content: flex-start;
         }
-    
-        .img-wrapper{
-            flex:2 1 auto;
+
+        .img-wrapper {
+            flex: 2 1 auto;
             max-height: 100%;
-            height:auto;
+            height: auto;
             min-width: 0;
             min-height: 50%;
             display: flex;
             align-items: flex-end;
 
-            img{
+            img {
                 max-width: 100%;
-                max-height: 100% !important;
                 min-height: 100px;
                 object-fit: contain;
             }
         }
-    
+
         .image-block__meta {
-            flex:1 1 auto;
+            flex: 1 1 auto;
             width: 100%;
         }
-        
-
     }
-
-    
 }
 
 .modal-content {
