@@ -1,14 +1,14 @@
-<div class="contacts is-align-full">
+<div class="contacts is-align-wide">
     <div class="columns">
         <div class="column is-8-desktop has-text-left has-text-black has-text-weight-semibold">
             {?title}
                 <h2 class="has-text-weight-bold">
-                    {title|s}
+                    {title|html}
                 </h2>
             {/title}
 
             {?description}
-                {description|s}
+                {description|kses}
             {/description}
         </div>
     </div>
