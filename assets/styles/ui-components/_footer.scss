@@ -27,6 +27,10 @@ $footer-copy-link-border-color: $black;
         }
     }
 
+    .icon.is-primary-invert {
+        fill: currentColor !important;
+    }
+
     // No automatic hyphenation for footer's headings
     h2 {
         hyphens: manual;
