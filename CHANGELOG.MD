@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1044: Add open & close buttons and icon-texts to accordion partial
+
+## [1.6.8] - 2024-05-20
+
 - TMS-1028: Fix footer social-media icon color
 
 ## [1.6.7] - 2024-05-14
