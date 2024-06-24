@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1054: Remove hero overlay-toggle from single page editor
+
+## [1.6.9] - 2024-06-04
+
 - TMS-1044: Add open & close buttons and icon-texts to accordion partial
 
 ## [1.6.8] - 2024-05-20
