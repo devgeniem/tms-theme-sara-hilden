@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.7.0] - 2024-06-26
+
 - TMS-1054: Remove hero overlay-toggle from single page editor
 
 ## [1.6.9] - 2024-06-04
