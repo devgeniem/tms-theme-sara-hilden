@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1067: Show price-info for event in listing if it's free
+
+## [1.7.2] - 2024-09-12
+
+- Hero field key hotfix
+
 ## [1.7.1] - 2024-08-21
 
 - TMS-1057: Increase articles lead-text font-size
