@@ -14,7 +14,7 @@ class AlterCallToActionFields {
      * Constructor
      */
     public function __construct() {
-        add_filter(
+        \add_filter(
             'tms/acf/layout/_call_to_action/fields',
             [ $this, 'alter_fields' ],
             10,
@@ -31,7 +31,6 @@ class AlterCallToActionFields {
      */
     public function alter_fields( array $fields ) : array {
         try {
-            unset( $fields['rows']->sub_fields['display_artist'] );
             $fields['rows']->sub_fields['layout']->set_wrapper_width( 100 );
         }
         catch ( Exception $e ) {
