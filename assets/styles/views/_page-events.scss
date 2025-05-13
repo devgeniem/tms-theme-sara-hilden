@@ -1,6 +1,8 @@
 .page-template-page-events-search {
-    .events-form {
-        background-color: $color-sarahilden-gray;
+    form {
+        .has-background-light {
+            background-color: transparent !important;
+        }
     }
 }
 
