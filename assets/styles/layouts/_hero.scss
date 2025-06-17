@@ -45,6 +45,11 @@
         }
     }
 
+    &__video-controls {
+        position: relative !important;
+        z-index: 10;
+    }
+
     &__control {
         transform: none;
         top: unset;
