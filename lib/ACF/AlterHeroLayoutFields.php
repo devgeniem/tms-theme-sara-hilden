@@ -36,7 +36,6 @@ class AlterHeroLayoutFields {
             $fields['link']->set_wrapper_width( 100 );
             $fields['image']->set_required();
             $fields['description']->set_maxlength( 200 );
-            $fields['video_file']->set_instructions( 'Jos olet asettanut herolle kuvan, videota ei näytetä.' );
         }
         catch ( Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
