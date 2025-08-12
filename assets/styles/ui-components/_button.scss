@@ -28,7 +28,7 @@ $button-secondary-border-color: $light;
         &:focus,
         &.is-focused {
             border-color: $button-primary-border-color !important;
-            outline: .125rem dotted $black !important;
+            outline: .15rem dotted $black !important;
             outline-offset: .25rem !important;
             background-color: $black !important;
             color: $white !important;
@@ -47,7 +47,7 @@ $button-secondary-border-color: $light;
 
             &:focus,
             &.is-focused {
-                outline: .125rem dotted $black !important;
+                outline: .15rem dotted $black !important;
             }
 
         }
@@ -71,7 +71,7 @@ $button-secondary-border-color: $light;
         &:focus,
         &.is-focused {
             border-color: $button-secondary-border-color !important;
-            outline: .125rem dotted $black !important;
+            outline: .15rem dotted $black !important;
             outline-offset: .25rem !important;
         }
 
@@ -89,8 +89,8 @@ $button-secondary-border-color: $light;
 
         &.is-inverted {
             &:focus,
-            &.is-focused { 
-                outline: .125rem dotted $white !important;
+            &.is-focused {
+                outline: .15rem dotted $white !important;
             }
         }
     }
