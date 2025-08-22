@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1164: Button color changes
+
 ## [1.9.1] - 2025-08-13
 
 - TMS-1160: Fix elements focus outline thickness
