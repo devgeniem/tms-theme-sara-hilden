@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-1164: Button color changes
 - TMS-1187: Hero-museum style change
+- TMS-1190: Add height to single exhibition hero on large monitors
 
 ## [1.9.1] - 2025-08-13
 
