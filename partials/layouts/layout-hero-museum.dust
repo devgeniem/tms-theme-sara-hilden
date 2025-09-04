@@ -83,7 +83,7 @@
                                     {title|html}
                                 </p>
 
-                                <p class="mt-0 mb-0 is-family-secondary has-text-large has-text-black">
+                                <p class="mt-0 mb-0 is-family-secondary has-text-black">
                                     {text|kses}
                                 </p>
 
