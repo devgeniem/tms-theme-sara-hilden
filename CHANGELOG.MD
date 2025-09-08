@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-1187: Hero-museum style change
+- TMS-1163: Search results breadcrumbs accessibility fixes
 
 ## [1.9.1] - 2025-08-13
 
