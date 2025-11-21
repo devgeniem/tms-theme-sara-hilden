@@ -57,14 +57,10 @@ $button-secondary-border-color: $light;
 
     &.is-secondary {
         border-color: $button-secondary-border-color !important;
+        color: $primary-invert !important;
 
         .icon {
             fill: currentColor !important;
-        }
-
-        &:hover,
-        &.is-hovered {
-            border-color: $black !important;
         }
 
         &:focus,

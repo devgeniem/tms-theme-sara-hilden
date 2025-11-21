@@ -45,7 +45,7 @@ class HeroFormatter implements \TMS\Theme\Base\Interfaces\Formatter {
             $box_classes[]             = 'hero__box--background';
             $box_classes[]             = 'has-background-white';
             $box_classes[]             = 'has-text-primary';
-            $button_classes[]          = 'is-primary-invert';
+            $button_classes[]          = 'is-primary';
         }
 
         $layout['button_classes'] = implode( ' ', $button_classes );

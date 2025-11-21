@@ -31,12 +31,6 @@ input[type="text"] {
         border-color: $black;
         background-color: transparent;
         color: $black;
-
-        &:hover {
-            border-color: $white;
-            background-color: $black;
-            color: $white;
-        }
     }
 
     .gform_button_select_files:after {
