@@ -20,9 +20,9 @@
         }
 
         &.is-current {
-            border-color: $border-light;
-            background-color: $black;
-            color: $white;
+            border-color: $border-light !important;
+            background-color: $black !important;
+            color: $white !important;
 
             &:hover,
             &:focus {
