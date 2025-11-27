@@ -12,10 +12,10 @@
         &.is-hovered,
         &:focus,
         &.is-focused {
-            background-color: $link !important;
+            background-color: $primary-invert !important;
 
             .icon {
-                fill: $white !important; 
+                fill: $primary !important;
             }
         }
     }

@@ -1,16 +1,16 @@
 .site-header-notice {
     button {
-        
         &.is-primary-invert {
             border-color: $white !important;
         }
-       
+
         .icon {
             fill :$white !important;
         }
 
         &:hover,
         .is-hover {
+            color: $white !important;
             .icon {
                 fill :$black !important;
             }
@@ -19,6 +19,7 @@
         &:focus,
         .is-focus {
             outline: .15rem dotted $white !important;
+            color: $white !important;
             .icon {
                 fill :$black !important;
             }
