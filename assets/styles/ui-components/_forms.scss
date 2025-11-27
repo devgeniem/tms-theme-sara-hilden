@@ -13,6 +13,12 @@
         font-weight: 700;
         padding: 0.8rem 2rem !important;
     }
+
+    .button {
+        background-color: $primary !important;
+        border-color: $primary !important;
+        color: $primary-invert !important;
+    }
 }
 
 input[type="text"] {

@@ -58,6 +58,7 @@ $button-secondary-border-color: $light;
     &.is-secondary {
         border-color: $button-secondary-border-color !important;
         color: $primary-invert !important;
+        background-color: $primary !important;
 
         .icon {
             fill: currentColor !important;
