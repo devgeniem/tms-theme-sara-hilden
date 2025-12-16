@@ -16,7 +16,6 @@ $button-secondary-border-color: $light;
         border-color: $button-primary-border-color !important;
 
         &,
-        &.is-borderless,
         &:hover,
         &.is-hovered,
         &:focus,
@@ -25,6 +24,16 @@ $button-secondary-border-color: $light;
         &.is-active {
             background-color: $primary-invert !important;
             color: $primary !important;
+        }
+
+        &.is-borderless {
+            &,
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: $primary-invert !important;
+                color: $primary !important;
+            }
         }
 
         .icon {
