@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.10.0] - 2026-02-03
+
 - TMS-1164: Button color changes
 
 ## [1.9.2] - 2025-09-08
