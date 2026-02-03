@@ -1,15 +1,10 @@
 .gallery-controls {
     .gallery-button {
-        background-color: transparent !important;
-        border:none;
-
-        .icon {
-            fill: $white !important;
-        }
+        border: none;
 
         &:hover,
         &:focus {
-                outline: 0.15rem solid $white !important;
+            outline: 0.15rem solid $white !important;
         }
     }
 }
@@ -31,7 +26,7 @@
         }
     }
 
-    .slide-deck, 
+    .slide-deck,
     .slide-deck .slide{
 
         figure {
@@ -41,13 +36,12 @@
 
             figcaption {
                 margin-top: 0;
-                
-                p{
+
+                p {
                     max-width: fit-content;
                 }
             }
         }
-        
     }
 
 }

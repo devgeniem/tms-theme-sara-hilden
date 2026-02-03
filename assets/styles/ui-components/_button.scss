@@ -15,14 +15,29 @@ $button-secondary-border-color: $light;
     &.is-primary {
         border-color: $button-primary-border-color !important;
 
-        .icon {
-            fill: currentColor !important;
+        &,
+        &:hover,
+        &.is-hovered,
+        &:focus,
+        &.is-focused,
+        &:active,
+        &.is-active {
+            background-color: $primary-invert !important;
+            color: $primary !important;
         }
 
-        &:hover,
-        &.is-hovered {
-            border-color: $white !important;
-            background-color: $black !important;
+        &.is-borderless {
+            &,
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: $primary-invert !important;
+                color: $primary !important;
+            }
+        }
+
+        .icon {
+            fill: currentColor !important;
         }
 
         &:focus,
@@ -30,16 +45,12 @@ $button-secondary-border-color: $light;
             border-color: $button-primary-border-color !important;
             outline: .15rem dotted $black !important;
             outline-offset: .25rem !important;
-            background-color: $black !important;
-            color: $white !important;
         }
 
         &:active,
         &.is-active {
             border-color: $button-primary-border-color !important;
-            background-color: $black !important;
             box-shadow: none;
-            color: $white !important;
 
             .icon {
                 fill: currentColor !important;
@@ -55,17 +66,11 @@ $button-secondary-border-color: $light;
 
     &.is-secondary {
         border-color: $button-secondary-border-color !important;
-        background-color: $black !important;
-        color: $white !important;
+        color: $primary-invert !important;
+        background-color: $primary !important;
 
         .icon {
             fill: currentColor !important;
-        }
-
-        &:hover,
-        &.is-hovered {
-            border-color: $black !important;
-            background-color: $white !important;
         }
 
         &:focus,
@@ -78,9 +83,7 @@ $button-secondary-border-color: $light;
         &:active,
         &.is-active {
             border-color: $button-secondary-border-color !important;
-            background-color: $white !important;
             box-shadow: none;
-            color: $black !important;
 
             .icon {
                 fill: currentColor !important;

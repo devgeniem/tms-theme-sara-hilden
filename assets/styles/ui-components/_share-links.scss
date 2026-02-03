@@ -5,17 +5,18 @@
         text-align: center;
         font-weight: 400;
     }
-    a {
+    a,
+    a.has-background-accent {
         border: 1px solid $link;
 
         &:hover,
         &.is-hovered,
         &:focus,
         &.is-focused {
-            background-color: $link !important;
+            background-color: $primary-invert !important;
 
             .icon {
-                fill: $white !important;
+                fill: $primary !important;
             }
         }
     }
