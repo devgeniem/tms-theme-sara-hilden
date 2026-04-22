@@ -7,14 +7,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- Update Node, webpack & dependency versions
+
+## [1.10.0] - 2026-02-03
+
 - TMS-1164: Button color changes
-- TMS-1187: Hero-museum style change
+
+## [1.9.2] - 2025-09-08
+
 - TMS-1190: Add height to single exhibition hero on large monitors
+- TMS-1187: Hero-museum style change
+- TMS-1163: Search results breadcrumbs accessibility fixes
 
 ## [1.9.1] - 2025-08-13
 
 - TMS-1160: Fix elements focus outline thickness
-- TMS-1163: Search results breadcrumbs accessibility fixes
 
 ## [1.9.0] - 2025-06-23
 
